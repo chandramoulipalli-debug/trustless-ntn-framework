@@ -100,7 +100,7 @@ def main():
         results.append(r)
         print(f"  N={n:5d}: {r['mean_round_time_ms']:.2f} ms/round, "
               f"ledger={r['ledger_size_kb']:.1f} KB, "
-              f"mem Δ={r['memory_delta_mb']:.1f} MB")
+              f"mem_delta={r['memory_delta_mb']:.1f} MB")
 
     output = {"results": results}
     os.makedirs("results/data", exist_ok=True)

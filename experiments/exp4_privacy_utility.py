@@ -127,7 +127,7 @@ def main():
     print("[Exp4] Done. Results saved to results/data/exp4_privacy_utility.json")
     print(f"[Exp4] Baseline F1 (no DP): {baseline_f1:.3f}")
     for s in summary:
-        print(f"  ε={s['epsilon']}: MAE={s['mae_mean']:.4f}, F1={s['f1_mean']:.3f}")
+        print(f"  eps={s['epsilon']}: MAE={s['mae_mean']:.4f}, F1={s['f1_mean']:.3f}")
 
 
 if __name__ == "__main__":
