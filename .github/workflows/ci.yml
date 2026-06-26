@@ -1,0 +1,49 @@
+name: CI – Reproducibility Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: pytest tests/ -v --tb=short
+
+      - name: Smoke test – Experiment 1 (5 runs only)
+        run: |
+          python -c "
+          import yaml, sys
+          with open('configs/simulation_config.yaml') as f:
+              cfg = yaml.safe_load(f)
+          cfg['simulation']['num_runs'] = 5
+          cfg['simulation']['num_rounds'] = 50
+          import yaml
+          with open('configs/simulation_config.yaml','w') as f:
+              yaml.dump(cfg, f)
+          "
+          python run_all.py --exp 1
+
+      - name: Upload results artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: results
+          path: results/data/

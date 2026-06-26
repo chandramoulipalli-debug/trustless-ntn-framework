@@ -1,0 +1,61 @@
+# simulation_config.yaml
+# Single source of truth for ALL experiment hyperparameters.
+# Changing a value here propagates to every experiment automatically.
+
+simulation:
+  seed: 42
+  num_runs: 30          # repetitions per experiment (for 95% CI)
+  num_rounds: 500       # interaction rounds per simulation
+
+topology:
+  leo_satellites: 72
+  meo_satellites: 12
+  geo_satellites: 3
+  haps: 10
+  uavs: 50
+  ground_nodes: 200
+  # delay bounds per segment (milliseconds)
+  delay:
+    leo_ground_ms: [5, 20]
+    meo_ground_ms: [50, 120]
+    geo_ground_ms: [250, 300]
+    uav_uav_ms: [2, 80]
+    haps_ground_ms: [10, 40]
+
+trust:
+  alpha: 0.7            # weight for historical trust (Eq. 4)
+  lambda_uav: 0.05      # fast decay for volatile UAV links
+  lambda_leo: 0.02      # medium decay for LEO links
+  lambda_geo: 0.005     # slow decay for stable GEO links
+  lambda_haps: 0.01
+  lambda_ground: 0.015
+  threshold_theta: 0.4  # trust threshold for access/routing decisions
+  init_trust: 0.5       # initial trust for all nodes
+
+attacks:
+  malicious_fraction: 0.20   # 20% malicious nodes (worst-case from paper)
+  on_off_good_rounds: 100
+  on_off_bad_rounds: 50
+  build_betray_buildup: 150  # rounds to build trust before betrayal
+  sybil_identities: 5        # extra fake identities per Sybil node
+  replay_window_ms: 5000     # stale evidence window in ms
+
+crypto:
+  paillier_key_bits: 1024    # Paillier HE key size
+  dp_epsilon_values: [0.1, 0.5, 1.0, 2.0, 5.0]  # DP privacy budgets
+  dp_delta: 1.0e-5
+  mpc_domains: 3             # number of administrative domains
+
+ledger:
+  consensus_delay_ms: [50, 200]   # simulated PBFT consensus delay
+  batch_size: 20                  # transactions per block
+  partition_duration_rounds: 50   # how long partition lasts
+
+scalability:
+  node_counts: [100, 500, 1000, 2000, 3000, 5000]
+
+baselines:
+  - centralized
+  - static_dlt
+  - zt_auth_only
+  - uav_fl

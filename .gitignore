@@ -1,0 +1,13 @@
+venv311/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.ipynb_checkpoints/
+results/data/*.json
+results/figures/*.png
+results/figures/*.pdf
+*.egg-info/
+dist/
+build/
+.DS_Store
