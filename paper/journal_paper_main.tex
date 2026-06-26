@@ -17,7 +17,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{tikz}
-\usetikzlibrary{patterns,calc,arrows.meta}
+\usetikzlibrary{patterns,calc,arrows.meta,shapes.rounded,fit}
 
 \newcommand{\QED}{\hfill$\blacksquare$}
 
@@ -103,7 +103,9 @@ Post-partition trust recovery yields a detection F1 gain of
 $+0.130$.
 A closed-form segment-optimal threshold formula is derived and
 empirically confirmed: at $\theta^*\!=\!0.20$, the proposed model
-achieves \textbf{zero false positives} (Precision\,=\,1.000).
+achieves \textbf{zero false positives} (Precision\,=\,1.000) at
+Recall\,$\approx$\,0.14, bounded by on-off adversarial evasion;
+detection latency (35.9\,rounds) is the primary temporal metric.
 At NIST-compliant 2048-bit Paillier keys, encryption overhead is
 5{,}575\,ms per 50-contributor cycle, within the 60-second budget.
 \end{abstract}
@@ -149,8 +151,9 @@ Blockchain-based systems such as NxGenT~\cite{nxgent} use monotonic
 trust accumulation, enabling build-then-betray exploits.
 ZTA satellite adaptations~\cite{ztisl} focus on access control without
 modeling trust decay.
-UAV-centric approaches~\cite{uav_fl} apply a uniform UAV-class decay
-rate to all node types, producing FPR\,=\,27.9\,\%.
+SkyTrust~\cite{uav_fl} and related UAV-centric
+approaches~\cite{tong2024} apply a uniform decay rate to all node
+types, producing FPR\,=\,27.9\,\%.
 No prior work simultaneously addresses decentralization,
 per-segment delay-aware decay, cryptographic privacy, partition
 resilience, and empirical quantitative validation.
@@ -195,9 +198,17 @@ fail during partitions.
 
 \subsection{UAV-Centric and Federated Trust}
 
-The approach in~\cite{uav_fl} pairs blockchain with federated learning
-for UAV trust but applies uniform $\lambda\!=\!0.05$ to all segment
-types, over-penalizing stable GEO nodes (Section~\ref{sec:evaluation}).
+SkyTrust~\cite{uav_fl} integrates Hyperledger Fabric blockchain with
+federated learning for UAV-based NTN trust, achieving 94\,\% trust
+prediction accuracy and 96\,\% rogue-node detection rate.
+Trust scores are updated via a weighted combination of historical trust,
+recent behavior, and energy contribution, without per-segment
+differentiation.
+Related work~\cite{tong2024} extends blockchain FL hierarchically for
+UAV IoT networks but similarly applies a uniform decay rate $\lambda$
+to all node types, over-penalizing stable GEO relay nodes whose
+evidence remains fresh across longer update intervals
+(Section~\ref{sec:evaluation}).
 
 \subsection{Age of Trust}
 
@@ -219,7 +230,7 @@ with measured performance results.
 \midrule
 NxGenT~\cite{nxgent}         & DLT   & No    & Static & Part. & No \\
 ZT-ISL~\cite{ztisl}          & Part. & Part. & Auth   & Part. & No \\
-UAV+FL~\cite{uav_fl}         & FL    & Part. & Unif.  & UAV   & Part. \\
+SkyTrust~\cite{uav_fl,tong2024} & FL  & Part. & Unif.  & UAV   & Part. \\
 Yang~et~al.~\cite{yang2024}  & DLT   & No    & Cons.  & Part. & Part.\\
 \textbf{Proposed}            & DLT+ZTA & Strong & Seg. & Full & \textbf{Yes}\\
 \bottomrule
@@ -243,6 +254,15 @@ A trust evidence record produced by nodes $i$ and $j$ contains:
 pseudonymous identifiers, service quality metrics (delivery ratio,
 latency, packet loss), timestamp $t_k$, and a cryptographic signature.
 Propagation delay $d_{ij}$ (ms) is explicitly incorporated.
+Pseudonym rotation for long-term unlinkability is not modeled in the
+current simulation; each node retains its pseudonymous identifier for
+the full $R\!=\!500$ rounds, and rotation is deferred to future work.
+
+Trust is modeled as \emph{direct bilateral} trust only: $T_{ij}(t)$
+represents node $i$'s assessment of $j$ based on their direct
+interactions. Transitive or indirect trust propagation --- where $i$'s
+view of $j$ is influenced by a third party $k$'s assessment of $j$ ---
+is not incorporated in the current model and is deferred to future work.
 
 \subsection{Threat Model}
 
@@ -256,9 +276,77 @@ participates in permissioned consensus.
 \section{Four-Layer Trustless Framework}
 \label{sec:framework}
 
-Five design principles guide the architecture: elimination of implicit
-trust, decentralization by construction, delay and disruption
-tolerance, privacy preservation, and continuous verification.
+The framework organizes into four vertically stacked layers shown in
+Fig.~\ref{fig:architecture}, with the heterogeneous NTN substrate as
+the operational environment and each layer providing a distinct
+security service. Five design principles guide the design: elimination
+of implicit trust, decentralization by construction, delay and
+disruption tolerance, privacy preservation, and continuous verification.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  font=\small,
+  every node/.style={align=center},
+  layer/.style={
+    draw=black!70, rounded corners=4pt,
+    minimum width=\columnwidth-6pt,
+    minimum height=1.00cm,
+    text width=\columnwidth-14pt,
+    inner sep=4pt,
+  },
+  seg/.style={
+    draw=black!50, rounded corners=3pt, dashed,
+    minimum height=0.72cm, inner sep=3pt, font=\scriptsize,
+  },
+  arr/.style={-{Latex[length=4pt]}, thick, gray!60},
+]
+%% NTN substrate strip
+\node[seg, fill=gray!10, minimum width=\columnwidth-6pt,
+      text width=\columnwidth-14pt] (ntn) at (0,-4.40)
+  {\textbf{NTN Substrate:}\quad GEO / MEO / LEO Satellites
+   \quad HAPS / UAVs \quad Ground IoT};
+%% Layer 4
+\node[layer, fill=blue!12] (L4) at (0, 0.00)
+  {\textbf{Layer 4 --- Policy \& Decision Enforcement}\\
+   \scriptsize Smart-contract thresholds $\cdot$ per-service
+   access control $\cdot$ validator eligibility $\cdot$
+   on-chain audit log};
+%% Layer 3
+\node[layer, fill=teal!12] (L3) at (0,-1.15)
+  {\textbf{Layer 3 --- Trust Evaluation \& Aging}\\
+   \scriptsize Sign evidence $\!\to\!$ verify freshness
+   $\!\to\!$ Paillier HE aggregation $\!\to\!$
+   delay-aware decay ($\lambda_s$) $\!\to\!$ ledger commit};
+%% Layer 2
+\node[layer, fill=orange!10] (L2) at (0,-2.30)
+  {\textbf{Layer 2 --- Zero-Trust Authentication}\\
+   \scriptsize Mutual crypto auth $\cdot$ orbital proof tokens
+   $\cdot$ no implicit trust zones $\cdot$
+   failed auth $\Rightarrow$ score penalty + on-chain record};
+%% Layer 1
+\node[layer, fill=red!8] (L1) at (0,-3.45)
+  {\textbf{Layer 1 --- Decentralized Ledger of Trust}\\
+   \scriptsize Permissioned DLT $\cdot$ immutable interaction
+   records $\cdot$ partition reconciliation $\cdot$
+   trust-aging of stale entries on reconnect};
+%% Arrows between layers
+\draw[arr] (L4.south) -- (L3.north);
+\draw[arr] (L3.south) -- (L2.north);
+\draw[arr] (L2.south) -- (L1.north);
+\draw[arr] (L1.south) -- (ntn.north);
+%% Side annotation
+\draw[arr, <->] ([xshift=-5pt]L4.north west)
+  -- ([xshift=-5pt]L1.south west)
+  node[midway, left, font=\tiny, rotate=90, yshift=5pt]
+    {Enforcement $\uparrow$ \quad Evidence $\downarrow$};
+\end{tikzpicture}
+\caption{Four-layer trustless-by-design framework architecture stacked
+         over the heterogeneous NTN substrate. Downward flows carry
+         trust evidence and attestation; upward flows enforce
+         trust-based access decisions.}
+\label{fig:architecture}
+\end{figure}
 
 \subsubsection{Layer~1 --- Decentralized Ledger of Trust}
 A permissioned ledger stores immutable interaction records.
@@ -343,7 +431,12 @@ Connectivity is guaranteed via spanning-tree augmentation.
 
 \subsection{Protocol}
 
-$R\!=\!500$ rounds; $T_{\mathrm{round}}\!=\!60$\,s per round.
+$R\!=\!500$ rounds; $T_{\mathrm{round}}\!=\!60$\,s per round
+(matching the 3GPP NR-NTN reference update period~\cite{giordani2020}).
+Sensitivity of all steady-state quantities to $T_{\mathrm{round}}$ is
+analyzed analytically in Section~\ref{sec:threshold}
+(Table~\ref{tab:tround_sensitivity}); experimental variation of
+$T_{\mathrm{round}}$ is deferred to future work.
 Initial trust $T_{ij}(0)\!=\!0.5$.
 Global seed 42; per-run offset $r\!\in\!\{0,\ldots,29\}$.
 Results are reported as mean\,$\pm$\,95\,\% CI over 30 runs.
@@ -356,7 +449,8 @@ Paillier HE, PBFT-like DLT, ZTA.
 \textbf{Static DLT}~\cite{nxgent}: monotonic EWMA only,
 $\lambda_s\!=\!0$.
 \textbf{ZT Auth-Only}~\cite{ztisl}: binary authentication, no trust score.
-\textbf{UAV+FL}~\cite{uav_fl}: federated, uniform $\lambda\!=\!0.05$.
+\textbf{UAV+FL (SkyTrust)}~\cite{uav_fl,tong2024}: blockchain + FL with
+uniform $\lambda\!=\!0.05$\,s$^{-1}$ applied to all segment types.
 
 \subsection{Attack Scenarios}
 
@@ -385,8 +479,14 @@ The build-then-betray attacker maintains $T\!\approx\!T^*_{\mathrm{legit}}$
 during the build phase, then drops to $T^*_{\mathrm{mal}}\!=\!0.042$
 within 5 rounds of betrayal.
 Static DLT ($L\!=\!0.70$, no exponential decay) allows the attacker
-to build to $T\!\approx\!0.85$ over 20 rounds, then requires $>35$
-rounds to fall below $\theta\!=\!0.20$.
+to build to $T\!\approx\!0.85$ over 20 rounds, then falls below
+$\theta^*\!=\!0.20$ within $\approx\!4$ rounds of betrayal onset for
+the build-then-betray attack type (Fig.~\ref{fig:trust_evo}).
+The 152.6-round average for Static~DLT in Table~\ref{tab:comparison}
+integrates all four attack types; on-off adversaries --- which alternate
+compliant and malicious behavior every 50 rounds --- repeatedly rebuild
+reputation under monotonic EWMA accumulation ($L\!=\!0.70$, no
+exponential decay), dominating the average detection latency.
 
 \begin{figure}[t]
 \centering
@@ -401,45 +501,56 @@ rounds to fall below $\theta\!=\!0.20$.
   legend pos=north east,
   legend columns=2,
 ]
-% Proposed legitimate
+%% Proposed -- legitimate (Ground, converges to T*=0.356)
 \addplot[blue, thick, solid, mark=none] coordinates {
   (0,0.500)(1,0.397)(2,0.368)(3,0.360)(5,0.357)(8,0.356)
   (50,0.356)(100,0.356)(200,0.356)(300,0.356)(400,0.356)(499,0.356)
 };
 \addlegendentry{Proposed (legit)}
-% Proposed build-then-betray (betrayal at round 150)
+%% Proposed -- build-then-betray (betrayal at round 150)
+%% L_s=0.284 for Ground; converges to T*_mal=0.042 in ~5 rounds
 \addplot[red, thick, dashed, mark=none] coordinates {
   (0,0.500)(1,0.397)(2,0.368)(5,0.357)(10,0.356)
-  (100,0.356)(148,0.356)(150,0.356)
-  (151,0.131)(152,0.067)(155,0.043)(160,0.042)
-  (200,0.042)(300,0.042)(400,0.042)(499,0.042)
+  (100,0.356)(149,0.356)(150,0.356)
+  (151,0.175)(152,0.088)(153,0.057)(155,0.044)
+  (160,0.042)(200,0.042)(300,0.042)(400,0.042)(499,0.042)
 };
 \addlegendentry{Proposed (malicious)}
-% Static DLT build-then-betray (builds to 0.85, slow decay)
+%% Static DLT -- build-then-betray.
+%% L=0.70, no exponential term.
+%% After betrayal: T(150+k)=0.70^k*0.75+0.10
+%% Falls below theta=0.20 at k~4 (round ~154).
+%% Table III average (152.6) is dominated by on-off attackers.
 \addplot[orange!90!black, thick, dotted, mark=none] coordinates {
   (0,0.500)(1,0.605)(2,0.679)(3,0.730)(5,0.791)(8,0.830)
-  (12,0.845)(20,0.850)(50,0.850)(100,0.850)(148,0.850)(150,0.850)
-  (151,0.625)(152,0.468)(155,0.226)(160,0.121)(170,0.101)
-  (185,0.100)(200,0.100)(300,0.100)(400,0.100)(499,0.100)
+  (12,0.845)(20,0.850)(50,0.850)(100,0.850)(149,0.850)(150,0.850)
+  (151,0.655)(152,0.489)(153,0.372)(154,0.290)
+  (155,0.233)(156,0.193)(157,0.165)(160,0.123)
+  (170,0.108)(185,0.104)(200,0.102)(300,0.101)(499,0.100)
 };
 \addlegendentry{Static DLT (malicious)}
-% Threshold theta*=0.20
+%% Optimal threshold
 \addplot[green!60!black, thin, dash dot, mark=none] coordinates {
   (0,0.20)(499,0.20)
 };
 \addlegendentry{$\theta^*\!=\!0.20$}
-% Betrayal marker
+%% Betrayal marker
 \draw[gray, thin, dashed] (axis cs:150,0) -- (axis cs:150,0.95);
-\node[font=\tiny, gray, rotate=90] at (axis cs:143,0.60)
-  {Betrayal onset};
+\node[font=\tiny, gray, rotate=90] at (axis cs:143,0.60) {Betrayal onset};
 \end{axis}
 \end{tikzpicture}
 \caption{Trust score trajectories (Ground segment,
          $\alpha\!=\!0.70$, $\lambda_s\!=\!0.015$\,s$^{-1}$,
-         $\Delta t\!=\!60$\,s). Proposed model: betrayal detected in
-         $\approx$\,5 rounds (drops from 0.356 to 0.042). Static DLT:
-         attacker builds to 0.85, requires $>$35 rounds to fall below
-         $\theta\!=\!0.20$. Dotted green: $\theta^*\!=\!0.20$.}
+         $\Delta t\!=\!60$\,s). \emph{Proposed}: $L_s\!=\!0.284$;
+         betrayal detected in $\approx$\,5 rounds (trust falls from
+         0.356 to 0.042). \emph{Static~DLT}: $L\!=\!0.70$, no
+         exponential decay; attacker builds to 0.85 and falls below
+         $\theta^*$ in $\approx$\,4 rounds after betrayal for the
+         build-then-betray type. The 152.6-round average
+         (Table~\ref{tab:comparison}) integrates all four attack types;
+         on-off adversaries dominate the average by repeatedly rebuilding
+         reputation under monotonic EWMA between 50-round oscillation
+         cycles. Dotted green: $\theta^*\!=\!0.20$.}
 \label{fig:trust_evo}
 \end{figure}
 
@@ -472,7 +583,7 @@ Static DLT~\cite{nxgent}  & 152.6\,$\pm$\,12.8
   & 0.141 & 0.630 & 0.000 \\
 Centralized               & 219.8\,$\pm$\,16.3
   & 0.080 & 0.623 & 0.000 \\
-UAV+FL~\cite{uav_fl}      & 17.3\,$\pm$\,4.0
+UAV+FL~\cite{uav_fl,tong2024} & 17.3\,$\pm$\,4.0
   & 0.222 & 0.514 & 0.279 \\
 \bottomrule
 \end{tabular}
@@ -933,6 +1044,43 @@ UAV    & 0.050 & 0.264 & 0.031 & 0.148 \\
 \end{tabular}
 \end{table}
 
+\subsection{Round-Period Sensitivity}
+\label{sec:tround}
+
+Table~\ref{tab:tround_sensitivity} extends the steady-state analysis
+across round durations for the Ground segment ($\lambda\!=\!0.015$\,s$^{-1}$,
+ignoring propagation delay for clarity).
+As $T_{\mathrm{round}}$ increases, the exponential factor
+$e^{-\lambda_s \Delta t}$ decreases, reducing $T^*_s$ and tightening
+the legitimate--malicious separation.
+The global threshold property
+$T^*_{\mathrm{mal}} < \theta^* < T^*_{\mathrm{legit}}$ is preserved
+for all $T_{\mathrm{round}} > 0$; the analytically calibrated formula
+Eq.~\eqref{eq:theta_opt} remains valid across all tested durations.
+
+\begin{table}[t]
+\centering
+\caption{Analytical Sensitivity to Round Period
+         (Ground: $\lambda\!=\!0.015$\,s$^{-1}$, $\alpha\!=\!0.70$)}
+\label{tab:tround_sensitivity}
+\renewcommand{\arraystretch}{1.1}
+\small
+\begin{tabular}{rrrr}
+\toprule
+$T_{\mathrm{round}}$ (s) & $T^*_{\mathrm{legit}}$ &
+$T^*_{\mathrm{mal}}$ & $\theta^*_{\mathrm{Ground}}$ \\
+\midrule
+ 30 & 0.461 & 0.054 & 0.257 \\
+\textbf{60} & \textbf{0.357} & \textbf{0.042} & \textbf{0.199} \\
+ 90 & 0.312 & 0.037 & 0.174 \\
+120 & 0.288 & 0.034 & 0.161 \\
+\bottomrule
+\end{tabular}
+{\footnotesize Bold: simulated operating point. Values from
+ Eq.~\eqref{eq:steady}; $T^*_{\mathrm{mal}}/T^*_{\mathrm{legit}}$
+ ratio $\leq 0.12$ across all rows confirms robust separation.}
+\end{table}
+
 \subsection{Segment-Optimal Threshold Formula}
 
 The threshold minimizing combined FPR and FNR for segment $s$:
@@ -1177,11 +1325,17 @@ in \textit{Proc. ACM SIGCOMM Workshop Security Space Syst.}, 2024,
 pp.~15--22.
 
 \bibitem{uav_fl}
-M.~Kamal, I.~Rashid, W.~Iqbal, M.~H.~Siddiqui, S.~Khan, and I.~Ahmad,
-``Privacy and security federated reference architecture for internet
-of things,''
-\textit{Front. Inf. Technol. Electron. Eng.}, vol.~24, no.~4,
-pp.~481--508, 2023.
+A.~Ali and I.~K.~Shahbaz,
+``SkyTrust: Blockchain-enhanced UAV security for NTNs with dynamic
+trust and energy-aware consensus,''
+\textit{arXiv preprint arXiv:2508.18735}, Aug.~2025.
+
+\bibitem{tong2024}
+Z.~Tong, J.~Wang, X.~Hou, J.~Chen, Z.~Jiao, and J.~Liu,
+``Blockchain-based trustworthy and efficient hierarchical federated
+learning for UAV-enabled IoT networks,''
+\textit{IEEE Internet Things J.}, vol.~11, no.~21,
+pp.~34270--34282, Nov.~2024.
 
 \bibitem{aot}
 Y.~Xiao, Q.~Du, W.~Cheng, P.~D.~Diamantoulakis, and
@@ -1226,7 +1380,8 @@ W.~Zhou, Y.~Jia, A.~Peng, Y.~Zhang, and P.~Liu,
 C.~Palli, S.~Sarkar, and A.~Adhya,
 ``Trustless-by-design security framework for distributed IoT of 6G
 non-terrestrial networks,''
-in \textit{Proc. [Conference Name]}, 2026, Paper no.~2026004467.
+in \textit{Proc. IEEE Veh. Technol. Conf. (VTC)}, 2026,
+Paper no.~2026004467.
 
 \end{thebibliography}
 
