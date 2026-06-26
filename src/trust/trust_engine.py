@@ -33,10 +33,13 @@ class TrustEngine:
     def update(self, i: int, j: int, s_ij: float, delta_t_ms: float):
         """
         Apply Eq. 4: delay-aware trust aging update.
-        delta_t_ms: elapsed time including propagation delay (ms).
+        delta_t_ms: link propagation delay (ms) — added on top of round_duration_sec.
+        delta_t for Eq.4 = round_duration_sec + propagation_delay_sec, so that
+        trust ages with real elapsed NTN time and propagation delay adds staleness penalty.
         s_ij: latest interaction quality in [0,1].
         """
-        delta_t_sec = delta_t_ms / 1000.0
+        round_dur = self.cfg["trust"]["round_duration_sec"]
+        delta_t_sec = round_dur + delta_t_ms / 1000.0
         lam = get_lambda(self.node_types[j], self.cfg)
         alpha = self.alpha
         self.T[i, j] = (alpha * self.T[i, j] * np.exp(-lam * delta_t_sec)
@@ -47,10 +50,12 @@ class TrustEngine:
         """
         Apply decay to ALL pairs simultaneously (no new interaction).
         Used when evidence is absent (e.g., during partitions).
+        delta_t = round_duration_sec + partition_link_delay (ms).
         """
+        round_dur = self.cfg["trust"]["round_duration_sec"]
         for j in range(self.N):
             lam = get_lambda(self.node_types[j], self.cfg)
-            delta_t_sec = delta_t_ms / 1000.0
+            delta_t_sec = round_dur + delta_t_ms / 1000.0
             self.T[:, j] *= np.exp(-lam * delta_t_sec)
         np.fill_diagonal(self.T, 1.0)
 
@@ -167,7 +172,8 @@ class UAVBlockchainFL:
         self.theta = cfg["trust"]["threshold_theta"]
 
     def update(self, i: int, j: int, s_ij: float, delta_t_ms: float):
-        delta_t_sec = delta_t_ms / 1000.0
+        round_dur = self.cfg["trust"]["round_duration_sec"]
+        delta_t_sec = round_dur + delta_t_ms / 1000.0
         # Same decay rate for ALL link types — key weakness vs. proposed
         self.T[i, j] = (self.alpha * self.T[i, j] * np.exp(-self.lam * delta_t_sec)
                         + (1 - self.alpha) * s_ij)

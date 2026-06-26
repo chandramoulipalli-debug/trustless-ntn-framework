@@ -24,9 +24,14 @@ topology:
 
 trust:
   alpha: 0.7            # weight for historical trust (Eq. 4)
-  lambda_uav: 0.05      # fast decay for volatile UAV links
-  lambda_leo: 0.02      # medium decay for LEO links
-  lambda_geo: 0.005     # slow decay for stable GEO links
+  # lambda values are in 1/second; each round = round_duration_sec of real NTN time
+  # delta_t passed to Eq.4 = round_duration_sec + link_propagation_delay_sec
+  # This correctly models that trust ages with elapsed time between interactions,
+  # with propagation delay adding a staleness penalty on top.
+  round_duration_sec: 60.0  # each round = 60s (one NTN interaction cycle)
+  lambda_uav: 0.05      # fast decay: UAV links volatile (e^{-0.05*60}=0.050 per round)
+  lambda_leo: 0.02      # medium decay: LEO handovers  (e^{-0.02*60}=0.301 per round)
+  lambda_geo: 0.005     # slow decay: GEO stable links (e^{-0.005*60}=0.741 per round)
   lambda_haps: 0.01
   lambda_ground: 0.015
   threshold_theta: 0.4  # trust threshold for access/routing decisions
