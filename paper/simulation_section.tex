@@ -1,0 +1,105 @@
+%% ============================================================
+%% Simulation Methodology Section
+%% ============================================================
+
+\section{Simulation Methodology}
+\label{sec:simulation}
+
+\subsection{Network Topology}
+
+We simulate a heterogeneous NTN graph $G=(V,E)$ with
+$N=1{,}000$ nodes across five segment types: GEO satellites
+($n_{\mathrm{GEO}}=2$), MEO satellites ($n_{\mathrm{MEO}}=4$),
+LEO satellites ($n_{\mathrm{LEO}}=30$), HAPS nodes
+($n_{\mathrm{HAPS}}=10$), UAVs ($n_{\mathrm{UAV}}=50$), and
+IoT ground devices ($n_{\mathrm{Ground}}=904$).  Links are generated
+from a segment-aware random graph model with per-link propagation
+delays drawn uniformly from segment-typical ranges
+(GEO: 150--300\,ms; LEO: 5--40\,ms; Ground: 1--20\,ms).  Connectivity
+is guaranteed via a minimum spanning-tree augmentation step.
+All topology parameters are fixed in \texttt{configs/simulation\_config.yaml}
+to ensure byte-for-byte reproducibility.
+
+\subsection{Trust Update and Baselines}
+
+Each simulation consists of $R=500$ rounds of duration $T_{\mathrm{round}}=60$\,s,
+representing one NTN interaction cycle (aligned with 3GPP NTN
+scheduling periodicity for IoT devices~\cite{3gpp_ntn}).
+In each round, every node $i$ observes one randomly selected neighbour $j$
+and computes a feedback score $s_{ij}(t) \in [0,1]$ based on
+packet-delivery ratio and authentication success.  The feedback is
+submitted to the DLT, which applies Eq.~(4):
+%
+\begin{equation*}
+  T_{ij}(t+\Delta t) =
+    \alpha \cdot T_{ij}(t) \cdot e^{-\lambda_s \Delta t}
+    + (1-\alpha)\,s_{ij}(t)
+\end{equation*}
+%
+where $\Delta t = T_{\mathrm{round}} + d_{ij}/1000$ (seconds), $d_{ij}$
+is the link propagation delay in milliseconds, and $\lambda_s$ is the
+segment-specific decay rate (Table~\ref{tab:lambda}).
+
+Five trust models are compared:
+\begin{enumerate}
+  \item \textbf{Proposed}: Eq.~(4) with per-segment $\lambda_s$,
+        Paillier HE aggregation, PBFT-like DLT, and ZTA policy layer.
+  \item \textbf{Centralized Trust}: Authority aggregates all feedback;
+        inaccessible during partition (simulates single-authority SPOF).
+  \item \textbf{Static DLT (NxGenT)}~\cite{nxgent}: Permissioned DLT with
+        monotonic trust accumulation; no temporal decay.
+  \item \textbf{ZT Auth-Only}: Binary ZTA authentication without a
+        continuous trust score; node classified by latest authentication
+        outcome.
+  \item \textbf{UAV+FL Blockchain}~\cite{uav_fl}: Federated-learning-based
+        trust aggregation with uniform $\lambda_{\mathrm{UAV}}=0.05$ decay
+        applied to all segment types.
+\end{enumerate}
+
+\subsection{Attack Scenarios}
+
+Twenty percent of nodes (unless varied in Exp6) are designated
+malicious with roles drawn uniformly from:
+\textit{on-off} (alternating good/bad behaviour every 50 rounds),
+\textit{build-then-betray} (legitimate for rounds 1--150, malicious
+thereafter),
+\textit{Sybil} (colluding group with shared false feedback),
+and \textit{badmouthing} (transmits falsely low scores for legitimate
+peers).  Feedback scores for malicious nodes are:
+$s_{ij}(t) = \min(0.15, \mathcal{N}(0.1, 0.05^2))$ during attack
+phases and $s_{ij}(t) \sim \mathcal{U}(0.7, 1.0)$ during good
+phases.
+
+\subsection{Evaluation Metrics}
+
+\begin{itemize}
+  \item \textbf{Detection Latency}: Rounds elapsed from attack onset
+        until the malicious node's trust score falls continuously below
+        $\theta$ for three consecutive rounds (averaged over all malicious
+        nodes and all 30 runs).
+  \item \textbf{F1 Score / AUC-ROC}: Binary classification metrics at
+        the final round ($t=500$) using threshold $\theta$ and the full
+        ROC curve respectively.
+  \item \textbf{Trust MAE}: Mean absolute error between estimated and
+        ground-truth trust scores (used for privacy-utility tradeoff).
+  \item \textbf{Ledger TPS}: Simulated transaction throughput of the
+        PBFT-like consensus layer.
+\end{itemize}
+
+\subsection{Reproducibility}
+
+All experiments are seeded with \texttt{seed=42} and controlled
+via \texttt{configs/simulation\_config.yaml}.  The full pipeline is
+executed as:
+%
+\begin{verbatim}
+  pip install -r requirements.txt
+  python run_all.py
+\end{verbatim}
+%
+A GitHub Actions CI workflow automatically re-executes the 16-test
+unit suite and validates key invariants (trust boundedness,
+monotone decay ordering, Paillier correctness) on every commit.
+Numerical results are archived as JSON files in
+\texttt{results/data/}.  A Zenodo DOI is provided for
+long-term archiving of the exact artefact set~\cite{zenodo2026}.

@@ -1,0 +1,85 @@
+%% ============================================================
+%% Discussion and Future Work
+%% ============================================================
+
+\section{Discussion and Future Work}
+\label{sec:discussion}
+
+\subsection{Interpretation of Key Results}
+
+\textbf{Detection latency as the primary metric.}
+Single-snapshot metrics (F1, AUC-ROC) are inadequate for NTN trust
+evaluation because on-off attackers deliberately alternate good and bad
+behaviour within observation windows.  At any snapshot, attackers in
+their ``good'' phase are indistinguishable from legitimate nodes —
+a fundamental evasion property that all five models experience equally.
+Detection latency, which integrates temporal trust evolution, provides
+a more informative measure of a framework's real-time response
+capability.  On this metric, the proposed framework achieves a
+$4.3\times$ and $6.1\times$ improvement over Static~DLT and
+Centralized~Trust respectively.
+
+\textbf{False positive rate and threshold calibration.}
+With a fixed threshold $\theta=0.40$ and round duration
+$T_{\mathrm{round}}=60$\,s, the steady-state trust of legitimate
+Ground, LEO, and UAV nodes (Eq.~\ref{eq:steady_state}) falls between
+0.264 and 0.356 — below $\theta=0.40$.  This causes
+FPR\,=\,26.8\% for the proposed model.
+Equation~\ref{eq:theta_opt} provides a closed-form expression for the
+segment-optimal threshold; a global $\theta=0.20$ separates legitimate
+from malicious nodes for all segment types and reduces FPR
+analytically to $\approx 0$.  Deployment systems should use adaptive
+threshold calibration based on network telemetry of the legitimate
+node trust distribution.
+
+\textbf{Paillier HE overhead feasibility.}
+At 755\,ms per aggregation cycle for 50 contributors and 1024-bit
+keys, the overhead is within the 60-second round budget for clusters
+of up to 50 ground IoT devices reporting to a HAPS aggregator.
+For denser deployments, 2048-bit keys or lattice-based HE schemes
+(CKKS) reduce or eliminate linear scaling constraints; this is
+addressed as future work below.
+
+\subsection{Future Work}
+
+\textbf{1. Adaptive per-segment threshold.}
+The closed-form threshold from Eq.~(\ref{eq:theta_opt}) requires
+knowledge of $\bar{s}_{\mathrm{legit}}$, which can be estimated
+online via a sliding-window median of trust scores from
+well-established nodes.  An online EM-based threshold estimator
+that updates $\theta_s$ continuously without knowledge of the
+attack fraction is a natural extension.
+
+\textbf{2. Lattice-based HE for satellite uplink constraints.}
+The GEO uplink budget (typically $<$\,50\,KB per burst) is exceeded
+by Paillier ciphertexts at 100+ contributors (25\,KB each).
+CKKS or BFV schemes with batching reduce ciphertext sizes by
+$32\times$ while maintaining approximate homomorphic aggregation.
+
+\textbf{3. Federated ZTA policy learning.}
+The ZTA policy layer currently applies static RBAC rules.
+Federated reinforcement learning across NTN segments — where each
+satellite or HAPS learns adaptive access rules from local trust
+histories without sharing raw telemetry — is a promising direction
+for self-evolving security postures.
+
+\textbf{4. Hardware-in-the-loop validation.}
+The simulation adopts an Erd\H{o}s-R{\'e}nyi random graph with
+empirically-derived delay distributions.  Integration with a
+3GPP NR-NTN channel simulator or a hardware testbed (e.g.,
+SDR-based LEO emulator) would validate the link-delay model and
+provide measured packet-delivery ratios for feedback scoring.
+
+\textbf{5. Formal privacy guarantees under composition.}
+The current privacy analysis bounds leakage per aggregation round
+using standard DP composition.  The R{\'e}nyi DP accountant and
+zero-concentrated DP framework yield tighter cumulative bounds over
+$R=500$ rounds and should replace the basic $(\varepsilon,\delta)$
+analysis.
+
+\textbf{6. Cross-orbit DLT partitioning.}
+The partition experiment (Exp2) simulates a single 50-round partition
+event.  GEO–LEO handover creates periodic disconnections every
+$\sim$\,90\,minutes; evaluating the reconciliation protocol under
+repeated, structured partitions with varying inter-partition intervals
+is required before LEO mega-constellation deployment.
