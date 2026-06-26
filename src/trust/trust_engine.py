@@ -170,10 +170,10 @@ class UAVBlockchainFL:
         self.alpha = cfg["trust"]["alpha"]
         self.lam = cfg["trust"]["lambda_uav"]  # fixed λ — no per-segment tuning
         self.theta = cfg["trust"]["threshold_theta"]
+        self.round_dur = cfg["trust"]["round_duration_sec"]
 
     def update(self, i: int, j: int, s_ij: float, delta_t_ms: float):
-        round_dur = self.cfg["trust"]["round_duration_sec"]
-        delta_t_sec = round_dur + delta_t_ms / 1000.0
+        delta_t_sec = self.round_dur + delta_t_ms / 1000.0
         # Same decay rate for ALL link types — key weakness vs. proposed
         self.T[i, j] = (self.alpha * self.T[i, j] * np.exp(-self.lam * delta_t_sec)
                         + (1 - self.alpha) * s_ij)
