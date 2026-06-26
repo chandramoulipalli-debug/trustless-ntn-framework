@@ -4,9 +4,12 @@ __pycache__/
 *.pyo
 .pytest_cache/
 .ipynb_checkpoints/
-results/data/*.json
-results/figures/*.png
-results/figures/*.pdf
+# Simulation outputs are tracked for reproducibility (uncomment to exclude)
+# results/data/*.json
+# results/figures/*.png
+# results/figures/*.pdf
+results/exp8_err.txt
+results/exp8_out.txt
 *.egg-info/
 dist/
 build/

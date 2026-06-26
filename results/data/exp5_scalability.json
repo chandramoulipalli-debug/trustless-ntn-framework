@@ -1,0 +1,58 @@
+{
+  "results": [
+    {
+      "n_nodes": 100,
+      "n_edges": 242,
+      "mean_round_time_ms": 5.054503995925188,
+      "std_round_time_ms": 1.063703929259365,
+      "ledger_size_kb": 976.5625,
+      "avg_tps": 188.50343538868503,
+      "memory_delta_mb": 2.3046875
+    },
+    {
+      "n_nodes": 500,
+      "n_edges": 1277,
+      "mean_round_time_ms": 23.398773968219757,
+      "std_round_time_ms": 3.572796307352349,
+      "ledger_size_kb": 4882.8125,
+      "avg_tps": 184.97542787267366,
+      "memory_delta_mb": 9.83203125
+    },
+    {
+      "n_nodes": 1000,
+      "n_edges": 2495,
+      "mean_round_time_ms": 43.540573976933956,
+      "std_round_time_ms": 3.5754330079514767,
+      "ledger_size_kb": 9765.625,
+      "avg_tps": 185.9680406900487,
+      "memory_delta_mb": 20.0234375
+    },
+    {
+      "n_nodes": 2000,
+      "n_edges": 5015,
+      "mean_round_time_ms": 87.3209679685533,
+      "std_round_time_ms": 6.968761697819979,
+      "ledger_size_kb": 19531.25,
+      "avg_tps": 186.47155114939002,
+      "memory_delta_mb": 43.0390625
+    },
+    {
+      "n_nodes": 3000,
+      "n_edges": 7528,
+      "mean_round_time_ms": 131.37619199231267,
+      "std_round_time_ms": 10.948700395301522,
+      "ledger_size_kb": 29296.875,
+      "avg_tps": 186.0646050186727,
+      "memory_delta_mb": 64.015625
+    },
+    {
+      "n_nodes": 5000,
+      "n_edges": 12712,
+      "mean_round_time_ms": 227.7016059588641,
+      "std_round_time_ms": 28.660474535726422,
+      "ledger_size_kb": 48828.125,
+      "avg_tps": 185.12230614534386,
+      "memory_delta_mb": 112.015625
+    }
+  ]
+}

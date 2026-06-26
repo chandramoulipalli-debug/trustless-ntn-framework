@@ -1,0 +1,6370 @@
+{
+  "runs": [
+    {
+      "run_id": 0,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3089508579090723
+        },
+        {
+          "round": 168,
+          "divergence": 0.40572169905468186
+        },
+        {
+          "round": 169,
+          "divergence": 0.4421570040784105
+        },
+        {
+          "round": 170,
+          "divergence": 0.4565901636013108
+        },
+        {
+          "round": 171,
+          "divergence": 0.46248152773197637
+        },
+        {
+          "round": 172,
+          "divergence": 0.46496038907973425
+        },
+        {
+          "round": 173,
+          "divergence": 0.46601720298199195
+        },
+        {
+          "round": 174,
+          "divergence": 0.4664795509132679
+        },
+        {
+          "round": 175,
+          "divergence": 0.46669647826375465
+        },
+        {
+          "round": 176,
+          "divergence": 0.46679692877525897
+        },
+        {
+          "round": 177,
+          "divergence": 0.4668223406073532
+        },
+        {
+          "round": 178,
+          "divergence": 0.4668133932561972
+        },
+        {
+          "round": 179,
+          "divergence": 0.4667920676555117
+        },
+        {
+          "round": 180,
+          "divergence": 0.466751942327751
+        },
+        {
+          "round": 181,
+          "divergence": 0.46671181183299393
+        },
+        {
+          "round": 182,
+          "divergence": 0.46665793845979386
+        },
+        {
+          "round": 183,
+          "divergence": 0.4666423720962453
+        },
+        {
+          "round": 184,
+          "divergence": 0.4666016636463873
+        },
+        {
+          "round": 185,
+          "divergence": 0.4665498880968699
+        },
+        {
+          "round": 186,
+          "divergence": 0.46648827149051714
+        },
+        {
+          "round": 187,
+          "divergence": 0.46644358137567593
+        },
+        {
+          "round": 188,
+          "divergence": 0.46640499166050237
+        },
+        {
+          "round": 189,
+          "divergence": 0.46634754785095817
+        },
+        {
+          "round": 190,
+          "divergence": 0.46628909811639296
+        },
+        {
+          "round": 191,
+          "divergence": 0.4662474699308257
+        },
+        {
+          "round": 192,
+          "divergence": 0.4661931396683523
+        },
+        {
+          "round": 193,
+          "divergence": 0.46616669190145277
+        },
+        {
+          "round": 194,
+          "divergence": 0.4661062817962386
+        },
+        {
+          "round": 195,
+          "divergence": 0.4660496819048588
+        },
+        {
+          "round": 196,
+          "divergence": 0.465991220474819
+        },
+        {
+          "round": 197,
+          "divergence": 0.4659431465138402
+        },
+        {
+          "round": 198,
+          "divergence": 0.46589970868831426
+        },
+        {
+          "round": 199,
+          "divergence": 0.46586114283679997
+        },
+        {
+          "round": 200,
+          "divergence": 0.46581245608974087
+        },
+        {
+          "round": 201,
+          "divergence": 0.46576778066357527
+        },
+        {
+          "round": 202,
+          "divergence": 0.4657301379785055
+        },
+        {
+          "round": 203,
+          "divergence": 0.46568892953822855
+        },
+        {
+          "round": 204,
+          "divergence": 0.46564629694491005
+        },
+        {
+          "round": 205,
+          "divergence": 0.4655739429264941
+        },
+        {
+          "round": 206,
+          "divergence": 0.46554958765112364
+        },
+        {
+          "round": 207,
+          "divergence": 0.4654932400091753
+        },
+        {
+          "round": 208,
+          "divergence": 0.46545710740548996
+        },
+        {
+          "round": 209,
+          "divergence": 0.4653861763349258
+        },
+        {
+          "round": 210,
+          "divergence": 0.4653617036678828
+        },
+        {
+          "round": 211,
+          "divergence": 0.4653085970207395
+        },
+        {
+          "round": 212,
+          "divergence": 0.4652645599264007
+        },
+        {
+          "round": 213,
+          "divergence": 0.4652185871192144
+        },
+        {
+          "round": 214,
+          "divergence": 0.4651604890000461
+        },
+        {
+          "round": 215,
+          "divergence": 0.4651430456283574
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.16296296296296298,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.11095689926478688,
+      "mean_leo_trust": 0.11501057365655919,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 1,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30886646115745847
+        },
+        {
+          "round": 168,
+          "divergence": 0.40561493164805335
+        },
+        {
+          "round": 169,
+          "divergence": 0.4420824292022751
+        },
+        {
+          "round": 170,
+          "divergence": 0.4565177364303296
+        },
+        {
+          "round": 171,
+          "divergence": 0.46243835570483127
+        },
+        {
+          "round": 172,
+          "divergence": 0.46493697329203754
+        },
+        {
+          "round": 173,
+          "divergence": 0.46602674841527797
+        },
+        {
+          "round": 174,
+          "divergence": 0.4665141900999147
+        },
+        {
+          "round": 175,
+          "divergence": 0.4667418881122828
+        },
+        {
+          "round": 176,
+          "divergence": 0.4668307736801033
+        },
+        {
+          "round": 177,
+          "divergence": 0.46686368862444416
+        },
+        {
+          "round": 178,
+          "divergence": 0.4668857440720291
+        },
+        {
+          "round": 179,
+          "divergence": 0.4668941796567076
+        },
+        {
+          "round": 180,
+          "divergence": 0.466882335045455
+        },
+        {
+          "round": 181,
+          "divergence": 0.46684471299096675
+        },
+        {
+          "round": 182,
+          "divergence": 0.46679930363318295
+        },
+        {
+          "round": 183,
+          "divergence": 0.46675854884749235
+        },
+        {
+          "round": 184,
+          "divergence": 0.46674107750947913
+        },
+        {
+          "round": 185,
+          "divergence": 0.4667005004665137
+        },
+        {
+          "round": 186,
+          "divergence": 0.4666641968580255
+        },
+        {
+          "round": 187,
+          "divergence": 0.466622040209582
+        },
+        {
+          "round": 188,
+          "divergence": 0.4666101343878801
+        },
+        {
+          "round": 189,
+          "divergence": 0.4665710514754656
+        },
+        {
+          "round": 190,
+          "divergence": 0.4665379289872579
+        },
+        {
+          "round": 191,
+          "divergence": 0.4665094098673096
+        },
+        {
+          "round": 192,
+          "divergence": 0.4664567281599737
+        },
+        {
+          "round": 193,
+          "divergence": 0.46640884033948915
+        },
+        {
+          "round": 194,
+          "divergence": 0.46637118956789114
+        },
+        {
+          "round": 195,
+          "divergence": 0.4663310825619943
+        },
+        {
+          "round": 196,
+          "divergence": 0.46629782907915834
+        },
+        {
+          "round": 197,
+          "divergence": 0.46624437685073084
+        },
+        {
+          "round": 198,
+          "divergence": 0.4662310043584041
+        },
+        {
+          "round": 199,
+          "divergence": 0.4661919232953397
+        },
+        {
+          "round": 200,
+          "divergence": 0.46613391380874836
+        },
+        {
+          "round": 201,
+          "divergence": 0.4661008840051229
+        },
+        {
+          "round": 202,
+          "divergence": 0.46606447601212886
+        },
+        {
+          "round": 203,
+          "divergence": 0.46604886335504275
+        },
+        {
+          "round": 204,
+          "divergence": 0.4660189526376629
+        },
+        {
+          "round": 205,
+          "divergence": 0.4659577233184224
+        },
+        {
+          "round": 206,
+          "divergence": 0.46589855539939284
+        },
+        {
+          "round": 207,
+          "divergence": 0.465866994904919
+        },
+        {
+          "round": 208,
+          "divergence": 0.4658288474676326
+        },
+        {
+          "round": 209,
+          "divergence": 0.46581751036257996
+        },
+        {
+          "round": 210,
+          "divergence": 0.46575705708993004
+        },
+        {
+          "round": 211,
+          "divergence": 0.4657230662137804
+        },
+        {
+          "round": 212,
+          "divergence": 0.4657007225099871
+        },
+        {
+          "round": 213,
+          "divergence": 0.4656610280527228
+        },
+        {
+          "round": 214,
+          "divergence": 0.46563725460205274
+        },
+        {
+          "round": 215,
+          "divergence": 0.46561218756067274
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.18705035971223022,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.11399835280123059,
+      "mean_leo_trust": 0.10769909158458009,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 2,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3089564629761194
+        },
+        {
+          "round": 168,
+          "divergence": 0.4056972501908063
+        },
+        {
+          "round": 169,
+          "divergence": 0.4421210873487313
+        },
+        {
+          "round": 170,
+          "divergence": 0.4565272821689127
+        },
+        {
+          "round": 171,
+          "divergence": 0.4624003433471414
+        },
+        {
+          "round": 172,
+          "divergence": 0.464874982884095
+        },
+        {
+          "round": 173,
+          "divergence": 0.46594147834034244
+        },
+        {
+          "round": 174,
+          "divergence": 0.4664422247709259
+        },
+        {
+          "round": 175,
+          "divergence": 0.46668448179387084
+        },
+        {
+          "round": 176,
+          "divergence": 0.46679323571640574
+        },
+        {
+          "round": 177,
+          "divergence": 0.4668196228433814
+        },
+        {
+          "round": 178,
+          "divergence": 0.466839890776838
+        },
+        {
+          "round": 179,
+          "divergence": 0.46682069984333036
+        },
+        {
+          "round": 180,
+          "divergence": 0.46679508404170367
+        },
+        {
+          "round": 181,
+          "divergence": 0.4667601594882557
+        },
+        {
+          "round": 182,
+          "divergence": 0.4667267973543306
+        },
+        {
+          "round": 183,
+          "divergence": 0.4666811037940585
+        },
+        {
+          "round": 184,
+          "divergence": 0.46665423233615316
+        },
+        {
+          "round": 185,
+          "divergence": 0.4666095701242841
+        },
+        {
+          "round": 186,
+          "divergence": 0.4665418503474174
+        },
+        {
+          "round": 187,
+          "divergence": 0.4664899097842973
+        },
+        {
+          "round": 188,
+          "divergence": 0.4664328489298905
+        },
+        {
+          "round": 189,
+          "divergence": 0.4663769144356361
+        },
+        {
+          "round": 190,
+          "divergence": 0.46633184174714043
+        },
+        {
+          "round": 191,
+          "divergence": 0.4662854405119209
+        },
+        {
+          "round": 192,
+          "divergence": 0.4662352661630837
+        },
+        {
+          "round": 193,
+          "divergence": 0.46618273296677937
+        },
+        {
+          "round": 194,
+          "divergence": 0.46613393177288287
+        },
+        {
+          "round": 195,
+          "divergence": 0.46612267006530744
+        },
+        {
+          "round": 196,
+          "divergence": 0.4660674525419158
+        },
+        {
+          "round": 197,
+          "divergence": 0.4660047673754738
+        },
+        {
+          "round": 198,
+          "divergence": 0.4659939088716592
+        },
+        {
+          "round": 199,
+          "divergence": 0.4659572926473264
+        },
+        {
+          "round": 200,
+          "divergence": 0.4659165308864715
+        },
+        {
+          "round": 201,
+          "divergence": 0.46589647276760876
+        },
+        {
+          "round": 202,
+          "divergence": 0.46584324685374334
+        },
+        {
+          "round": 203,
+          "divergence": 0.4658077253817492
+        },
+        {
+          "round": 204,
+          "divergence": 0.4657674570933389
+        },
+        {
+          "round": 205,
+          "divergence": 0.465709514908423
+        },
+        {
+          "round": 206,
+          "divergence": 0.46568678148654785
+        },
+        {
+          "round": 207,
+          "divergence": 0.4656517848803494
+        },
+        {
+          "round": 208,
+          "divergence": 0.4655988971975102
+        },
+        {
+          "round": 209,
+          "divergence": 0.4655551840224017
+        },
+        {
+          "round": 210,
+          "divergence": 0.46549299466002964
+        },
+        {
+          "round": 211,
+          "divergence": 0.4654702574005753
+        },
+        {
+          "round": 212,
+          "divergence": 0.46543942936389077
+        },
+        {
+          "round": 213,
+          "divergence": 0.4653922868276901
+        },
+        {
+          "round": 214,
+          "divergence": 0.4653484535606992
+        },
+        {
+          "round": 215,
+          "divergence": 0.4652982569450717
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.25196850393700787,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.08460998691060617,
+      "mean_leo_trust": 0.09849876062920175,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 3,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30887255218580234
+        },
+        {
+          "round": 168,
+          "divergence": 0.40560328475597146
+        },
+        {
+          "round": 169,
+          "divergence": 0.44205210364044184
+        },
+        {
+          "round": 170,
+          "divergence": 0.4564847334174363
+        },
+        {
+          "round": 171,
+          "divergence": 0.4623859658980586
+        },
+        {
+          "round": 172,
+          "divergence": 0.4648640068797727
+        },
+        {
+          "round": 173,
+          "divergence": 0.4659485630525446
+        },
+        {
+          "round": 174,
+          "divergence": 0.4664214265481639
+        },
+        {
+          "round": 175,
+          "divergence": 0.46664768606115786
+        },
+        {
+          "round": 176,
+          "divergence": 0.466762660348039
+        },
+        {
+          "round": 177,
+          "divergence": 0.4668171808857304
+        },
+        {
+          "round": 178,
+          "divergence": 0.46681193649467684
+        },
+        {
+          "round": 179,
+          "divergence": 0.4667923835873158
+        },
+        {
+          "round": 180,
+          "divergence": 0.4667639756640442
+        },
+        {
+          "round": 181,
+          "divergence": 0.4667365103828591
+        },
+        {
+          "round": 182,
+          "divergence": 0.4667065348370916
+        },
+        {
+          "round": 183,
+          "divergence": 0.4666813309609279
+        },
+        {
+          "round": 184,
+          "divergence": 0.46666396593916815
+        },
+        {
+          "round": 185,
+          "divergence": 0.4666228112263465
+        },
+        {
+          "round": 186,
+          "divergence": 0.46656839420727686
+        },
+        {
+          "round": 187,
+          "divergence": 0.4665271674912137
+        },
+        {
+          "round": 188,
+          "divergence": 0.46647016795636065
+        },
+        {
+          "round": 189,
+          "divergence": 0.46642809321251877
+        },
+        {
+          "round": 190,
+          "divergence": 0.4663907342937345
+        },
+        {
+          "round": 191,
+          "divergence": 0.46634520014182135
+        },
+        {
+          "round": 192,
+          "divergence": 0.46630810177657317
+        },
+        {
+          "round": 193,
+          "divergence": 0.4662747993958519
+        },
+        {
+          "round": 194,
+          "divergence": 0.4662453960578264
+        },
+        {
+          "round": 195,
+          "divergence": 0.46620269241662393
+        },
+        {
+          "round": 196,
+          "divergence": 0.46616836936098005
+        },
+        {
+          "round": 197,
+          "divergence": 0.4661128336089352
+        },
+        {
+          "round": 198,
+          "divergence": 0.4660862100984301
+        },
+        {
+          "round": 199,
+          "divergence": 0.46603571784358194
+        },
+        {
+          "round": 200,
+          "divergence": 0.46598639947152354
+        },
+        {
+          "round": 201,
+          "divergence": 0.46594508324986134
+        },
+        {
+          "round": 202,
+          "divergence": 0.46590442480776
+        },
+        {
+          "round": 203,
+          "divergence": 0.4658594203627757
+        },
+        {
+          "round": 204,
+          "divergence": 0.4658287276962101
+        },
+        {
+          "round": 205,
+          "divergence": 0.4657961324027578
+        },
+        {
+          "round": 206,
+          "divergence": 0.4657763184383854
+        },
+        {
+          "round": 207,
+          "divergence": 0.46572941189104233
+        },
+        {
+          "round": 208,
+          "divergence": 0.46568619540395806
+        },
+        {
+          "round": 209,
+          "divergence": 0.46563915216804874
+        },
+        {
+          "round": 210,
+          "divergence": 0.46559509959280276
+        },
+        {
+          "round": 211,
+          "divergence": 0.46556390295357936
+        },
+        {
+          "round": 212,
+          "divergence": 0.46554523935034
+        },
+        {
+          "round": 213,
+          "divergence": 0.46548198713258476
+        },
+        {
+          "round": 214,
+          "divergence": 0.4654707769246492
+        },
+        {
+          "round": 215,
+          "divergence": 0.46543358326950046
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.23529411764705882,
+      "f1_post_partition": 0.327710843373494,
+      "mean_geo_trust": 0.09927643681350301,
+      "mean_leo_trust": 0.10578656885779772,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 4,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3085316749289751
+        },
+        {
+          "round": 168,
+          "divergence": 0.40518802724347946
+        },
+        {
+          "round": 169,
+          "divergence": 0.44158908386907947
+        },
+        {
+          "round": 170,
+          "divergence": 0.45598537397389205
+        },
+        {
+          "round": 171,
+          "divergence": 0.46186011568836044
+        },
+        {
+          "round": 172,
+          "divergence": 0.46433234138977747
+        },
+        {
+          "round": 173,
+          "divergence": 0.46541456663176434
+        },
+        {
+          "round": 174,
+          "divergence": 0.4659210284412334
+        },
+        {
+          "round": 175,
+          "divergence": 0.46612120489441633
+        },
+        {
+          "round": 176,
+          "divergence": 0.46622474031449584
+        },
+        {
+          "round": 177,
+          "divergence": 0.46627314834917816
+        },
+        {
+          "round": 178,
+          "divergence": 0.4662977839927264
+        },
+        {
+          "round": 179,
+          "divergence": 0.4662879936616404
+        },
+        {
+          "round": 180,
+          "divergence": 0.46625601632668606
+        },
+        {
+          "round": 181,
+          "divergence": 0.4662078738214096
+        },
+        {
+          "round": 182,
+          "divergence": 0.4661711491086382
+        },
+        {
+          "round": 183,
+          "divergence": 0.46613552585676643
+        },
+        {
+          "round": 184,
+          "divergence": 0.46608004608075126
+        },
+        {
+          "round": 185,
+          "divergence": 0.46602344929416045
+        },
+        {
+          "round": 186,
+          "divergence": 0.46599897079800523
+        },
+        {
+          "round": 187,
+          "divergence": 0.46594615929435435
+        },
+        {
+          "round": 188,
+          "divergence": 0.4658963251771924
+        },
+        {
+          "round": 189,
+          "divergence": 0.4658631263079994
+        },
+        {
+          "round": 190,
+          "divergence": 0.46577869818031126
+        },
+        {
+          "round": 191,
+          "divergence": 0.46572169215173653
+        },
+        {
+          "round": 192,
+          "divergence": 0.4656713848176616
+        },
+        {
+          "round": 193,
+          "divergence": 0.4656139538338172
+        },
+        {
+          "round": 194,
+          "divergence": 0.46555595883593826
+        },
+        {
+          "round": 195,
+          "divergence": 0.4655181498407948
+        },
+        {
+          "round": 196,
+          "divergence": 0.46546717931625586
+        },
+        {
+          "round": 197,
+          "divergence": 0.46543016727507375
+        },
+        {
+          "round": 198,
+          "divergence": 0.46537392161413005
+        },
+        {
+          "round": 199,
+          "divergence": 0.4653133544137167
+        },
+        {
+          "round": 200,
+          "divergence": 0.46525915857324013
+        },
+        {
+          "round": 201,
+          "divergence": 0.4652190678654797
+        },
+        {
+          "round": 202,
+          "divergence": 0.46515616764356826
+        },
+        {
+          "round": 203,
+          "divergence": 0.4650970776479662
+        },
+        {
+          "round": 204,
+          "divergence": 0.4650793356513015
+        },
+        {
+          "round": 205,
+          "divergence": 0.4650663386878684
+        },
+        {
+          "round": 206,
+          "divergence": 0.4650430367493741
+        },
+        {
+          "round": 207,
+          "divergence": 0.4649909824068947
+        },
+        {
+          "round": 208,
+          "divergence": 0.4649410919967911
+        },
+        {
+          "round": 209,
+          "divergence": 0.46490504883645334
+        },
+        {
+          "round": 210,
+          "divergence": 0.46483631180027574
+        },
+        {
+          "round": 211,
+          "divergence": 0.4648161426576089
+        },
+        {
+          "round": 212,
+          "divergence": 0.4647730591408405
+        },
+        {
+          "round": 213,
+          "divergence": 0.4647330250154598
+        },
+        {
+          "round": 214,
+          "divergence": 0.4646695024274096
+        },
+        {
+          "round": 215,
+          "divergence": 0.4646271545645932
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.17391304347826086,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.12934093098771116,
+      "mean_leo_trust": 0.12282808066647805,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 5,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30891035659759875
+        },
+        {
+          "round": 168,
+          "divergence": 0.40555469325386695
+        },
+        {
+          "round": 169,
+          "divergence": 0.44193504410735973
+        },
+        {
+          "round": 170,
+          "divergence": 0.45633203821841556
+        },
+        {
+          "round": 171,
+          "divergence": 0.4622102349024537
+        },
+        {
+          "round": 172,
+          "divergence": 0.4646691492010013
+        },
+        {
+          "round": 173,
+          "divergence": 0.46572883500023193
+        },
+        {
+          "round": 174,
+          "divergence": 0.4662189202320954
+        },
+        {
+          "round": 175,
+          "divergence": 0.46645300272782336
+        },
+        {
+          "round": 176,
+          "divergence": 0.46650465324524565
+        },
+        {
+          "round": 177,
+          "divergence": 0.4665536148746333
+        },
+        {
+          "round": 178,
+          "divergence": 0.4665381189520349
+        },
+        {
+          "round": 179,
+          "divergence": 0.46655079460614074
+        },
+        {
+          "round": 180,
+          "divergence": 0.46651590255692965
+        },
+        {
+          "round": 181,
+          "divergence": 0.46648756819748444
+        },
+        {
+          "round": 182,
+          "divergence": 0.46645020270883364
+        },
+        {
+          "round": 183,
+          "divergence": 0.4664013011689725
+        },
+        {
+          "round": 184,
+          "divergence": 0.4663508051850471
+        },
+        {
+          "round": 185,
+          "divergence": 0.466277735947878
+        },
+        {
+          "round": 186,
+          "divergence": 0.4662293469144007
+        },
+        {
+          "round": 187,
+          "divergence": 0.4661858777910185
+        },
+        {
+          "round": 188,
+          "divergence": 0.46612484255365905
+        },
+        {
+          "round": 189,
+          "divergence": 0.4660939648916718
+        },
+        {
+          "round": 190,
+          "divergence": 0.46604218662276453
+        },
+        {
+          "round": 191,
+          "divergence": 0.4659928878700227
+        },
+        {
+          "round": 192,
+          "divergence": 0.46595356146621614
+        },
+        {
+          "round": 193,
+          "divergence": 0.46589208836107115
+        },
+        {
+          "round": 194,
+          "divergence": 0.46585402752538946
+        },
+        {
+          "round": 195,
+          "divergence": 0.4658114975022673
+        },
+        {
+          "round": 196,
+          "divergence": 0.46578077054591294
+        },
+        {
+          "round": 197,
+          "divergence": 0.46573065419840426
+        },
+        {
+          "round": 198,
+          "divergence": 0.4656909741475331
+        },
+        {
+          "round": 199,
+          "divergence": 0.46567324312113006
+        },
+        {
+          "round": 200,
+          "divergence": 0.46564181131985105
+        },
+        {
+          "round": 201,
+          "divergence": 0.4655878876577882
+        },
+        {
+          "round": 202,
+          "divergence": 0.46552114743649237
+        },
+        {
+          "round": 203,
+          "divergence": 0.4654789270082314
+        },
+        {
+          "round": 204,
+          "divergence": 0.46546353881371705
+        },
+        {
+          "round": 205,
+          "divergence": 0.4653993793822849
+        },
+        {
+          "round": 206,
+          "divergence": 0.4653640893294212
+        },
+        {
+          "round": 207,
+          "divergence": 0.4653136149023595
+        },
+        {
+          "round": 208,
+          "divergence": 0.4652640726738683
+        },
+        {
+          "round": 209,
+          "divergence": 0.46520200514500365
+        },
+        {
+          "round": 210,
+          "divergence": 0.46515300122928693
+        },
+        {
+          "round": 211,
+          "divergence": 0.46511791469113933
+        },
+        {
+          "round": 212,
+          "divergence": 0.465099884908843
+        },
+        {
+          "round": 213,
+          "divergence": 0.46506201345980835
+        },
+        {
+          "round": 214,
+          "divergence": 0.4650336833711167
+        },
+        {
+          "round": 215,
+          "divergence": 0.46498989816990494
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.17647058823529413,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.10836273614336285,
+      "mean_leo_trust": 0.1144580955186343,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 6,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30875556005426796
+        },
+        {
+          "round": 168,
+          "divergence": 0.4054761550056429
+        },
+        {
+          "round": 169,
+          "divergence": 0.4418954759657888
+        },
+        {
+          "round": 170,
+          "divergence": 0.4563129425578352
+        },
+        {
+          "round": 171,
+          "divergence": 0.46219032560728346
+        },
+        {
+          "round": 172,
+          "divergence": 0.4646695612276283
+        },
+        {
+          "round": 173,
+          "divergence": 0.4657113343150441
+        },
+        {
+          "round": 174,
+          "divergence": 0.4661941175824034
+        },
+        {
+          "round": 175,
+          "divergence": 0.46644572355768366
+        },
+        {
+          "round": 176,
+          "divergence": 0.46654811784217837
+        },
+        {
+          "round": 177,
+          "divergence": 0.4665710773064467
+        },
+        {
+          "round": 178,
+          "divergence": 0.4665542309228896
+        },
+        {
+          "round": 179,
+          "divergence": 0.4665285925177016
+        },
+        {
+          "round": 180,
+          "divergence": 0.46649226801086524
+        },
+        {
+          "round": 181,
+          "divergence": 0.4664518410703301
+        },
+        {
+          "round": 182,
+          "divergence": 0.4664129536872222
+        },
+        {
+          "round": 183,
+          "divergence": 0.46637616674249516
+        },
+        {
+          "round": 184,
+          "divergence": 0.46633983821042435
+        },
+        {
+          "round": 185,
+          "divergence": 0.4662914691662537
+        },
+        {
+          "round": 186,
+          "divergence": 0.46620889941264815
+        },
+        {
+          "round": 187,
+          "divergence": 0.466170082912704
+        },
+        {
+          "round": 188,
+          "divergence": 0.4661329738784373
+        },
+        {
+          "round": 189,
+          "divergence": 0.46609491105019973
+        },
+        {
+          "round": 190,
+          "divergence": 0.46604866756780516
+        },
+        {
+          "round": 191,
+          "divergence": 0.4659785801836361
+        },
+        {
+          "round": 192,
+          "divergence": 0.46594189543757364
+        },
+        {
+          "round": 193,
+          "divergence": 0.4659072202185992
+        },
+        {
+          "round": 194,
+          "divergence": 0.4658934007034654
+        },
+        {
+          "round": 195,
+          "divergence": 0.4658367522235527
+        },
+        {
+          "round": 196,
+          "divergence": 0.46579428352971947
+        },
+        {
+          "round": 197,
+          "divergence": 0.4657664972142517
+        },
+        {
+          "round": 198,
+          "divergence": 0.46570451350084713
+        },
+        {
+          "round": 199,
+          "divergence": 0.46567511846473625
+        },
+        {
+          "round": 200,
+          "divergence": 0.4656227383975239
+        },
+        {
+          "round": 201,
+          "divergence": 0.46557997838035026
+        },
+        {
+          "round": 202,
+          "divergence": 0.4655208725927518
+        },
+        {
+          "round": 203,
+          "divergence": 0.46549259054233894
+        },
+        {
+          "round": 204,
+          "divergence": 0.46543830814674647
+        },
+        {
+          "round": 205,
+          "divergence": 0.46536337876660405
+        },
+        {
+          "round": 206,
+          "divergence": 0.46532336013366427
+        },
+        {
+          "round": 207,
+          "divergence": 0.46529326891623557
+        },
+        {
+          "round": 208,
+          "divergence": 0.46526603475904715
+        },
+        {
+          "round": 209,
+          "divergence": 0.4652067732500005
+        },
+        {
+          "round": 210,
+          "divergence": 0.4651844788405548
+        },
+        {
+          "round": 211,
+          "divergence": 0.46515648644855306
+        },
+        {
+          "round": 212,
+          "divergence": 0.4651199911783589
+        },
+        {
+          "round": 213,
+          "divergence": 0.46508134392923595
+        },
+        {
+          "round": 214,
+          "divergence": 0.4650469975440503
+        },
+        {
+          "round": 215,
+          "divergence": 0.4650053624052702
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.2556390977443609,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.1020501860838672,
+      "mean_leo_trust": 0.10865696254279933,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 7,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30886044427063913
+        },
+        {
+          "round": 168,
+          "divergence": 0.40549810276093096
+        },
+        {
+          "round": 169,
+          "divergence": 0.44192999947193473
+        },
+        {
+          "round": 170,
+          "divergence": 0.45637771516661724
+        },
+        {
+          "round": 171,
+          "divergence": 0.46224016889677655
+        },
+        {
+          "round": 172,
+          "divergence": 0.4647190854835536
+        },
+        {
+          "round": 173,
+          "divergence": 0.4658160033953744
+        },
+        {
+          "round": 174,
+          "divergence": 0.4663106825909183
+        },
+        {
+          "round": 175,
+          "divergence": 0.46654075605653605
+        },
+        {
+          "round": 176,
+          "divergence": 0.4666337745076415
+        },
+        {
+          "round": 177,
+          "divergence": 0.46665760534996537
+        },
+        {
+          "round": 178,
+          "divergence": 0.4666722421177486
+        },
+        {
+          "round": 179,
+          "divergence": 0.46669620698420883
+        },
+        {
+          "round": 180,
+          "divergence": 0.4666810832678109
+        },
+        {
+          "round": 181,
+          "divergence": 0.4666317505804772
+        },
+        {
+          "round": 182,
+          "divergence": 0.46659357325344697
+        },
+        {
+          "round": 183,
+          "divergence": 0.4665585863888382
+        },
+        {
+          "round": 184,
+          "divergence": 0.4665227246751803
+        },
+        {
+          "round": 185,
+          "divergence": 0.466496809569663
+        },
+        {
+          "round": 186,
+          "divergence": 0.4664851114686386
+        },
+        {
+          "round": 187,
+          "divergence": 0.4664292476106031
+        },
+        {
+          "round": 188,
+          "divergence": 0.4664057426964325
+        },
+        {
+          "round": 189,
+          "divergence": 0.4663769689496286
+        },
+        {
+          "round": 190,
+          "divergence": 0.46634167047543174
+        },
+        {
+          "round": 191,
+          "divergence": 0.4662934188061242
+        },
+        {
+          "round": 192,
+          "divergence": 0.46627440869834136
+        },
+        {
+          "round": 193,
+          "divergence": 0.46622873450922786
+        },
+        {
+          "round": 194,
+          "divergence": 0.4661746402912255
+        },
+        {
+          "round": 195,
+          "divergence": 0.4661370909069194
+        },
+        {
+          "round": 196,
+          "divergence": 0.46610212743032486
+        },
+        {
+          "round": 197,
+          "divergence": 0.46606346826537814
+        },
+        {
+          "round": 198,
+          "divergence": 0.4660115151964533
+        },
+        {
+          "round": 199,
+          "divergence": 0.46598216727383557
+        },
+        {
+          "round": 200,
+          "divergence": 0.4659128344019576
+        },
+        {
+          "round": 201,
+          "divergence": 0.46586737731423505
+        },
+        {
+          "round": 202,
+          "divergence": 0.4658271025100522
+        },
+        {
+          "round": 203,
+          "divergence": 0.46577949582425293
+        },
+        {
+          "round": 204,
+          "divergence": 0.465733265900518
+        },
+        {
+          "round": 205,
+          "divergence": 0.4656851192180768
+        },
+        {
+          "round": 206,
+          "divergence": 0.46565873859618706
+        },
+        {
+          "round": 207,
+          "divergence": 0.4656449157439959
+        },
+        {
+          "round": 208,
+          "divergence": 0.4656048189800839
+        },
+        {
+          "round": 209,
+          "divergence": 0.46553823126957994
+        },
+        {
+          "round": 210,
+          "divergence": 0.46550839929656956
+        },
+        {
+          "round": 211,
+          "divergence": 0.4654401293667712
+        },
+        {
+          "round": 212,
+          "divergence": 0.4654034238013612
+        },
+        {
+          "round": 213,
+          "divergence": 0.46536775413232223
+        },
+        {
+          "round": 214,
+          "divergence": 0.46532457543844896
+        },
+        {
+          "round": 215,
+          "divergence": 0.4652998113689054
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.25,
+      "f1_post_partition": 0.327710843373494,
+      "mean_geo_trust": 0.09847563040336366,
+      "mean_leo_trust": 0.11380705791212092,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 8,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3086834499362161
+        },
+        {
+          "round": 168,
+          "divergence": 0.405309902993244
+        },
+        {
+          "round": 169,
+          "divergence": 0.44171427146416353
+        },
+        {
+          "round": 170,
+          "divergence": 0.45612650941486066
+        },
+        {
+          "round": 171,
+          "divergence": 0.4619846631131835
+        },
+        {
+          "round": 172,
+          "divergence": 0.464472471909891
+        },
+        {
+          "round": 173,
+          "divergence": 0.4655574968958047
+        },
+        {
+          "round": 174,
+          "divergence": 0.46604148245990934
+        },
+        {
+          "round": 175,
+          "divergence": 0.46625729937630217
+        },
+        {
+          "round": 176,
+          "divergence": 0.4663647535115852
+        },
+        {
+          "round": 177,
+          "divergence": 0.46641066508930246
+        },
+        {
+          "round": 178,
+          "divergence": 0.4664306906412289
+        },
+        {
+          "round": 179,
+          "divergence": 0.46642192844987174
+        },
+        {
+          "round": 180,
+          "divergence": 0.4663948687135
+        },
+        {
+          "round": 181,
+          "divergence": 0.46636553651085677
+        },
+        {
+          "round": 182,
+          "divergence": 0.4663330149532264
+        },
+        {
+          "round": 183,
+          "divergence": 0.4662854980992751
+        },
+        {
+          "round": 184,
+          "divergence": 0.46621290475859173
+        },
+        {
+          "round": 185,
+          "divergence": 0.46619219217856
+        },
+        {
+          "round": 186,
+          "divergence": 0.46614927269980955
+        },
+        {
+          "round": 187,
+          "divergence": 0.46608754558639265
+        },
+        {
+          "round": 188,
+          "divergence": 0.46603582293314955
+        },
+        {
+          "round": 189,
+          "divergence": 0.46601390336430987
+        },
+        {
+          "round": 190,
+          "divergence": 0.46597548741304257
+        },
+        {
+          "round": 191,
+          "divergence": 0.4659470508122176
+        },
+        {
+          "round": 192,
+          "divergence": 0.4659185356047398
+        },
+        {
+          "round": 193,
+          "divergence": 0.46585486123532144
+        },
+        {
+          "round": 194,
+          "divergence": 0.46583316664113006
+        },
+        {
+          "round": 195,
+          "divergence": 0.4657892387162316
+        },
+        {
+          "round": 196,
+          "divergence": 0.46575487189347237
+        },
+        {
+          "round": 197,
+          "divergence": 0.46569150976951096
+        },
+        {
+          "round": 198,
+          "divergence": 0.4656510516618299
+        },
+        {
+          "round": 199,
+          "divergence": 0.46561451103141316
+        },
+        {
+          "round": 200,
+          "divergence": 0.4655743578239526
+        },
+        {
+          "round": 201,
+          "divergence": 0.4655546018988774
+        },
+        {
+          "round": 202,
+          "divergence": 0.46551020988524455
+        },
+        {
+          "round": 203,
+          "divergence": 0.46547103719935173
+        },
+        {
+          "round": 204,
+          "divergence": 0.465438085459513
+        },
+        {
+          "round": 205,
+          "divergence": 0.46540838540186225
+        },
+        {
+          "round": 206,
+          "divergence": 0.4653779955209213
+        },
+        {
+          "round": 207,
+          "divergence": 0.46533515137587134
+        },
+        {
+          "round": 208,
+          "divergence": 0.4653046244420561
+        },
+        {
+          "round": 209,
+          "divergence": 0.465265722208394
+        },
+        {
+          "round": 210,
+          "divergence": 0.465208835375623
+        },
+        {
+          "round": 211,
+          "divergence": 0.46518097320254054
+        },
+        {
+          "round": 212,
+          "divergence": 0.4651516424009516
+        },
+        {
+          "round": 213,
+          "divergence": 0.4651262510995259
+        },
+        {
+          "round": 214,
+          "divergence": 0.46507717344720173
+        },
+        {
+          "round": 215,
+          "divergence": 0.4650425942212717
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.13636363636363635,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.12076241253923904,
+      "mean_leo_trust": 0.11683622646097358,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 9,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30884000201372735
+        },
+        {
+          "round": 168,
+          "divergence": 0.4055142233368752
+        },
+        {
+          "round": 169,
+          "divergence": 0.4419255688798673
+        },
+        {
+          "round": 170,
+          "divergence": 0.4563481890135409
+        },
+        {
+          "round": 171,
+          "divergence": 0.46221211471000867
+        },
+        {
+          "round": 172,
+          "divergence": 0.46469167105153697
+        },
+        {
+          "round": 173,
+          "divergence": 0.4657789132721576
+        },
+        {
+          "round": 174,
+          "divergence": 0.4662657949617118
+        },
+        {
+          "round": 175,
+          "divergence": 0.4664828859469479
+        },
+        {
+          "round": 176,
+          "divergence": 0.46659220003612556
+        },
+        {
+          "round": 177,
+          "divergence": 0.4666470846793481
+        },
+        {
+          "round": 178,
+          "divergence": 0.4666542733541491
+        },
+        {
+          "round": 179,
+          "divergence": 0.4666270662010973
+        },
+        {
+          "round": 180,
+          "divergence": 0.4666127025674935
+        },
+        {
+          "round": 181,
+          "divergence": 0.46657303751261014
+        },
+        {
+          "round": 182,
+          "divergence": 0.4665268171335078
+        },
+        {
+          "round": 183,
+          "divergence": 0.4665067667835398
+        },
+        {
+          "round": 184,
+          "divergence": 0.4664526481947984
+        },
+        {
+          "round": 185,
+          "divergence": 0.4664104493831842
+        },
+        {
+          "round": 186,
+          "divergence": 0.46639190524672824
+        },
+        {
+          "round": 187,
+          "divergence": 0.4663324906685355
+        },
+        {
+          "round": 188,
+          "divergence": 0.46626616039828017
+        },
+        {
+          "round": 189,
+          "divergence": 0.4662333173338952
+        },
+        {
+          "round": 190,
+          "divergence": 0.46620133577715156
+        },
+        {
+          "round": 191,
+          "divergence": 0.46614824443937153
+        },
+        {
+          "round": 192,
+          "divergence": 0.4661177699599585
+        },
+        {
+          "round": 193,
+          "divergence": 0.46606083056234104
+        },
+        {
+          "round": 194,
+          "divergence": 0.46600948344875953
+        },
+        {
+          "round": 195,
+          "divergence": 0.46597748167286085
+        },
+        {
+          "round": 196,
+          "divergence": 0.4659294415828738
+        },
+        {
+          "round": 197,
+          "divergence": 0.46587673767808463
+        },
+        {
+          "round": 198,
+          "divergence": 0.4658250446788377
+        },
+        {
+          "round": 199,
+          "divergence": 0.4658192406234921
+        },
+        {
+          "round": 200,
+          "divergence": 0.465794138035638
+        },
+        {
+          "round": 201,
+          "divergence": 0.4657490329315446
+        },
+        {
+          "round": 202,
+          "divergence": 0.4656898494710411
+        },
+        {
+          "round": 203,
+          "divergence": 0.46565115938343
+        },
+        {
+          "round": 204,
+          "divergence": 0.46561688071510593
+        },
+        {
+          "round": 205,
+          "divergence": 0.46558624368367485
+        },
+        {
+          "round": 206,
+          "divergence": 0.4655373324402502
+        },
+        {
+          "round": 207,
+          "divergence": 0.4655106443951032
+        },
+        {
+          "round": 208,
+          "divergence": 0.4654736249330533
+        },
+        {
+          "round": 209,
+          "divergence": 0.46544968913926293
+        },
+        {
+          "round": 210,
+          "divergence": 0.46540649971495324
+        },
+        {
+          "round": 211,
+          "divergence": 0.4653542800580022
+        },
+        {
+          "round": 212,
+          "divergence": 0.46532212283294405
+        },
+        {
+          "round": 213,
+          "divergence": 0.46531767942386193
+        },
+        {
+          "round": 214,
+          "divergence": 0.46526726312196176
+        },
+        {
+          "round": 215,
+          "divergence": 0.46522267568872705
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.15267175572519084,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.11295188079031075,
+      "mean_leo_trust": 0.10613762429499406,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 10,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3084329828844742
+        },
+        {
+          "round": 168,
+          "divergence": 0.4050795848389483
+        },
+        {
+          "round": 169,
+          "divergence": 0.4414829612987172
+        },
+        {
+          "round": 170,
+          "divergence": 0.455909766092094
+        },
+        {
+          "round": 171,
+          "divergence": 0.46177649655746067
+        },
+        {
+          "round": 172,
+          "divergence": 0.464257668767132
+        },
+        {
+          "round": 173,
+          "divergence": 0.46530336806400435
+        },
+        {
+          "round": 174,
+          "divergence": 0.4657973632356872
+        },
+        {
+          "round": 175,
+          "divergence": 0.46599916135747926
+        },
+        {
+          "round": 176,
+          "divergence": 0.4660842243342347
+        },
+        {
+          "round": 177,
+          "divergence": 0.4660902409595154
+        },
+        {
+          "round": 178,
+          "divergence": 0.4660941834018633
+        },
+        {
+          "round": 179,
+          "divergence": 0.4660871606701024
+        },
+        {
+          "round": 180,
+          "divergence": 0.46605701682240175
+        },
+        {
+          "round": 181,
+          "divergence": 0.4660139736734796
+        },
+        {
+          "round": 182,
+          "divergence": 0.4660039516954538
+        },
+        {
+          "round": 183,
+          "divergence": 0.4659684016907667
+        },
+        {
+          "round": 184,
+          "divergence": 0.4659193020319751
+        },
+        {
+          "round": 185,
+          "divergence": 0.46587415711204033
+        },
+        {
+          "round": 186,
+          "divergence": 0.46580732620983
+        },
+        {
+          "round": 187,
+          "divergence": 0.4657607418705194
+        },
+        {
+          "round": 188,
+          "divergence": 0.46571491309490864
+        },
+        {
+          "round": 189,
+          "divergence": 0.46568072959802653
+        },
+        {
+          "round": 190,
+          "divergence": 0.46562908676254877
+        },
+        {
+          "round": 191,
+          "divergence": 0.4656087952599657
+        },
+        {
+          "round": 192,
+          "divergence": 0.46554615210241523
+        },
+        {
+          "round": 193,
+          "divergence": 0.4654954835990263
+        },
+        {
+          "round": 194,
+          "divergence": 0.4654623722654998
+        },
+        {
+          "round": 195,
+          "divergence": 0.46541223066304055
+        },
+        {
+          "round": 196,
+          "divergence": 0.4653681121204473
+        },
+        {
+          "round": 197,
+          "divergence": 0.4653118381102548
+        },
+        {
+          "round": 198,
+          "divergence": 0.4652668910667642
+        },
+        {
+          "round": 199,
+          "divergence": 0.4652391921969057
+        },
+        {
+          "round": 200,
+          "divergence": 0.46520998442152245
+        },
+        {
+          "round": 201,
+          "divergence": 0.4651664182236124
+        },
+        {
+          "round": 202,
+          "divergence": 0.4651256839824775
+        },
+        {
+          "round": 203,
+          "divergence": 0.4651116782581091
+        },
+        {
+          "round": 204,
+          "divergence": 0.4650644205440487
+        },
+        {
+          "round": 205,
+          "divergence": 0.46502622529952836
+        },
+        {
+          "round": 206,
+          "divergence": 0.46500546685260746
+        },
+        {
+          "round": 207,
+          "divergence": 0.4649548915356609
+        },
+        {
+          "round": 208,
+          "divergence": 0.4649148474750841
+        },
+        {
+          "round": 209,
+          "divergence": 0.4648729088954696
+        },
+        {
+          "round": 210,
+          "divergence": 0.4648360421637108
+        },
+        {
+          "round": 211,
+          "divergence": 0.4648012986320619
+        },
+        {
+          "round": 212,
+          "divergence": 0.4647739477924377
+        },
+        {
+          "round": 213,
+          "divergence": 0.46473181635070504
+        },
+        {
+          "round": 214,
+          "divergence": 0.4646988922094804
+        },
+        {
+          "round": 215,
+          "divergence": 0.46465279676482385
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.26153846153846155,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.08624981857096088,
+      "mean_leo_trust": 0.10417274672565532,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 11,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3086808180542454
+        },
+        {
+          "round": 168,
+          "divergence": 0.4054369892081873
+        },
+        {
+          "round": 169,
+          "divergence": 0.44190970325594114
+        },
+        {
+          "round": 170,
+          "divergence": 0.4563456832078661
+        },
+        {
+          "round": 171,
+          "divergence": 0.46224236440152167
+        },
+        {
+          "round": 172,
+          "divergence": 0.4647260882403888
+        },
+        {
+          "round": 173,
+          "divergence": 0.4658031186585207
+        },
+        {
+          "round": 174,
+          "divergence": 0.46628866435181665
+        },
+        {
+          "round": 175,
+          "divergence": 0.4665271286516572
+        },
+        {
+          "round": 176,
+          "divergence": 0.4666218545044626
+        },
+        {
+          "round": 177,
+          "divergence": 0.46667673648273766
+        },
+        {
+          "round": 178,
+          "divergence": 0.4666754561152722
+        },
+        {
+          "round": 179,
+          "divergence": 0.4666743647570122
+        },
+        {
+          "round": 180,
+          "divergence": 0.46664241319522887
+        },
+        {
+          "round": 181,
+          "divergence": 0.46663594088533744
+        },
+        {
+          "round": 182,
+          "divergence": 0.46660915478067927
+        },
+        {
+          "round": 183,
+          "divergence": 0.46654918812533885
+        },
+        {
+          "round": 184,
+          "divergence": 0.46651259433627473
+        },
+        {
+          "round": 185,
+          "divergence": 0.46647320758080235
+        },
+        {
+          "round": 186,
+          "divergence": 0.4664427027595822
+        },
+        {
+          "round": 187,
+          "divergence": 0.4663717554297984
+        },
+        {
+          "round": 188,
+          "divergence": 0.4663273138502396
+        },
+        {
+          "round": 189,
+          "divergence": 0.4662916508536434
+        },
+        {
+          "round": 190,
+          "divergence": 0.466258324749628
+        },
+        {
+          "round": 191,
+          "divergence": 0.4662005606699251
+        },
+        {
+          "round": 192,
+          "divergence": 0.466150509306019
+        },
+        {
+          "round": 193,
+          "divergence": 0.4661109887257018
+        },
+        {
+          "round": 194,
+          "divergence": 0.46610584551433887
+        },
+        {
+          "round": 195,
+          "divergence": 0.46606572320041983
+        },
+        {
+          "round": 196,
+          "divergence": 0.4660092803016518
+        },
+        {
+          "round": 197,
+          "divergence": 0.4659609438761277
+        },
+        {
+          "round": 198,
+          "divergence": 0.4659077539793239
+        },
+        {
+          "round": 199,
+          "divergence": 0.4658803372038567
+        },
+        {
+          "round": 200,
+          "divergence": 0.46584449451139803
+        },
+        {
+          "round": 201,
+          "divergence": 0.4658013315161341
+        },
+        {
+          "round": 202,
+          "divergence": 0.46577090125474335
+        },
+        {
+          "round": 203,
+          "divergence": 0.4657179430609048
+        },
+        {
+          "round": 204,
+          "divergence": 0.46568694544886563
+        },
+        {
+          "round": 205,
+          "divergence": 0.46562275569563677
+        },
+        {
+          "round": 206,
+          "divergence": 0.46559422106610193
+        },
+        {
+          "round": 207,
+          "divergence": 0.46556110349207813
+        },
+        {
+          "round": 208,
+          "divergence": 0.4655526203363133
+        },
+        {
+          "round": 209,
+          "divergence": 0.4655317329966223
+        },
+        {
+          "round": 210,
+          "divergence": 0.4654875376667532
+        },
+        {
+          "round": 211,
+          "divergence": 0.4654385590066605
+        },
+        {
+          "round": 212,
+          "divergence": 0.46541544381328603
+        },
+        {
+          "round": 213,
+          "divergence": 0.4653819497441167
+        },
+        {
+          "round": 214,
+          "divergence": 0.46532601337380847
+        },
+        {
+          "round": 215,
+          "divergence": 0.4652748139198649
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.18840579710144928,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.10140462247590047,
+      "mean_leo_trust": 0.10871172683838608,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 12,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3085755612825929
+        },
+        {
+          "round": 168,
+          "divergence": 0.4052118862887727
+        },
+        {
+          "round": 169,
+          "divergence": 0.44162414449040105
+        },
+        {
+          "round": 170,
+          "divergence": 0.45603129844051266
+        },
+        {
+          "round": 171,
+          "divergence": 0.4618959401190217
+        },
+        {
+          "round": 172,
+          "divergence": 0.46437643189346534
+        },
+        {
+          "round": 173,
+          "divergence": 0.4654502899995091
+        },
+        {
+          "round": 174,
+          "divergence": 0.46594705625060895
+        },
+        {
+          "round": 175,
+          "divergence": 0.46616575903014795
+        },
+        {
+          "round": 176,
+          "divergence": 0.46627462124073865
+        },
+        {
+          "round": 177,
+          "divergence": 0.4663097207044588
+        },
+        {
+          "round": 178,
+          "divergence": 0.4663155437762211
+        },
+        {
+          "round": 179,
+          "divergence": 0.46629712830053965
+        },
+        {
+          "round": 180,
+          "divergence": 0.4662732664478223
+        },
+        {
+          "round": 181,
+          "divergence": 0.46623820481095457
+        },
+        {
+          "round": 182,
+          "divergence": 0.46621763143066536
+        },
+        {
+          "round": 183,
+          "divergence": 0.46621052547234715
+        },
+        {
+          "round": 184,
+          "divergence": 0.4661713569005746
+        },
+        {
+          "round": 185,
+          "divergence": 0.46614205331281994
+        },
+        {
+          "round": 186,
+          "divergence": 0.4660946422452451
+        },
+        {
+          "round": 187,
+          "divergence": 0.46601809518590076
+        },
+        {
+          "round": 188,
+          "divergence": 0.46597806163135325
+        },
+        {
+          "round": 189,
+          "divergence": 0.4659214731477394
+        },
+        {
+          "round": 190,
+          "divergence": 0.4658839500879823
+        },
+        {
+          "round": 191,
+          "divergence": 0.46584388970408375
+        },
+        {
+          "round": 192,
+          "divergence": 0.4658150405128054
+        },
+        {
+          "round": 193,
+          "divergence": 0.46577875160215343
+        },
+        {
+          "round": 194,
+          "divergence": 0.4657347655550862
+        },
+        {
+          "round": 195,
+          "divergence": 0.46567844287547755
+        },
+        {
+          "round": 196,
+          "divergence": 0.46563513048604
+        },
+        {
+          "round": 197,
+          "divergence": 0.4656016632662429
+        },
+        {
+          "round": 198,
+          "divergence": 0.46556311129685485
+        },
+        {
+          "round": 199,
+          "divergence": 0.46552694180310733
+        },
+        {
+          "round": 200,
+          "divergence": 0.465493448208364
+        },
+        {
+          "round": 201,
+          "divergence": 0.46546709841906525
+        },
+        {
+          "round": 202,
+          "divergence": 0.46545190165020545
+        },
+        {
+          "round": 203,
+          "divergence": 0.46539453997871744
+        },
+        {
+          "round": 204,
+          "divergence": 0.46535309388728346
+        },
+        {
+          "round": 205,
+          "divergence": 0.46532087821993584
+        },
+        {
+          "round": 206,
+          "divergence": 0.465296572862273
+        },
+        {
+          "round": 207,
+          "divergence": 0.4652773091449989
+        },
+        {
+          "round": 208,
+          "divergence": 0.4652266353069563
+        },
+        {
+          "round": 209,
+          "divergence": 0.4651926410699135
+        },
+        {
+          "round": 210,
+          "divergence": 0.46515436446251185
+        },
+        {
+          "round": 211,
+          "divergence": 0.4651169302437375
+        },
+        {
+          "round": 212,
+          "divergence": 0.4650911096962961
+        },
+        {
+          "round": 213,
+          "divergence": 0.46509069897651867
+        },
+        {
+          "round": 214,
+          "divergence": 0.4650655566185135
+        },
+        {
+          "round": 215,
+          "divergence": 0.46505217811035543
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.15037593984962405,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.10371081219465954,
+      "mean_leo_trust": 0.11364396224574798,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 13,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3085431651854006
+        },
+        {
+          "round": 168,
+          "divergence": 0.4052093887495799
+        },
+        {
+          "round": 169,
+          "divergence": 0.4416324832402815
+        },
+        {
+          "round": 170,
+          "divergence": 0.45605985228147594
+        },
+        {
+          "round": 171,
+          "divergence": 0.46194030064599495
+        },
+        {
+          "round": 172,
+          "divergence": 0.4644219876492551
+        },
+        {
+          "round": 173,
+          "divergence": 0.46548904737569663
+        },
+        {
+          "round": 174,
+          "divergence": 0.4659571878507702
+        },
+        {
+          "round": 175,
+          "divergence": 0.4661670036685104
+        },
+        {
+          "round": 176,
+          "divergence": 0.46627728942999586
+        },
+        {
+          "round": 177,
+          "divergence": 0.46630867048290703
+        },
+        {
+          "round": 178,
+          "divergence": 0.46631318790671317
+        },
+        {
+          "round": 179,
+          "divergence": 0.4663025192899416
+        },
+        {
+          "round": 180,
+          "divergence": 0.46626595670803656
+        },
+        {
+          "round": 181,
+          "divergence": 0.46623075136194647
+        },
+        {
+          "round": 182,
+          "divergence": 0.46618822341546307
+        },
+        {
+          "round": 183,
+          "divergence": 0.4661501349665145
+        },
+        {
+          "round": 184,
+          "divergence": 0.466115517564778
+        },
+        {
+          "round": 185,
+          "divergence": 0.46606547874704324
+        },
+        {
+          "round": 186,
+          "divergence": 0.466051517358604
+        },
+        {
+          "round": 187,
+          "divergence": 0.46600315797208586
+        },
+        {
+          "round": 188,
+          "divergence": 0.4659707473469689
+        },
+        {
+          "round": 189,
+          "divergence": 0.465932248724974
+        },
+        {
+          "round": 190,
+          "divergence": 0.4659057377727095
+        },
+        {
+          "round": 191,
+          "divergence": 0.4658513781589347
+        },
+        {
+          "round": 192,
+          "divergence": 0.4658223058532867
+        },
+        {
+          "round": 193,
+          "divergence": 0.46576794751902756
+        },
+        {
+          "round": 194,
+          "divergence": 0.4657253514912327
+        },
+        {
+          "round": 195,
+          "divergence": 0.4656777421889725
+        },
+        {
+          "round": 196,
+          "divergence": 0.46563233525073205
+        },
+        {
+          "round": 197,
+          "divergence": 0.46560015413994466
+        },
+        {
+          "round": 198,
+          "divergence": 0.4655570833972037
+        },
+        {
+          "round": 199,
+          "divergence": 0.4655162782715422
+        },
+        {
+          "round": 200,
+          "divergence": 0.4654818021879323
+        },
+        {
+          "round": 201,
+          "divergence": 0.4654607021214722
+        },
+        {
+          "round": 202,
+          "divergence": 0.46542188661522144
+        },
+        {
+          "round": 203,
+          "divergence": 0.46538167956766674
+        },
+        {
+          "round": 204,
+          "divergence": 0.4653410370247271
+        },
+        {
+          "round": 205,
+          "divergence": 0.4653085889933031
+        },
+        {
+          "round": 206,
+          "divergence": 0.46526522821290384
+        },
+        {
+          "round": 207,
+          "divergence": 0.4652254302198407
+        },
+        {
+          "round": 208,
+          "divergence": 0.4651775855249097
+        },
+        {
+          "round": 209,
+          "divergence": 0.4651413966335923
+        },
+        {
+          "round": 210,
+          "divergence": 0.46509074533585243
+        },
+        {
+          "round": 211,
+          "divergence": 0.4650650741824623
+        },
+        {
+          "round": 212,
+          "divergence": 0.4650305865900979
+        },
+        {
+          "round": 213,
+          "divergence": 0.4649778162151937
+        },
+        {
+          "round": 214,
+          "divergence": 0.46493136854442807
+        },
+        {
+          "round": 215,
+          "divergence": 0.46489991808114495
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.19117647058823528,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.11446818799294624,
+      "mean_leo_trust": 0.09868311600346759,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 14,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30903360051878664
+        },
+        {
+          "round": 168,
+          "divergence": 0.4057749912289463
+        },
+        {
+          "round": 169,
+          "divergence": 0.44222727318951166
+        },
+        {
+          "round": 170,
+          "divergence": 0.45665541483703054
+        },
+        {
+          "round": 171,
+          "divergence": 0.462536600974476
+        },
+        {
+          "round": 172,
+          "divergence": 0.4650202725188925
+        },
+        {
+          "round": 173,
+          "divergence": 0.46608507463118976
+        },
+        {
+          "round": 174,
+          "divergence": 0.46657207923755034
+        },
+        {
+          "round": 175,
+          "divergence": 0.46679183098011934
+        },
+        {
+          "round": 176,
+          "divergence": 0.46690925462029176
+        },
+        {
+          "round": 177,
+          "divergence": 0.4669489311105667
+        },
+        {
+          "round": 178,
+          "divergence": 0.46692377222862863
+        },
+        {
+          "round": 179,
+          "divergence": 0.466914256022699
+        },
+        {
+          "round": 180,
+          "divergence": 0.46689463832486316
+        },
+        {
+          "round": 181,
+          "divergence": 0.46685624462072706
+        },
+        {
+          "round": 182,
+          "divergence": 0.466839592604783
+        },
+        {
+          "round": 183,
+          "divergence": 0.4668015233733265
+        },
+        {
+          "round": 184,
+          "divergence": 0.46676019963175086
+        },
+        {
+          "round": 185,
+          "divergence": 0.4667437065863504
+        },
+        {
+          "round": 186,
+          "divergence": 0.46668392698472694
+        },
+        {
+          "round": 187,
+          "divergence": 0.46661548001406794
+        },
+        {
+          "round": 188,
+          "divergence": 0.46656348992899765
+        },
+        {
+          "round": 189,
+          "divergence": 0.4665277441786124
+        },
+        {
+          "round": 190,
+          "divergence": 0.4664957057780542
+        },
+        {
+          "round": 191,
+          "divergence": 0.4664782974630256
+        },
+        {
+          "round": 192,
+          "divergence": 0.46642717531763545
+        },
+        {
+          "round": 193,
+          "divergence": 0.46639385614490275
+        },
+        {
+          "round": 194,
+          "divergence": 0.4663666975478099
+        },
+        {
+          "round": 195,
+          "divergence": 0.4663360456710409
+        },
+        {
+          "round": 196,
+          "divergence": 0.4663069643146624
+        },
+        {
+          "round": 197,
+          "divergence": 0.46626246621842243
+        },
+        {
+          "round": 198,
+          "divergence": 0.4662296636365167
+        },
+        {
+          "round": 199,
+          "divergence": 0.4661989689552845
+        },
+        {
+          "round": 200,
+          "divergence": 0.46613940390620295
+        },
+        {
+          "round": 201,
+          "divergence": 0.4661035539205685
+        },
+        {
+          "round": 202,
+          "divergence": 0.46605335066810655
+        },
+        {
+          "round": 203,
+          "divergence": 0.4660302321859391
+        },
+        {
+          "round": 204,
+          "divergence": 0.4659858071110218
+        },
+        {
+          "round": 205,
+          "divergence": 0.46594773867779754
+        },
+        {
+          "round": 206,
+          "divergence": 0.4659194057381824
+        },
+        {
+          "round": 207,
+          "divergence": 0.4658714373117771
+        },
+        {
+          "round": 208,
+          "divergence": 0.46585686255664815
+        },
+        {
+          "round": 209,
+          "divergence": 0.46584475691872895
+        },
+        {
+          "round": 210,
+          "divergence": 0.4657905576182692
+        },
+        {
+          "round": 211,
+          "divergence": 0.4657289256022547
+        },
+        {
+          "round": 212,
+          "divergence": 0.46571803867713324
+        },
+        {
+          "round": 213,
+          "divergence": 0.4657086311130426
+        },
+        {
+          "round": 214,
+          "divergence": 0.4656769912673943
+        },
+        {
+          "round": 215,
+          "divergence": 0.4656555897272133
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.18705035971223022,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.11502106225329503,
+      "mean_leo_trust": 0.11569165350656248,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 15,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3089926976023695
+        },
+        {
+          "round": 168,
+          "divergence": 0.4057899044874099
+        },
+        {
+          "round": 169,
+          "divergence": 0.44224884722287117
+        },
+        {
+          "round": 170,
+          "divergence": 0.45669253835398954
+        },
+        {
+          "round": 171,
+          "divergence": 0.46259054161712543
+        },
+        {
+          "round": 172,
+          "divergence": 0.46505372796551386
+        },
+        {
+          "round": 173,
+          "divergence": 0.46614804116469144
+        },
+        {
+          "round": 174,
+          "divergence": 0.4666181138800705
+        },
+        {
+          "round": 175,
+          "divergence": 0.4668367168142573
+        },
+        {
+          "round": 176,
+          "divergence": 0.46693759420790315
+        },
+        {
+          "round": 177,
+          "divergence": 0.46694580229957666
+        },
+        {
+          "round": 178,
+          "divergence": 0.4669627856617945
+        },
+        {
+          "round": 179,
+          "divergence": 0.4669350929948883
+        },
+        {
+          "round": 180,
+          "divergence": 0.4669115109973607
+        },
+        {
+          "round": 181,
+          "divergence": 0.46688271902443296
+        },
+        {
+          "round": 182,
+          "divergence": 0.4668495076384419
+        },
+        {
+          "round": 183,
+          "divergence": 0.4668004724034109
+        },
+        {
+          "round": 184,
+          "divergence": 0.4667677643096162
+        },
+        {
+          "round": 185,
+          "divergence": 0.46670990974596754
+        },
+        {
+          "round": 186,
+          "divergence": 0.4666391411340624
+        },
+        {
+          "round": 187,
+          "divergence": 0.4666167725133207
+        },
+        {
+          "round": 188,
+          "divergence": 0.46656871443163206
+        },
+        {
+          "round": 189,
+          "divergence": 0.46654021936225615
+        },
+        {
+          "round": 190,
+          "divergence": 0.46648259470054837
+        },
+        {
+          "round": 191,
+          "divergence": 0.46641869056881446
+        },
+        {
+          "round": 192,
+          "divergence": 0.4663625834840247
+        },
+        {
+          "round": 193,
+          "divergence": 0.46632766117590446
+        },
+        {
+          "round": 194,
+          "divergence": 0.4663063508310488
+        },
+        {
+          "round": 195,
+          "divergence": 0.46625860107913764
+        },
+        {
+          "round": 196,
+          "divergence": 0.46622921562634373
+        },
+        {
+          "round": 197,
+          "divergence": 0.4661868503064696
+        },
+        {
+          "round": 198,
+          "divergence": 0.4661560234053909
+        },
+        {
+          "round": 199,
+          "divergence": 0.46608913280763786
+        },
+        {
+          "round": 200,
+          "divergence": 0.46605507642257965
+        },
+        {
+          "round": 201,
+          "divergence": 0.4659996198748756
+        },
+        {
+          "round": 202,
+          "divergence": 0.46597064521984166
+        },
+        {
+          "round": 203,
+          "divergence": 0.4659213392598948
+        },
+        {
+          "round": 204,
+          "divergence": 0.46587389367997506
+        },
+        {
+          "round": 205,
+          "divergence": 0.465851864741442
+        },
+        {
+          "round": 206,
+          "divergence": 0.4658056783572414
+        },
+        {
+          "round": 207,
+          "divergence": 0.4657782488283309
+        },
+        {
+          "round": 208,
+          "divergence": 0.4657533153804211
+        },
+        {
+          "round": 209,
+          "divergence": 0.4657137218219432
+        },
+        {
+          "round": 210,
+          "divergence": 0.465674529174998
+        },
+        {
+          "round": 211,
+          "divergence": 0.46563258081792847
+        },
+        {
+          "round": 212,
+          "divergence": 0.46560041991778767
+        },
+        {
+          "round": 213,
+          "divergence": 0.46556747927807995
+        },
+        {
+          "round": 214,
+          "divergence": 0.46553053262801575
+        },
+        {
+          "round": 215,
+          "divergence": 0.46549069557445766
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.0851063829787234,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.128351596928221,
+      "mean_leo_trust": 0.12219329051210458,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 16,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3088127985792603
+        },
+        {
+          "round": 168,
+          "divergence": 0.4055315646762444
+        },
+        {
+          "round": 169,
+          "divergence": 0.44196321096599994
+        },
+        {
+          "round": 170,
+          "divergence": 0.4564000421543365
+        },
+        {
+          "round": 171,
+          "divergence": 0.46228691856452486
+        },
+        {
+          "round": 172,
+          "divergence": 0.4647671245478045
+        },
+        {
+          "round": 173,
+          "divergence": 0.46587317716089105
+        },
+        {
+          "round": 174,
+          "divergence": 0.46639030259649433
+        },
+        {
+          "round": 175,
+          "divergence": 0.46662330385970663
+        },
+        {
+          "round": 176,
+          "divergence": 0.46671650895827765
+        },
+        {
+          "round": 177,
+          "divergence": 0.4667576167696785
+        },
+        {
+          "round": 178,
+          "divergence": 0.4667629914829382
+        },
+        {
+          "round": 179,
+          "divergence": 0.46675793723713654
+        },
+        {
+          "round": 180,
+          "divergence": 0.466726230912499
+        },
+        {
+          "round": 181,
+          "divergence": 0.46669734075398195
+        },
+        {
+          "round": 182,
+          "divergence": 0.46666687592652517
+        },
+        {
+          "round": 183,
+          "divergence": 0.46664837801682263
+        },
+        {
+          "round": 184,
+          "divergence": 0.46660735561496947
+        },
+        {
+          "round": 185,
+          "divergence": 0.46657974756319737
+        },
+        {
+          "round": 186,
+          "divergence": 0.46655115793096086
+        },
+        {
+          "round": 187,
+          "divergence": 0.466495680794422
+        },
+        {
+          "round": 188,
+          "divergence": 0.46646185691709036
+        },
+        {
+          "round": 189,
+          "divergence": 0.46640978645298997
+        },
+        {
+          "round": 190,
+          "divergence": 0.46636098485735167
+        },
+        {
+          "round": 191,
+          "divergence": 0.4663097201794879
+        },
+        {
+          "round": 192,
+          "divergence": 0.4662559750920204
+        },
+        {
+          "round": 193,
+          "divergence": 0.4662386184538835
+        },
+        {
+          "round": 194,
+          "divergence": 0.4661951322267543
+        },
+        {
+          "round": 195,
+          "divergence": 0.46617179417759064
+        },
+        {
+          "round": 196,
+          "divergence": 0.46612340221957727
+        },
+        {
+          "round": 197,
+          "divergence": 0.466054303321888
+        },
+        {
+          "round": 198,
+          "divergence": 0.466038729758992
+        },
+        {
+          "round": 199,
+          "divergence": 0.46600885192419056
+        },
+        {
+          "round": 200,
+          "divergence": 0.46598329528441457
+        },
+        {
+          "round": 201,
+          "divergence": 0.4659264845065878
+        },
+        {
+          "round": 202,
+          "divergence": 0.46587466643578607
+        },
+        {
+          "round": 203,
+          "divergence": 0.46584694906610047
+        },
+        {
+          "round": 204,
+          "divergence": 0.4657973508760667
+        },
+        {
+          "round": 205,
+          "divergence": 0.46575655962896156
+        },
+        {
+          "round": 206,
+          "divergence": 0.46570414128038057
+        },
+        {
+          "round": 207,
+          "divergence": 0.4656925402529373
+        },
+        {
+          "round": 208,
+          "divergence": 0.4656628181178379
+        },
+        {
+          "round": 209,
+          "divergence": 0.4656443516703983
+        },
+        {
+          "round": 210,
+          "divergence": 0.4656260811244587
+        },
+        {
+          "round": 211,
+          "divergence": 0.4655943088285046
+        },
+        {
+          "round": 212,
+          "divergence": 0.46555702818565015
+        },
+        {
+          "round": 213,
+          "divergence": 0.46553146221823444
+        },
+        {
+          "round": 214,
+          "divergence": 0.4654914836259152
+        },
+        {
+          "round": 215,
+          "divergence": 0.4654519971201846
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.2318840579710145,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.13246012010403388,
+      "mean_leo_trust": 0.11174853436832645,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 17,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30855646518112484
+        },
+        {
+          "round": 168,
+          "divergence": 0.4052118191027315
+        },
+        {
+          "round": 169,
+          "divergence": 0.4416515011971085
+        },
+        {
+          "round": 170,
+          "divergence": 0.45606805682930307
+        },
+        {
+          "round": 171,
+          "divergence": 0.4619463944504762
+        },
+        {
+          "round": 172,
+          "divergence": 0.46442210998859373
+        },
+        {
+          "round": 173,
+          "divergence": 0.46550697999449003
+        },
+        {
+          "round": 174,
+          "divergence": 0.46601723841378306
+        },
+        {
+          "round": 175,
+          "divergence": 0.466227279182509
+        },
+        {
+          "round": 176,
+          "divergence": 0.466287790451446
+        },
+        {
+          "round": 177,
+          "divergence": 0.4663377952694878
+        },
+        {
+          "round": 178,
+          "divergence": 0.46633750727769263
+        },
+        {
+          "round": 179,
+          "divergence": 0.4663272946446501
+        },
+        {
+          "round": 180,
+          "divergence": 0.46632623137811796
+        },
+        {
+          "round": 181,
+          "divergence": 0.4663001349822686
+        },
+        {
+          "round": 182,
+          "divergence": 0.4662733685582987
+        },
+        {
+          "round": 183,
+          "divergence": 0.46622289871638345
+        },
+        {
+          "round": 184,
+          "divergence": 0.46616607028054324
+        },
+        {
+          "round": 185,
+          "divergence": 0.46612200294298994
+        },
+        {
+          "round": 186,
+          "divergence": 0.466059422404333
+        },
+        {
+          "round": 187,
+          "divergence": 0.46599421094183024
+        },
+        {
+          "round": 188,
+          "divergence": 0.4659492966826513
+        },
+        {
+          "round": 189,
+          "divergence": 0.4659255966995414
+        },
+        {
+          "round": 190,
+          "divergence": 0.46586559594848637
+        },
+        {
+          "round": 191,
+          "divergence": 0.4658290689247932
+        },
+        {
+          "round": 192,
+          "divergence": 0.4657589978272868
+        },
+        {
+          "round": 193,
+          "divergence": 0.46571848969546725
+        },
+        {
+          "round": 194,
+          "divergence": 0.4656776110204537
+        },
+        {
+          "round": 195,
+          "divergence": 0.4656481396053336
+        },
+        {
+          "round": 196,
+          "divergence": 0.46560347653585626
+        },
+        {
+          "round": 197,
+          "divergence": 0.46555258905471397
+        },
+        {
+          "round": 198,
+          "divergence": 0.4655143916607167
+        },
+        {
+          "round": 199,
+          "divergence": 0.46545676307961414
+        },
+        {
+          "round": 200,
+          "divergence": 0.46538621929637053
+        },
+        {
+          "round": 201,
+          "divergence": 0.4653459587483345
+        },
+        {
+          "round": 202,
+          "divergence": 0.4652970997507041
+        },
+        {
+          "round": 203,
+          "divergence": 0.46525325772633713
+        },
+        {
+          "round": 204,
+          "divergence": 0.46520003051620434
+        },
+        {
+          "round": 205,
+          "divergence": 0.46516856620035435
+        },
+        {
+          "round": 206,
+          "divergence": 0.46511476951702757
+        },
+        {
+          "round": 207,
+          "divergence": 0.4650573799321262
+        },
+        {
+          "round": 208,
+          "divergence": 0.4650321805040148
+        },
+        {
+          "round": 209,
+          "divergence": 0.46498948442451404
+        },
+        {
+          "round": 210,
+          "divergence": 0.4649267419027664
+        },
+        {
+          "round": 211,
+          "divergence": 0.4649057097352435
+        },
+        {
+          "round": 212,
+          "divergence": 0.46484961974482497
+        },
+        {
+          "round": 213,
+          "divergence": 0.4648070873131307
+        },
+        {
+          "round": 214,
+          "divergence": 0.4647512567473265
+        },
+        {
+          "round": 215,
+          "divergence": 0.46471149924270044
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.2556390977443609,
+      "f1_post_partition": 0.327710843373494,
+      "mean_geo_trust": 0.09164823379157329,
+      "mean_leo_trust": 0.104973814042463,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 18,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30900562445009916
+        },
+        {
+          "round": 168,
+          "divergence": 0.4056996789132499
+        },
+        {
+          "round": 169,
+          "divergence": 0.4421238314835527
+        },
+        {
+          "round": 170,
+          "divergence": 0.45656387895645617
+        },
+        {
+          "round": 171,
+          "divergence": 0.46242947635440806
+        },
+        {
+          "round": 172,
+          "divergence": 0.46490324352396883
+        },
+        {
+          "round": 173,
+          "divergence": 0.4659931424701458
+        },
+        {
+          "round": 174,
+          "divergence": 0.4664758823982982
+        },
+        {
+          "round": 175,
+          "divergence": 0.46671746849233897
+        },
+        {
+          "round": 176,
+          "divergence": 0.46681870425855193
+        },
+        {
+          "round": 177,
+          "divergence": 0.4668480364394281
+        },
+        {
+          "round": 178,
+          "divergence": 0.46687490733398646
+        },
+        {
+          "round": 179,
+          "divergence": 0.4668465515011738
+        },
+        {
+          "round": 180,
+          "divergence": 0.46684496330382597
+        },
+        {
+          "round": 181,
+          "divergence": 0.4668390427493176
+        },
+        {
+          "round": 182,
+          "divergence": 0.46681580752857693
+        },
+        {
+          "round": 183,
+          "divergence": 0.4667898601828492
+        },
+        {
+          "round": 184,
+          "divergence": 0.4667415655413239
+        },
+        {
+          "round": 185,
+          "divergence": 0.4667178147131197
+        },
+        {
+          "round": 186,
+          "divergence": 0.4666768529222527
+        },
+        {
+          "round": 187,
+          "divergence": 0.4666149104155623
+        },
+        {
+          "round": 188,
+          "divergence": 0.4665823844654321
+        },
+        {
+          "round": 189,
+          "divergence": 0.46655363219388346
+        },
+        {
+          "round": 190,
+          "divergence": 0.4665296138175317
+        },
+        {
+          "round": 191,
+          "divergence": 0.4664942082502784
+        },
+        {
+          "round": 192,
+          "divergence": 0.4664589263883546
+        },
+        {
+          "round": 193,
+          "divergence": 0.46640868059317714
+        },
+        {
+          "round": 194,
+          "divergence": 0.4663640530349617
+        },
+        {
+          "round": 195,
+          "divergence": 0.46633140154347347
+        },
+        {
+          "round": 196,
+          "divergence": 0.4662870263859091
+        },
+        {
+          "round": 197,
+          "divergence": 0.46625603989472314
+        },
+        {
+          "round": 198,
+          "divergence": 0.46621795088525964
+        },
+        {
+          "round": 199,
+          "divergence": 0.4661928557128484
+        },
+        {
+          "round": 200,
+          "divergence": 0.46618083489606027
+        },
+        {
+          "round": 201,
+          "divergence": 0.4661244083426606
+        },
+        {
+          "round": 202,
+          "divergence": 0.46606690897453523
+        },
+        {
+          "round": 203,
+          "divergence": 0.4660423275263232
+        },
+        {
+          "round": 204,
+          "divergence": 0.46600601666812047
+        },
+        {
+          "round": 205,
+          "divergence": 0.4659895220320393
+        },
+        {
+          "round": 206,
+          "divergence": 0.46594817381982295
+        },
+        {
+          "round": 207,
+          "divergence": 0.4659148764495752
+        },
+        {
+          "round": 208,
+          "divergence": 0.4658693525279067
+        },
+        {
+          "round": 209,
+          "divergence": 0.4658367258589583
+        },
+        {
+          "round": 210,
+          "divergence": 0.46582272412069065
+        },
+        {
+          "round": 211,
+          "divergence": 0.465782741919687
+        },
+        {
+          "round": 212,
+          "divergence": 0.46574505913434194
+        },
+        {
+          "round": 213,
+          "divergence": 0.46571654503266036
+        },
+        {
+          "round": 214,
+          "divergence": 0.46568907125024595
+        },
+        {
+          "round": 215,
+          "divergence": 0.4656853861237034
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.2773722627737226,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.12913928632301322,
+      "mean_leo_trust": 0.11073438987098129,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 19,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3088143578540033
+        },
+        {
+          "round": 168,
+          "divergence": 0.4054521941357046
+        },
+        {
+          "round": 169,
+          "divergence": 0.4418445680088489
+        },
+        {
+          "round": 170,
+          "divergence": 0.456251888450428
+        },
+        {
+          "round": 171,
+          "divergence": 0.4621306423799145
+        },
+        {
+          "round": 172,
+          "divergence": 0.4645912738373838
+        },
+        {
+          "round": 173,
+          "divergence": 0.46567152162316133
+        },
+        {
+          "round": 174,
+          "divergence": 0.46617300736986667
+        },
+        {
+          "round": 175,
+          "divergence": 0.4663910139968444
+        },
+        {
+          "round": 176,
+          "divergence": 0.4664939560079244
+        },
+        {
+          "round": 177,
+          "divergence": 0.46652386873007107
+        },
+        {
+          "round": 178,
+          "divergence": 0.46654653373800997
+        },
+        {
+          "round": 179,
+          "divergence": 0.46652897844885677
+        },
+        {
+          "round": 180,
+          "divergence": 0.46650569924520047
+        },
+        {
+          "round": 181,
+          "divergence": 0.4664809983452694
+        },
+        {
+          "round": 182,
+          "divergence": 0.4664421128934897
+        },
+        {
+          "round": 183,
+          "divergence": 0.4664168832648618
+        },
+        {
+          "round": 184,
+          "divergence": 0.46639836596331946
+        },
+        {
+          "round": 185,
+          "divergence": 0.46636125910388576
+        },
+        {
+          "round": 186,
+          "divergence": 0.46632844167730825
+        },
+        {
+          "round": 187,
+          "divergence": 0.4663124882391344
+        },
+        {
+          "round": 188,
+          "divergence": 0.4662688872544427
+        },
+        {
+          "round": 189,
+          "divergence": 0.46623659427337144
+        },
+        {
+          "round": 190,
+          "divergence": 0.4662079531266062
+        },
+        {
+          "round": 191,
+          "divergence": 0.4661488646244352
+        },
+        {
+          "round": 192,
+          "divergence": 0.466120529522618
+        },
+        {
+          "round": 193,
+          "divergence": 0.46607067757752446
+        },
+        {
+          "round": 194,
+          "divergence": 0.4660466265017061
+        },
+        {
+          "round": 195,
+          "divergence": 0.46600503325302334
+        },
+        {
+          "round": 196,
+          "divergence": 0.46597191405988125
+        },
+        {
+          "round": 197,
+          "divergence": 0.4659333903272904
+        },
+        {
+          "round": 198,
+          "divergence": 0.4658884736212983
+        },
+        {
+          "round": 199,
+          "divergence": 0.46585973363715877
+        },
+        {
+          "round": 200,
+          "divergence": 0.46582307298799763
+        },
+        {
+          "round": 201,
+          "divergence": 0.4657838347555873
+        },
+        {
+          "round": 202,
+          "divergence": 0.4657469747304476
+        },
+        {
+          "round": 203,
+          "divergence": 0.4657093444274414
+        },
+        {
+          "round": 204,
+          "divergence": 0.46569114521489374
+        },
+        {
+          "round": 205,
+          "divergence": 0.46565714621612864
+        },
+        {
+          "round": 206,
+          "divergence": 0.4656277617672094
+        },
+        {
+          "round": 207,
+          "divergence": 0.4655901147603404
+        },
+        {
+          "round": 208,
+          "divergence": 0.4655719221716502
+        },
+        {
+          "round": 209,
+          "divergence": 0.46552110752553644
+        },
+        {
+          "round": 210,
+          "divergence": 0.4655030067449873
+        },
+        {
+          "round": 211,
+          "divergence": 0.46548548135909246
+        },
+        {
+          "round": 212,
+          "divergence": 0.46546169540045207
+        },
+        {
+          "round": 213,
+          "divergence": 0.46541805262261426
+        },
+        {
+          "round": 214,
+          "divergence": 0.46538561624605157
+        },
+        {
+          "round": 215,
+          "divergence": 0.46536299078474946
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.19858156028368795,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.1338642063463647,
+      "mean_leo_trust": 0.12919083116378033,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 20,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3086774752267531
+        },
+        {
+          "round": 168,
+          "divergence": 0.4053362477200941
+        },
+        {
+          "round": 169,
+          "divergence": 0.44175519360817195
+        },
+        {
+          "round": 170,
+          "divergence": 0.456144193162268
+        },
+        {
+          "round": 171,
+          "divergence": 0.4619934298524214
+        },
+        {
+          "round": 172,
+          "divergence": 0.464455413875205
+        },
+        {
+          "round": 173,
+          "divergence": 0.4655141542702386
+        },
+        {
+          "round": 174,
+          "divergence": 0.46600638602472033
+        },
+        {
+          "round": 175,
+          "divergence": 0.4662326864275029
+        },
+        {
+          "round": 176,
+          "divergence": 0.4663517699815941
+        },
+        {
+          "round": 177,
+          "divergence": 0.46639738125201696
+        },
+        {
+          "round": 178,
+          "divergence": 0.46639768598844444
+        },
+        {
+          "round": 179,
+          "divergence": 0.46639146200598086
+        },
+        {
+          "round": 180,
+          "divergence": 0.4663560106349312
+        },
+        {
+          "round": 181,
+          "divergence": 0.4663252254116284
+        },
+        {
+          "round": 182,
+          "divergence": 0.46628714614828987
+        },
+        {
+          "round": 183,
+          "divergence": 0.4662572948978454
+        },
+        {
+          "round": 184,
+          "divergence": 0.4661853480061183
+        },
+        {
+          "round": 185,
+          "divergence": 0.46615442962591935
+        },
+        {
+          "round": 186,
+          "divergence": 0.46612524652682635
+        },
+        {
+          "round": 187,
+          "divergence": 0.466068509316116
+        },
+        {
+          "round": 188,
+          "divergence": 0.46602929499587564
+        },
+        {
+          "round": 189,
+          "divergence": 0.46600190818990966
+        },
+        {
+          "round": 190,
+          "divergence": 0.4659722480719074
+        },
+        {
+          "round": 191,
+          "divergence": 0.46592460079223413
+        },
+        {
+          "round": 192,
+          "divergence": 0.46587829987575075
+        },
+        {
+          "round": 193,
+          "divergence": 0.46582523844387635
+        },
+        {
+          "round": 194,
+          "divergence": 0.4657835943440331
+        },
+        {
+          "round": 195,
+          "divergence": 0.46573606556627817
+        },
+        {
+          "round": 196,
+          "divergence": 0.465705819845404
+        },
+        {
+          "round": 197,
+          "divergence": 0.4656593271518342
+        },
+        {
+          "round": 198,
+          "divergence": 0.4656070697291122
+        },
+        {
+          "round": 199,
+          "divergence": 0.4655789512403066
+        },
+        {
+          "round": 200,
+          "divergence": 0.4655411110066378
+        },
+        {
+          "round": 201,
+          "divergence": 0.4654670384610815
+        },
+        {
+          "round": 202,
+          "divergence": 0.4654245074862859
+        },
+        {
+          "round": 203,
+          "divergence": 0.46537860044812984
+        },
+        {
+          "round": 204,
+          "divergence": 0.4653578640641286
+        },
+        {
+          "round": 205,
+          "divergence": 0.46531888601562366
+        },
+        {
+          "round": 206,
+          "divergence": 0.46527753849537373
+        },
+        {
+          "round": 207,
+          "divergence": 0.46524521479953795
+        },
+        {
+          "round": 208,
+          "divergence": 0.46520519147496725
+        },
+        {
+          "round": 209,
+          "divergence": 0.46516620518099716
+        },
+        {
+          "round": 210,
+          "divergence": 0.4651179232012063
+        },
+        {
+          "round": 211,
+          "divergence": 0.4651062766822213
+        },
+        {
+          "round": 212,
+          "divergence": 0.46508250735572876
+        },
+        {
+          "round": 213,
+          "divergence": 0.4650330232201176
+        },
+        {
+          "round": 214,
+          "divergence": 0.4650163216297448
+        },
+        {
+          "round": 215,
+          "divergence": 0.46494976684171496
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.24427480916030533,
+      "f1_post_partition": 0.327710843373494,
+      "mean_geo_trust": 0.10652373775918045,
+      "mean_leo_trust": 0.10566939552996832,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 21,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30947172355878877
+        },
+        {
+          "round": 168,
+          "divergence": 0.4062652682160327
+        },
+        {
+          "round": 169,
+          "divergence": 0.4426997359593034
+        },
+        {
+          "round": 170,
+          "divergence": 0.4570954052656376
+        },
+        {
+          "round": 171,
+          "divergence": 0.4629828557089227
+        },
+        {
+          "round": 172,
+          "divergence": 0.46545317092351446
+        },
+        {
+          "round": 173,
+          "divergence": 0.4665514331104291
+        },
+        {
+          "round": 174,
+          "divergence": 0.46703462822007596
+        },
+        {
+          "round": 175,
+          "divergence": 0.4672568269243363
+        },
+        {
+          "round": 176,
+          "divergence": 0.4673435528817154
+        },
+        {
+          "round": 177,
+          "divergence": 0.46737564041637714
+        },
+        {
+          "round": 178,
+          "divergence": 0.4673943610789746
+        },
+        {
+          "round": 179,
+          "divergence": 0.46739234175068706
+        },
+        {
+          "round": 180,
+          "divergence": 0.4673621977882233
+        },
+        {
+          "round": 181,
+          "divergence": 0.46733557902353773
+        },
+        {
+          "round": 182,
+          "divergence": 0.46733142180603593
+        },
+        {
+          "round": 183,
+          "divergence": 0.4672728613384338
+        },
+        {
+          "round": 184,
+          "divergence": 0.46724937827552976
+        },
+        {
+          "round": 185,
+          "divergence": 0.4672165943035839
+        },
+        {
+          "round": 186,
+          "divergence": 0.46716405657112436
+        },
+        {
+          "round": 187,
+          "divergence": 0.4671145601509001
+        },
+        {
+          "round": 188,
+          "divergence": 0.467073166611235
+        },
+        {
+          "round": 189,
+          "divergence": 0.4670316410536061
+        },
+        {
+          "round": 190,
+          "divergence": 0.46700530903224574
+        },
+        {
+          "round": 191,
+          "divergence": 0.4669496054861145
+        },
+        {
+          "round": 192,
+          "divergence": 0.46689607839921665
+        },
+        {
+          "round": 193,
+          "divergence": 0.46686675284327683
+        },
+        {
+          "round": 194,
+          "divergence": 0.46681461393659807
+        },
+        {
+          "round": 195,
+          "divergence": 0.4667655254581607
+        },
+        {
+          "round": 196,
+          "divergence": 0.46672882270989896
+        },
+        {
+          "round": 197,
+          "divergence": 0.4667057075336702
+        },
+        {
+          "round": 198,
+          "divergence": 0.46666833800569935
+        },
+        {
+          "round": 199,
+          "divergence": 0.4666410392896668
+        },
+        {
+          "round": 200,
+          "divergence": 0.4665926638497943
+        },
+        {
+          "round": 201,
+          "divergence": 0.46652662499773245
+        },
+        {
+          "round": 202,
+          "divergence": 0.4665055496414384
+        },
+        {
+          "round": 203,
+          "divergence": 0.4664866335321268
+        },
+        {
+          "round": 204,
+          "divergence": 0.4664366576483831
+        },
+        {
+          "round": 205,
+          "divergence": 0.46637889820236134
+        },
+        {
+          "round": 206,
+          "divergence": 0.4663328002586954
+        },
+        {
+          "round": 207,
+          "divergence": 0.4662843344809039
+        },
+        {
+          "round": 208,
+          "divergence": 0.46624333302394144
+        },
+        {
+          "round": 209,
+          "divergence": 0.466225428926599
+        },
+        {
+          "round": 210,
+          "divergence": 0.46619570161832313
+        },
+        {
+          "round": 211,
+          "divergence": 0.4661657038757523
+        },
+        {
+          "round": 212,
+          "divergence": 0.46612318786925094
+        },
+        {
+          "round": 213,
+          "divergence": 0.4660690396465572
+        },
+        {
+          "round": 214,
+          "divergence": 0.4660454990537385
+        },
+        {
+          "round": 215,
+          "divergence": 0.46602037491634424
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.24817518248175183,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.09771578789906707,
+      "mean_leo_trust": 0.10336444849139113,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 22,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30893729122269686
+        },
+        {
+          "round": 168,
+          "divergence": 0.4056319094984523
+        },
+        {
+          "round": 169,
+          "divergence": 0.4420409116806987
+        },
+        {
+          "round": 170,
+          "divergence": 0.4564569756942388
+        },
+        {
+          "round": 171,
+          "divergence": 0.4623464945588996
+        },
+        {
+          "round": 172,
+          "divergence": 0.46481580241271314
+        },
+        {
+          "round": 173,
+          "divergence": 0.4658623894100347
+        },
+        {
+          "round": 174,
+          "divergence": 0.4663347038031573
+        },
+        {
+          "round": 175,
+          "divergence": 0.46657447305572675
+        },
+        {
+          "round": 176,
+          "divergence": 0.46664926162610204
+        },
+        {
+          "round": 177,
+          "divergence": 0.46667359151100335
+        },
+        {
+          "round": 178,
+          "divergence": 0.46667925481158107
+        },
+        {
+          "round": 179,
+          "divergence": 0.4666456674221724
+        },
+        {
+          "round": 180,
+          "divergence": 0.46661998446033337
+        },
+        {
+          "round": 181,
+          "divergence": 0.4665711946753864
+        },
+        {
+          "round": 182,
+          "divergence": 0.46652302365785236
+        },
+        {
+          "round": 183,
+          "divergence": 0.46650865312416334
+        },
+        {
+          "round": 184,
+          "divergence": 0.46647652810443074
+        },
+        {
+          "round": 185,
+          "divergence": 0.46643760434589104
+        },
+        {
+          "round": 186,
+          "divergence": 0.46639286424284704
+        },
+        {
+          "round": 187,
+          "divergence": 0.4663638115622045
+        },
+        {
+          "round": 188,
+          "divergence": 0.4663096495865635
+        },
+        {
+          "round": 189,
+          "divergence": 0.466247218056738
+        },
+        {
+          "round": 190,
+          "divergence": 0.46616065912469484
+        },
+        {
+          "round": 191,
+          "divergence": 0.46613367453961874
+        },
+        {
+          "round": 192,
+          "divergence": 0.4660832080148557
+        },
+        {
+          "round": 193,
+          "divergence": 0.4660251154461241
+        },
+        {
+          "round": 194,
+          "divergence": 0.4659879985674069
+        },
+        {
+          "round": 195,
+          "divergence": 0.4659126173289103
+        },
+        {
+          "round": 196,
+          "divergence": 0.46586914078898944
+        },
+        {
+          "round": 197,
+          "divergence": 0.4658281816094293
+        },
+        {
+          "round": 198,
+          "divergence": 0.46577315002740355
+        },
+        {
+          "round": 199,
+          "divergence": 0.4657236681405098
+        },
+        {
+          "round": 200,
+          "divergence": 0.4656776259670455
+        },
+        {
+          "round": 201,
+          "divergence": 0.4656356554717197
+        },
+        {
+          "round": 202,
+          "divergence": 0.46557971602149506
+        },
+        {
+          "round": 203,
+          "divergence": 0.4655457853907568
+        },
+        {
+          "round": 204,
+          "divergence": 0.4655202381285744
+        },
+        {
+          "round": 205,
+          "divergence": 0.46545605092452313
+        },
+        {
+          "round": 206,
+          "divergence": 0.4654142297652235
+        },
+        {
+          "round": 207,
+          "divergence": 0.4653942723133367
+        },
+        {
+          "round": 208,
+          "divergence": 0.46534114714965064
+        },
+        {
+          "round": 209,
+          "divergence": 0.4652918680872291
+        },
+        {
+          "round": 210,
+          "divergence": 0.4652493513027291
+        },
+        {
+          "round": 211,
+          "divergence": 0.46517793612289793
+        },
+        {
+          "round": 212,
+          "divergence": 0.46511133113150066
+        },
+        {
+          "round": 213,
+          "divergence": 0.4650849363709791
+        },
+        {
+          "round": 214,
+          "divergence": 0.465041981612111
+        },
+        {
+          "round": 215,
+          "divergence": 0.465037826427292
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.16296296296296298,
+      "f1_post_partition": 0.327710843373494,
+      "mean_geo_trust": 0.10112728065819121,
+      "mean_leo_trust": 0.1048375837503874,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 23,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30881490129362954
+        },
+        {
+          "round": 168,
+          "divergence": 0.4055323947497896
+        },
+        {
+          "round": 169,
+          "divergence": 0.4419465887118667
+        },
+        {
+          "round": 170,
+          "divergence": 0.45634710196645745
+        },
+        {
+          "round": 171,
+          "divergence": 0.4622158352450377
+        },
+        {
+          "round": 172,
+          "divergence": 0.4647058518364665
+        },
+        {
+          "round": 173,
+          "divergence": 0.46576243644609483
+        },
+        {
+          "round": 174,
+          "divergence": 0.46624185212672586
+        },
+        {
+          "round": 175,
+          "divergence": 0.4664692852460692
+        },
+        {
+          "round": 176,
+          "divergence": 0.4665499541751019
+        },
+        {
+          "round": 177,
+          "divergence": 0.46659225442443547
+        },
+        {
+          "round": 178,
+          "divergence": 0.46659454969096337
+        },
+        {
+          "round": 179,
+          "divergence": 0.46655936517635044
+        },
+        {
+          "round": 180,
+          "divergence": 0.46648391258552446
+        },
+        {
+          "round": 181,
+          "divergence": 0.4664459297083838
+        },
+        {
+          "round": 182,
+          "divergence": 0.46639714160917306
+        },
+        {
+          "round": 183,
+          "divergence": 0.466362831339772
+        },
+        {
+          "round": 184,
+          "divergence": 0.4663142570521219
+        },
+        {
+          "round": 185,
+          "divergence": 0.46630004648425505
+        },
+        {
+          "round": 186,
+          "divergence": 0.4662304820109846
+        },
+        {
+          "round": 187,
+          "divergence": 0.46616785639979
+        },
+        {
+          "round": 188,
+          "divergence": 0.46610902977764274
+        },
+        {
+          "round": 189,
+          "divergence": 0.46605420358937394
+        },
+        {
+          "round": 190,
+          "divergence": 0.4659968705016945
+        },
+        {
+          "round": 191,
+          "divergence": 0.46594905921317004
+        },
+        {
+          "round": 192,
+          "divergence": 0.4659044327250816
+        },
+        {
+          "round": 193,
+          "divergence": 0.4658486125655746
+        },
+        {
+          "round": 194,
+          "divergence": 0.4657865155669338
+        },
+        {
+          "round": 195,
+          "divergence": 0.4657461294089898
+        },
+        {
+          "round": 196,
+          "divergence": 0.4656937822011977
+        },
+        {
+          "round": 197,
+          "divergence": 0.4656402434109851
+        },
+        {
+          "round": 198,
+          "divergence": 0.46557856352143906
+        },
+        {
+          "round": 199,
+          "divergence": 0.4655429985296026
+        },
+        {
+          "round": 200,
+          "divergence": 0.46550909217825354
+        },
+        {
+          "round": 201,
+          "divergence": 0.4654635941763055
+        },
+        {
+          "round": 202,
+          "divergence": 0.46540479970449583
+        },
+        {
+          "round": 203,
+          "divergence": 0.46535217821272823
+        },
+        {
+          "round": 204,
+          "divergence": 0.4652961164597816
+        },
+        {
+          "round": 205,
+          "divergence": 0.4652544742675561
+        },
+        {
+          "round": 206,
+          "divergence": 0.46521059872532794
+        },
+        {
+          "round": 207,
+          "divergence": 0.4651575997091273
+        },
+        {
+          "round": 208,
+          "divergence": 0.46513004080028125
+        },
+        {
+          "round": 209,
+          "divergence": 0.4650879932700171
+        },
+        {
+          "round": 210,
+          "divergence": 0.46501942622697395
+        },
+        {
+          "round": 211,
+          "divergence": 0.4649885670786866
+        },
+        {
+          "round": 212,
+          "divergence": 0.46494600271195735
+        },
+        {
+          "round": 213,
+          "divergence": 0.46490485506296964
+        },
+        {
+          "round": 214,
+          "divergence": 0.4648744929335091
+        },
+        {
+          "round": 215,
+          "divergence": 0.46482081321468405
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.16666666666666666,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.09114054915995846,
+      "mean_leo_trust": 0.10027518350610325,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 24,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30887709277306635
+        },
+        {
+          "round": 168,
+          "divergence": 0.4055804282122856
+        },
+        {
+          "round": 169,
+          "divergence": 0.4420025982885913
+        },
+        {
+          "round": 170,
+          "divergence": 0.45641544743346435
+        },
+        {
+          "round": 171,
+          "divergence": 0.4623056632318224
+        },
+        {
+          "round": 172,
+          "divergence": 0.46477658671659833
+        },
+        {
+          "round": 173,
+          "divergence": 0.4658704865791174
+        },
+        {
+          "round": 174,
+          "divergence": 0.4663431636626179
+        },
+        {
+          "round": 175,
+          "divergence": 0.4665431159344511
+        },
+        {
+          "round": 176,
+          "divergence": 0.46665174738439974
+        },
+        {
+          "round": 177,
+          "divergence": 0.4666994728154496
+        },
+        {
+          "round": 178,
+          "divergence": 0.4666996859655893
+        },
+        {
+          "round": 179,
+          "divergence": 0.4666829918451384
+        },
+        {
+          "round": 180,
+          "divergence": 0.466649059270464
+        },
+        {
+          "round": 181,
+          "divergence": 0.4666073157066571
+        },
+        {
+          "round": 182,
+          "divergence": 0.46658081398752554
+        },
+        {
+          "round": 183,
+          "divergence": 0.4665431223387213
+        },
+        {
+          "round": 184,
+          "divergence": 0.46652172423155
+        },
+        {
+          "round": 185,
+          "divergence": 0.466474096801676
+        },
+        {
+          "round": 186,
+          "divergence": 0.4664284191976542
+        },
+        {
+          "round": 187,
+          "divergence": 0.46637962013573253
+        },
+        {
+          "round": 188,
+          "divergence": 0.4663085685807761
+        },
+        {
+          "round": 189,
+          "divergence": 0.4662722115676697
+        },
+        {
+          "round": 190,
+          "divergence": 0.4662268794779913
+        },
+        {
+          "round": 191,
+          "divergence": 0.46618029952164103
+        },
+        {
+          "round": 192,
+          "divergence": 0.46611081729956716
+        },
+        {
+          "round": 193,
+          "divergence": 0.46606595307825094
+        },
+        {
+          "round": 194,
+          "divergence": 0.4660244172773993
+        },
+        {
+          "round": 195,
+          "divergence": 0.4660008205555095
+        },
+        {
+          "round": 196,
+          "divergence": 0.4659743217958931
+        },
+        {
+          "round": 197,
+          "divergence": 0.46594437560346985
+        },
+        {
+          "round": 198,
+          "divergence": 0.4658879368351481
+        },
+        {
+          "round": 199,
+          "divergence": 0.46582029944256814
+        },
+        {
+          "round": 200,
+          "divergence": 0.4657882817875207
+        },
+        {
+          "round": 201,
+          "divergence": 0.46571767254588786
+        },
+        {
+          "round": 202,
+          "divergence": 0.4656729505579948
+        },
+        {
+          "round": 203,
+          "divergence": 0.46562067345677405
+        },
+        {
+          "round": 204,
+          "divergence": 0.46557326429377577
+        },
+        {
+          "round": 205,
+          "divergence": 0.4655373583080447
+        },
+        {
+          "round": 206,
+          "divergence": 0.46550917324605556
+        },
+        {
+          "round": 207,
+          "divergence": 0.46547735183983524
+        },
+        {
+          "round": 208,
+          "divergence": 0.4654400321742996
+        },
+        {
+          "round": 209,
+          "divergence": 0.4654120706889314
+        },
+        {
+          "round": 210,
+          "divergence": 0.4653791430988565
+        },
+        {
+          "round": 211,
+          "divergence": 0.46535471279421536
+        },
+        {
+          "round": 212,
+          "divergence": 0.4653057867369134
+        },
+        {
+          "round": 213,
+          "divergence": 0.4652725272653742
+        },
+        {
+          "round": 214,
+          "divergence": 0.46522615556467284
+        },
+        {
+          "round": 215,
+          "divergence": 0.4651887383126193
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.22388059701492538,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.10904937043658924,
+      "mean_leo_trust": 0.10419724176787083,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 25,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3086658069409796
+        },
+        {
+          "round": 168,
+          "divergence": 0.4054061950972062
+        },
+        {
+          "round": 169,
+          "divergence": 0.4418877642507235
+        },
+        {
+          "round": 170,
+          "divergence": 0.4563171651446919
+        },
+        {
+          "round": 171,
+          "divergence": 0.46220367710785887
+        },
+        {
+          "round": 172,
+          "divergence": 0.46467602428162647
+        },
+        {
+          "round": 173,
+          "divergence": 0.46575639421472265
+        },
+        {
+          "round": 174,
+          "divergence": 0.46624385211914454
+        },
+        {
+          "round": 175,
+          "divergence": 0.4664623539732962
+        },
+        {
+          "round": 176,
+          "divergence": 0.46658785636132744
+        },
+        {
+          "round": 177,
+          "divergence": 0.4666042517166945
+        },
+        {
+          "round": 178,
+          "divergence": 0.46658463498208697
+        },
+        {
+          "round": 179,
+          "divergence": 0.46657187343077033
+        },
+        {
+          "round": 180,
+          "divergence": 0.46654001960254315
+        },
+        {
+          "round": 181,
+          "divergence": 0.4665315742481904
+        },
+        {
+          "round": 182,
+          "divergence": 0.46650126686508064
+        },
+        {
+          "round": 183,
+          "divergence": 0.46647616950554643
+        },
+        {
+          "round": 184,
+          "divergence": 0.4664258599578904
+        },
+        {
+          "round": 185,
+          "divergence": 0.4663893083835248
+        },
+        {
+          "round": 186,
+          "divergence": 0.4663421080091598
+        },
+        {
+          "round": 187,
+          "divergence": 0.466297006254382
+        },
+        {
+          "round": 188,
+          "divergence": 0.4662593802300599
+        },
+        {
+          "round": 189,
+          "divergence": 0.4662382148735138
+        },
+        {
+          "round": 190,
+          "divergence": 0.46621097262135824
+        },
+        {
+          "round": 191,
+          "divergence": 0.4661785183230527
+        },
+        {
+          "round": 192,
+          "divergence": 0.46612524424782886
+        },
+        {
+          "round": 193,
+          "divergence": 0.4660790551298358
+        },
+        {
+          "round": 194,
+          "divergence": 0.4660161107199228
+        },
+        {
+          "round": 195,
+          "divergence": 0.4659668672341657
+        },
+        {
+          "round": 196,
+          "divergence": 0.4659294779303771
+        },
+        {
+          "round": 197,
+          "divergence": 0.46588629501484374
+        },
+        {
+          "round": 198,
+          "divergence": 0.46586600141944345
+        },
+        {
+          "round": 199,
+          "divergence": 0.46584733437304293
+        },
+        {
+          "round": 200,
+          "divergence": 0.4658125238488666
+        },
+        {
+          "round": 201,
+          "divergence": 0.4657610883999248
+        },
+        {
+          "round": 202,
+          "divergence": 0.4657499811480048
+        },
+        {
+          "round": 203,
+          "divergence": 0.4657195630306698
+        },
+        {
+          "round": 204,
+          "divergence": 0.46566759859050216
+        },
+        {
+          "round": 205,
+          "divergence": 0.46565836848214104
+        },
+        {
+          "round": 206,
+          "divergence": 0.46559870928802183
+        },
+        {
+          "round": 207,
+          "divergence": 0.4655601101664832
+        },
+        {
+          "round": 208,
+          "divergence": 0.46551323841660425
+        },
+        {
+          "round": 209,
+          "divergence": 0.4654933764263835
+        },
+        {
+          "round": 210,
+          "divergence": 0.4654451491050643
+        },
+        {
+          "round": 211,
+          "divergence": 0.46540601282245025
+        },
+        {
+          "round": 212,
+          "divergence": 0.4653809129469267
+        },
+        {
+          "round": 213,
+          "divergence": 0.4653470861300488
+        },
+        {
+          "round": 214,
+          "divergence": 0.4653215535549301
+        },
+        {
+          "round": 215,
+          "divergence": 0.4652853347767996
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.17777777777777778,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.10457329840703344,
+      "mean_leo_trust": 0.11409314728693976,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 26,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.3087838170185878
+        },
+        {
+          "round": 168,
+          "divergence": 0.4054632546507667
+        },
+        {
+          "round": 169,
+          "divergence": 0.441855951530206
+        },
+        {
+          "round": 170,
+          "divergence": 0.45627442412199454
+        },
+        {
+          "round": 171,
+          "divergence": 0.4621198456629542
+        },
+        {
+          "round": 172,
+          "divergence": 0.46456683182130903
+        },
+        {
+          "round": 173,
+          "divergence": 0.46564334291600307
+        },
+        {
+          "round": 174,
+          "divergence": 0.4661242728620609
+        },
+        {
+          "round": 175,
+          "divergence": 0.4663257343691803
+        },
+        {
+          "round": 176,
+          "divergence": 0.4664274585917822
+        },
+        {
+          "round": 177,
+          "divergence": 0.4664531798090881
+        },
+        {
+          "round": 178,
+          "divergence": 0.4664345405045964
+        },
+        {
+          "round": 179,
+          "divergence": 0.4664017057640826
+        },
+        {
+          "round": 180,
+          "divergence": 0.46639331443600346
+        },
+        {
+          "round": 181,
+          "divergence": 0.46634469353223124
+        },
+        {
+          "round": 182,
+          "divergence": 0.4663069070236778
+        },
+        {
+          "round": 183,
+          "divergence": 0.4662529124474688
+        },
+        {
+          "round": 184,
+          "divergence": 0.46619189203074135
+        },
+        {
+          "round": 185,
+          "divergence": 0.46614391639148517
+        },
+        {
+          "round": 186,
+          "divergence": 0.4661042863356063
+        },
+        {
+          "round": 187,
+          "divergence": 0.46605101859784526
+        },
+        {
+          "round": 188,
+          "divergence": 0.46601386967937375
+        },
+        {
+          "round": 189,
+          "divergence": 0.4659673952321841
+        },
+        {
+          "round": 190,
+          "divergence": 0.4659306122461838
+        },
+        {
+          "round": 191,
+          "divergence": 0.4658718623999513
+        },
+        {
+          "round": 192,
+          "divergence": 0.46582024451144066
+        },
+        {
+          "round": 193,
+          "divergence": 0.4657792025522453
+        },
+        {
+          "round": 194,
+          "divergence": 0.46573391156548566
+        },
+        {
+          "round": 195,
+          "divergence": 0.46568200467952514
+        },
+        {
+          "round": 196,
+          "divergence": 0.46563886178904423
+        },
+        {
+          "round": 197,
+          "divergence": 0.46557965372229815
+        },
+        {
+          "round": 198,
+          "divergence": 0.4655495821254018
+        },
+        {
+          "round": 199,
+          "divergence": 0.4655080649127367
+        },
+        {
+          "round": 200,
+          "divergence": 0.4654675236762342
+        },
+        {
+          "round": 201,
+          "divergence": 0.46542495682813806
+        },
+        {
+          "round": 202,
+          "divergence": 0.46535451664960953
+        },
+        {
+          "round": 203,
+          "divergence": 0.46534269205560924
+        },
+        {
+          "round": 204,
+          "divergence": 0.46528294998046205
+        },
+        {
+          "round": 205,
+          "divergence": 0.46524561465904346
+        },
+        {
+          "round": 206,
+          "divergence": 0.4652217635751688
+        },
+        {
+          "round": 207,
+          "divergence": 0.46515851202947317
+        },
+        {
+          "round": 208,
+          "divergence": 0.4651425533834569
+        },
+        {
+          "round": 209,
+          "divergence": 0.4650978955370552
+        },
+        {
+          "round": 210,
+          "divergence": 0.46505094936540053
+        },
+        {
+          "round": 211,
+          "divergence": 0.46502238541241087
+        },
+        {
+          "round": 212,
+          "divergence": 0.4649831084169465
+        },
+        {
+          "round": 213,
+          "divergence": 0.4649675591217161
+        },
+        {
+          "round": 214,
+          "divergence": 0.4648964842488333
+        },
+        {
+          "round": 215,
+          "divergence": 0.4648693191253953
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.2,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.08170993949729949,
+      "mean_leo_trust": 0.10799617504129967,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 27,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.308684273385937
+        },
+        {
+          "round": 168,
+          "divergence": 0.4052468746561874
+        },
+        {
+          "round": 169,
+          "divergence": 0.4415956902502395
+        },
+        {
+          "round": 170,
+          "divergence": 0.4559708983772174
+        },
+        {
+          "round": 171,
+          "divergence": 0.4618572337617886
+        },
+        {
+          "round": 172,
+          "divergence": 0.46431515480802255
+        },
+        {
+          "round": 173,
+          "divergence": 0.4654105505283061
+        },
+        {
+          "round": 174,
+          "divergence": 0.465894581056079
+        },
+        {
+          "round": 175,
+          "divergence": 0.4661114696958057
+        },
+        {
+          "round": 176,
+          "divergence": 0.4662030029262198
+        },
+        {
+          "round": 177,
+          "divergence": 0.4662443934219555
+        },
+        {
+          "round": 178,
+          "divergence": 0.46626063247149363
+        },
+        {
+          "round": 179,
+          "divergence": 0.4662304465311966
+        },
+        {
+          "round": 180,
+          "divergence": 0.46624145338432454
+        },
+        {
+          "round": 181,
+          "divergence": 0.4662060875699101
+        },
+        {
+          "round": 182,
+          "divergence": 0.4661571503869276
+        },
+        {
+          "round": 183,
+          "divergence": 0.46611099048699234
+        },
+        {
+          "round": 184,
+          "divergence": 0.4660599422258923
+        },
+        {
+          "round": 185,
+          "divergence": 0.46601566130770716
+        },
+        {
+          "round": 186,
+          "divergence": 0.465964430013878
+        },
+        {
+          "round": 187,
+          "divergence": 0.4659212993281324
+        },
+        {
+          "round": 188,
+          "divergence": 0.46586497342523037
+        },
+        {
+          "round": 189,
+          "divergence": 0.4658463891833519
+        },
+        {
+          "round": 190,
+          "divergence": 0.4657976099471248
+        },
+        {
+          "round": 191,
+          "divergence": 0.46577360182329064
+        },
+        {
+          "round": 192,
+          "divergence": 0.4657257905451043
+        },
+        {
+          "round": 193,
+          "divergence": 0.465673382309468
+        },
+        {
+          "round": 194,
+          "divergence": 0.4656091774983309
+        },
+        {
+          "round": 195,
+          "divergence": 0.46555899700002346
+        },
+        {
+          "round": 196,
+          "divergence": 0.4655471495448184
+        },
+        {
+          "round": 197,
+          "divergence": 0.46550120083771773
+        },
+        {
+          "round": 198,
+          "divergence": 0.46545108786654277
+        },
+        {
+          "round": 199,
+          "divergence": 0.4654373866913574
+        },
+        {
+          "round": 200,
+          "divergence": 0.4654014836828132
+        },
+        {
+          "round": 201,
+          "divergence": 0.4653516663309083
+        },
+        {
+          "round": 202,
+          "divergence": 0.46531328798779636
+        },
+        {
+          "round": 203,
+          "divergence": 0.46526999572614053
+        },
+        {
+          "round": 204,
+          "divergence": 0.4652309793758622
+        },
+        {
+          "round": 205,
+          "divergence": 0.46519340099835227
+        },
+        {
+          "round": 206,
+          "divergence": 0.46516656093662073
+        },
+        {
+          "round": 207,
+          "divergence": 0.46514439155351767
+        },
+        {
+          "round": 208,
+          "divergence": 0.46512851863987387
+        },
+        {
+          "round": 209,
+          "divergence": 0.465067932522019
+        },
+        {
+          "round": 210,
+          "divergence": 0.4650225889942577
+        },
+        {
+          "round": 211,
+          "divergence": 0.4649896075264902
+        },
+        {
+          "round": 212,
+          "divergence": 0.464953051053421
+        },
+        {
+          "round": 213,
+          "divergence": 0.46492134759708803
+        },
+        {
+          "round": 214,
+          "divergence": 0.46485812555532097
+        },
+        {
+          "round": 215,
+          "divergence": 0.464815439428567
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.27692307692307694,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.11280086236547984,
+      "mean_leo_trust": 0.11084525797822468,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 28,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30896546007703957
+        },
+        {
+          "round": 168,
+          "divergence": 0.40573854465364406
+        },
+        {
+          "round": 169,
+          "divergence": 0.4422049623628322
+        },
+        {
+          "round": 170,
+          "divergence": 0.4566288522160144
+        },
+        {
+          "round": 171,
+          "divergence": 0.4625435636600338
+        },
+        {
+          "round": 172,
+          "divergence": 0.4650129638861399
+        },
+        {
+          "round": 173,
+          "divergence": 0.46608797532175794
+        },
+        {
+          "round": 174,
+          "divergence": 0.4665670411815923
+        },
+        {
+          "round": 175,
+          "divergence": 0.466790718832431
+        },
+        {
+          "round": 176,
+          "divergence": 0.4669254797013386
+        },
+        {
+          "round": 177,
+          "divergence": 0.46697456142415983
+        },
+        {
+          "round": 178,
+          "divergence": 0.4669700961746398
+        },
+        {
+          "round": 179,
+          "divergence": 0.46695721396640444
+        },
+        {
+          "round": 180,
+          "divergence": 0.46693056395808596
+        },
+        {
+          "round": 181,
+          "divergence": 0.46692665014901585
+        },
+        {
+          "round": 182,
+          "divergence": 0.4668705810523977
+        },
+        {
+          "round": 183,
+          "divergence": 0.4668291133978397
+        },
+        {
+          "round": 184,
+          "divergence": 0.46676783082752205
+        },
+        {
+          "round": 185,
+          "divergence": 0.46673749816341026
+        },
+        {
+          "round": 186,
+          "divergence": 0.46670763486862527
+        },
+        {
+          "round": 187,
+          "divergence": 0.46665142590985953
+        },
+        {
+          "round": 188,
+          "divergence": 0.46662821295717527
+        },
+        {
+          "round": 189,
+          "divergence": 0.4665874816356212
+        },
+        {
+          "round": 190,
+          "divergence": 0.4665541478000498
+        },
+        {
+          "round": 191,
+          "divergence": 0.466487359435855
+        },
+        {
+          "round": 192,
+          "divergence": 0.4664424212931099
+        },
+        {
+          "round": 193,
+          "divergence": 0.4663963961076404
+        },
+        {
+          "round": 194,
+          "divergence": 0.4663785388035794
+        },
+        {
+          "round": 195,
+          "divergence": 0.466334515891274
+        },
+        {
+          "round": 196,
+          "divergence": 0.46629498203700215
+        },
+        {
+          "round": 197,
+          "divergence": 0.46624036927297374
+        },
+        {
+          "round": 198,
+          "divergence": 0.46618573392483553
+        },
+        {
+          "round": 199,
+          "divergence": 0.46615183931669923
+        },
+        {
+          "round": 200,
+          "divergence": 0.4661061431606694
+        },
+        {
+          "round": 201,
+          "divergence": 0.4660423449490308
+        },
+        {
+          "round": 202,
+          "divergence": 0.4660270738161738
+        },
+        {
+          "round": 203,
+          "divergence": 0.4659871598834237
+        },
+        {
+          "round": 204,
+          "divergence": 0.4659544939249259
+        },
+        {
+          "round": 205,
+          "divergence": 0.46593292173543616
+        },
+        {
+          "round": 206,
+          "divergence": 0.4658798849050141
+        },
+        {
+          "round": 207,
+          "divergence": 0.46583642971014044
+        },
+        {
+          "round": 208,
+          "divergence": 0.46580187231567777
+        },
+        {
+          "round": 209,
+          "divergence": 0.4657914505554137
+        },
+        {
+          "round": 210,
+          "divergence": 0.4657594920467259
+        },
+        {
+          "round": 211,
+          "divergence": 0.46571651045911444
+        },
+        {
+          "round": 212,
+          "divergence": 0.46568427919486743
+        },
+        {
+          "round": 213,
+          "divergence": 0.4656789464981695
+        },
+        {
+          "round": 214,
+          "divergence": 0.4656474256675699
+        },
+        {
+          "round": 215,
+          "divergence": 0.4655947582333256
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.19117647058823528,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.10781220428052184,
+      "mean_leo_trust": 0.11236149544988759,
+      "ledger_tps": 0.0
+    },
+    {
+      "run_id": 29,
+      "divergence_curve": [
+        {
+          "round": 166,
+          "divergence": 0.0
+        },
+        {
+          "round": 167,
+          "divergence": 0.30863797609449545
+        },
+        {
+          "round": 168,
+          "divergence": 0.4053301212526595
+        },
+        {
+          "round": 169,
+          "divergence": 0.44174748409448056
+        },
+        {
+          "round": 170,
+          "divergence": 0.45618114298156914
+        },
+        {
+          "round": 171,
+          "divergence": 0.4620444475227317
+        },
+        {
+          "round": 172,
+          "divergence": 0.4645057424264235
+        },
+        {
+          "round": 173,
+          "divergence": 0.46555702249226294
+        },
+        {
+          "round": 174,
+          "divergence": 0.4660499411254625
+        },
+        {
+          "round": 175,
+          "divergence": 0.46625898728680365
+        },
+        {
+          "round": 176,
+          "divergence": 0.46634797681121753
+        },
+        {
+          "round": 177,
+          "divergence": 0.4663897280663098
+        },
+        {
+          "round": 178,
+          "divergence": 0.46640698330362157
+        },
+        {
+          "round": 179,
+          "divergence": 0.4663699117673049
+        },
+        {
+          "round": 180,
+          "divergence": 0.4663492564690468
+        },
+        {
+          "round": 181,
+          "divergence": 0.4663193815474994
+        },
+        {
+          "round": 182,
+          "divergence": 0.46627601622252784
+        },
+        {
+          "round": 183,
+          "divergence": 0.4662333985023089
+        },
+        {
+          "round": 184,
+          "divergence": 0.46618657762520843
+        },
+        {
+          "round": 185,
+          "divergence": 0.46613608270281387
+        },
+        {
+          "round": 186,
+          "divergence": 0.4660888105568589
+        },
+        {
+          "round": 187,
+          "divergence": 0.46603100513598106
+        },
+        {
+          "round": 188,
+          "divergence": 0.46596999686433305
+        },
+        {
+          "round": 189,
+          "divergence": 0.4659467804846067
+        },
+        {
+          "round": 190,
+          "divergence": 0.46589873860391967
+        },
+        {
+          "round": 191,
+          "divergence": 0.46583587286779415
+        },
+        {
+          "round": 192,
+          "divergence": 0.4657867700500348
+        },
+        {
+          "round": 193,
+          "divergence": 0.4657484067457859
+        },
+        {
+          "round": 194,
+          "divergence": 0.4656957182637742
+        },
+        {
+          "round": 195,
+          "divergence": 0.46565020440433075
+        },
+        {
+          "round": 196,
+          "divergence": 0.4656085872293081
+        },
+        {
+          "round": 197,
+          "divergence": 0.4655462773747265
+        },
+        {
+          "round": 198,
+          "divergence": 0.4655247316772369
+        },
+        {
+          "round": 199,
+          "divergence": 0.4654775170595469
+        },
+        {
+          "round": 200,
+          "divergence": 0.4654532959400219
+        },
+        {
+          "round": 201,
+          "divergence": 0.4654169566335596
+        },
+        {
+          "round": 202,
+          "divergence": 0.46535263939024313
+        },
+        {
+          "round": 203,
+          "divergence": 0.4652958032890609
+        },
+        {
+          "round": 204,
+          "divergence": 0.4652454340033402
+        },
+        {
+          "round": 205,
+          "divergence": 0.4651984381229379
+        },
+        {
+          "round": 206,
+          "divergence": 0.465157986741448
+        },
+        {
+          "round": 207,
+          "divergence": 0.46513021248913544
+        },
+        {
+          "round": 208,
+          "divergence": 0.46507634114497287
+        },
+        {
+          "round": 209,
+          "divergence": 0.46505154211399957
+        },
+        {
+          "round": 210,
+          "divergence": 0.46501000493829087
+        },
+        {
+          "round": 211,
+          "divergence": 0.46498548546851776
+        },
+        {
+          "round": 212,
+          "divergence": 0.46493469864608283
+        },
+        {
+          "round": 213,
+          "divergence": 0.46489373559938674
+        },
+        {
+          "round": 214,
+          "divergence": 0.46488033853392613
+        },
+        {
+          "round": 215,
+          "divergence": 0.4648280019599021
+        }
+      ],
+      "convergence_round": 216,
+      "partition_duration_rounds": 50,
+      "f1_pre_partition": 0.14925373134328357,
+      "f1_post_partition": 0.3325301204819277,
+      "mean_geo_trust": 0.12424084554330458,
+      "mean_leo_trust": 0.11408564318829767,
+      "ledger_tps": 0.0
+    }
+  ],
+  "summary": {
+    "f1_pre_partition_mean": 0.20168519104221663,
+    "f1_post_partition_mean": 0.33172690763052187,
+    "f1_degradation": -0.13004171658830524,
+    "mean_ledger_tps": 0.0
+  }
+}

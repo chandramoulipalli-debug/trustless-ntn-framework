@@ -1,0 +1,107 @@
+{
+  "paillier": [
+    {
+      "n_contributors": 5,
+      "enc_time_ms": 76.35913994163275,
+      "agg_time_ms": 0.08046012371778488,
+      "dec_time_ms": 4.661739990115166,
+      "total_time_ms": 81.1013400554657,
+      "total_time_std": 1.998214555641424,
+      "ciphertext_size_kb": 1.25
+    },
+    {
+      "n_contributors": 10,
+      "enc_time_ms": 150.34194001927972,
+      "agg_time_ms": 0.15790006145834923,
+      "dec_time_ms": 4.770440049469471,
+      "total_time_ms": 155.27028013020754,
+      "total_time_std": 2.6815774171061313,
+      "ciphertext_size_kb": 2.5
+    },
+    {
+      "n_contributors": 25,
+      "enc_time_ms": 380.1240600645542,
+      "agg_time_ms": 0.4030797630548477,
+      "dec_time_ms": 4.676240123808384,
+      "total_time_ms": 385.20337995141745,
+      "total_time_std": 14.52558421860008,
+      "ciphertext_size_kb": 6.25
+    },
+    {
+      "n_contributors": 50,
+      "enc_time_ms": 749.6813599951565,
+      "agg_time_ms": 0.8255199529230595,
+      "dec_time_ms": 4.758820123970509,
+      "total_time_ms": 755.2657000720501,
+      "total_time_std": 4.890806781392743,
+      "ciphertext_size_kb": 12.5
+    },
+    {
+      "n_contributors": 100,
+      "enc_time_ms": 1493.2889999821782,
+      "agg_time_ms": 1.6252398490905762,
+      "dec_time_ms": 4.683160129934549,
+      "total_time_ms": 1499.5973999612033,
+      "total_time_std": 6.203438019490693,
+      "ciphertext_size_kb": 25.0
+    },
+    {
+      "n_contributors": 200,
+      "enc_time_ms": 3028.3154998905957,
+      "agg_time_ms": 3.738499991595745,
+      "dec_time_ms": 5.049999989569187,
+      "total_time_ms": 3037.1039998717606,
+      "total_time_std": 28.313371548232016,
+      "ciphertext_size_kb": 50.0
+    }
+  ],
+  "mpc": [
+    {
+      "n_domains": 2,
+      "simulated_mpc_latency_ms": 332.186814566789,
+      "round_trip_ms": 166.0934072833945
+    },
+    {
+      "n_domains": 3,
+      "simulated_mpc_latency_ms": 347.4952978884236,
+      "round_trip_ms": 115.83176596280785
+    },
+    {
+      "n_domains": 5,
+      "simulated_mpc_latency_ms": 893.9484399335369,
+      "round_trip_ms": 178.78968798670738
+    }
+  ],
+  "consensus": [
+    {
+      "batch_size": 5,
+      "avg_tps": 43.530232269808174,
+      "total_records": 500,
+      "ledger_size_kb": 97.65625
+    },
+    {
+      "batch_size": 10,
+      "avg_tps": 87.2282914721054,
+      "total_records": 500,
+      "ledger_size_kb": 97.65625
+    },
+    {
+      "batch_size": 20,
+      "avg_tps": 210.88207179334182,
+      "total_records": 500,
+      "ledger_size_kb": 97.65625
+    },
+    {
+      "batch_size": 50,
+      "avg_tps": 404.86899476956285,
+      "total_records": 500,
+      "ledger_size_kb": 97.65625
+    },
+    {
+      "batch_size": 100,
+      "avg_tps": 858.5194039843385,
+      "total_records": 500,
+      "ledger_size_kb": 97.65625
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "key_bits_1024": [
+    {
+      "n_contributors": 5,
+      "enc_time_ms": 74.56320011988282,
+      "agg_time_ms": 0.09059999138116837,
+      "dec_time_ms": 4.575700033456087,
+      "total_time_ms": 79.22950014472008,
+      "ciphertext_size_kb": 1.25,
+      "result": 0.8
+    },
+    {
+      "n_contributors": 10,
+      "enc_time_ms": 154.39390018582344,
+      "agg_time_ms": 0.26769982650876045,
+      "dec_time_ms": 4.705000203102827,
+      "total_time_ms": 159.36660021543503,
+      "ciphertext_size_kb": 2.5,
+      "result": 0.8
+    },
+    {
+      "n_contributors": 25,
+      "enc_time_ms": 391.5663002990186,
+      "agg_time_ms": 0.43000001460313797,
+      "dec_time_ms": 4.797600209712982,
+      "total_time_ms": 396.79390052333474,
+      "ciphertext_size_kb": 6.25,
+      "result": 0.8
+    },
+    {
+      "n_contributors": 50,
+      "enc_time_ms": 798.9858998917043,
+      "agg_time_ms": 0.8574002422392368,
+      "dec_time_ms": 4.577099811285734,
+      "total_time_ms": 804.4203999452293,
+      "ciphertext_size_kb": 12.5,
+      "result": 0.8
+    },
+    {
+      "n_contributors": 100,
+      "enc_time_ms": 1644.764699973166,
+      "agg_time_ms": 2.7071996591985226,
+      "dec_time_ms": 7.514100056141615,
+      "total_time_ms": 1654.9859996885061,
+      "ciphertext_size_kb": 25.0,
+      "result": 0.8
+    },
+    {
+      "n_contributors": 200,
+      "enc_time_ms": 3232.5683999806643,
+      "agg_time_ms": 4.604100249707699,
+      "dec_time_ms": 4.545100033283234,
+      "total_time_ms": 3241.717600263655,
+      "ciphertext_size_kb": 50.0,
+      "result": 0.8
+    }
+  ],
+  "key_bits_2048": [
+    {
+      "n_contributors": 5,
+      "enc_time_ms": 587.5933999195695,
+      "agg_time_ms": 0.2623000182211399,
+      "dec_time_ms": 30.079999938607216,
+      "total_time_ms": 617.9356998763978,
+      "ciphertext_size_kb": 2.5,
+      "result": 0.8
+    },
+    {
+      "n_contributors": 10,
+      "enc_time_ms": 1123.091499786824,
+      "agg_time_ms": 0.4825000651180744,
+      "dec_time_ms": 31.512499786913395,
+      "total_time_ms": 1155.0864996388555,
+      "ciphertext_size_kb": 5.0,
+      "result": 0.8
+    },
+    {
+      "n_contributors": 25,
+      "enc_time_ms": 2807.027400005609,
+      "agg_time_ms": 1.3154000043869019,
+      "dec_time_ms": 29.67869956046343,
+      "total_time_ms": 2838.021499570459,
+      "ciphertext_size_kb": 12.5,
+      "result": 0.8
+    },
+    {
+      "n_contributors": 50,
+      "enc_time_ms": 5543.339699972421,
+      "agg_time_ms": 2.578999847173691,
+      "dec_time_ms": 29.662600252777338,
+      "total_time_ms": 5575.581300072372,
+      "ciphertext_size_kb": 25.0,
+      "result": 0.8
+    },
+    {
+      "n_contributors": 100,
+      "enc_time_ms": 11280.88690014556,
+      "agg_time_ms": 5.2732001058757305,
+      "dec_time_ms": 33.040800131857395,
+      "total_time_ms": 11319.200900383294,
+      "ciphertext_size_kb": 50.0,
+      "result": 0.8
+    },
+    {
+      "n_contributors": 200,
+      "enc_time_ms": 22378.29519994557,
+      "agg_time_ms": 13.387700077146292,
+      "dec_time_ms": 29.840299859642982,
+      "total_time_ms": 22421.52319988236,
+      "ciphertext_size_kb": 100.0,
+      "result": 0.8
+    }
+  ]
+}
