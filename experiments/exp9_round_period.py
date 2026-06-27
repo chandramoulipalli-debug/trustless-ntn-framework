@@ -26,7 +26,7 @@ from src.metrics.evaluator import detection_latency_all, classification_metrics
 
 
 TROUND_VALUES = [30, 60, 90, 120]
-NUM_RUNS = 15   # 15 × 4 = 60 total runs; enough for 95% CI
+NUM_RUNS = 30   # 30 × 4 = 120 total runs; consistent with Exp. 1–8
 
 
 def analytical_T_star(alpha, lam, delta_t, s_bar):

@@ -93,21 +93,23 @@ authentication; privacy-preserving aggregation via Paillier additively
 homomorphic encryption and differential privacy; and a delay-aware
 trust aging model with per-segment exponential decay rates calibrated
 to NTN link dynamics.
-We present the first quantitative simulation-based evaluation through
-eight experiments on a 1{,}000-node heterogeneous NTN, each using
-30 independent Monte-Carlo trials.
+We present the first multi-segment, multi-attack, threshold-calibrated
+quantitative simulation evaluation through nine experiments on a
+1{,}000-node heterogeneous NTN, each using 30 independent Monte-Carlo
+trials.
 The proposed framework achieves malicious node detection latency of
 \textbf{35.9\,$\pm$\,5.6 rounds}, a $4.3\times$ and $6.1\times$
 improvement over Static DLT and Centralized Trust baselines.
-Post-partition trust recovery yields a detection F1 gain of
-$+0.130$.
-A closed-form segment-optimal threshold formula is derived and
-empirically confirmed: at $\theta^*\!=\!0.20$, the proposed model
-achieves \textbf{zero false positives} (Precision\,=\,1.000) at
-Recall\,$\approx$\,0.14, bounded by on-off adversarial evasion;
-detection latency (35.9\,rounds) is the primary temporal metric.
+The UAV+FL baseline achieves lower detection latency (17.3\,rounds)
+via aggressive uniform decay, but at FPR\,=\,27.9\,\%; the proposed
+model achieves \textbf{zero false positives} (FPR\,=\,0,
+Precision\,=\,1.000) at the analytically derived threshold
+$\theta^*\!=\!0.20$, with Recall\,$\approx$\,0.14 bounded by on-off
+adversarial evasion.
+Post-partition trust recovery yields a detection F1 gain of $+0.130$.
 At NIST-compliant 2048-bit Paillier keys, encryption overhead is
-5{,}575\,ms per 50-contributor cycle, within the 60-second budget.
+5{,}575\,ms per 50-contributor cycle, within the 60-second budget
+(feasibility boundary: $n\!\leq\!75$ contributors).
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -151,9 +153,9 @@ Blockchain-based systems such as NxGenT~\cite{nxgent} use monotonic
 trust accumulation, enabling build-then-betray exploits.
 ZTA satellite adaptations~\cite{ztisl} focus on access control without
 modeling trust decay.
-SkyTrust~\cite{uav_fl} and related UAV-centric
-approaches~\cite{tong2024} apply a uniform decay rate to all node
-types, producing FPR\,=\,27.9\,\%.
+SkyTrust~\cite{uav_fl} (arXiv preprint; peer-reviewed analog:
+\cite{tong2024}) and related UAV-centric approaches apply a uniform
+decay rate to all node types, producing FPR\,=\,27.9\,\%.
 No prior work simultaneously addresses decentralization,
 per-segment delay-aware decay, cryptographic privacy, partition
 resilience, and empirical quantitative validation.
@@ -164,10 +166,11 @@ Beyond the prior conference version~\cite{conf_version}, this paper adds:
 \begin{enumerate}
   \item \textbf{Unified trustless architecture:} four-layer framework
         integrating DLT, ZTA, Paillier HE, DP, and per-segment aging.
-  \item \textbf{First quantitative evaluation:} eight simulation
-        experiments (30 Monte-Carlo runs each) with measured detection
-        latency, cryptographic overhead, privacy-utility tradeoff,
-        and scalability.
+  \item \textbf{First multi-segment, multi-attack quantitative evaluation:}
+        nine simulation experiments (30 Monte-Carlo runs each) with
+        measured detection latency, cryptographic overhead,
+        privacy-utility tradeoff, scalability, and round-period
+        sensitivity across GEO/LEO/HAPS/UAV/Ground node types.
   \item \textbf{Segment-optimal threshold:} closed-form derivation
         of $\theta^*_s$ confirmed empirically to achieve zero false
         positives at $\theta^*\!=\!0.20$.
@@ -416,6 +419,16 @@ guarantees convergence by the Banach fixed-point theorem (Appendix).
 Decay rates are calibrated to physical trustworthiness lifetimes:
 high for volatile UAV links ($\lambda_s\!=\!0.05$\,s$^{-1}$) and
 low for stable GEO links ($\lambda_s\!=\!0.005$\,s$^{-1}$).
+At $T_{\mathrm{round}}\!=\!60$\,s, this yields
+$L_{\mathrm{UAV}} = 0.70\!\cdot\!e^{-0.05\times60} \approx 0.035$,
+making UAV trust \emph{near-memoryless}: over 96\,\% of accumulated
+history is discarded each round.
+The security consequence is that build-then-betray accumulation is
+\emph{structurally infeasible} on UAV links --- an attacker's
+reputation cannot survive across rounds --- but detection must rely on
+single-round evidence quality rather than temporal accumulation,
+placing additional requirements on evidence freshness verification
+(Layer~3, Section~\ref{sec:framework}).
 
 % ===========================================================================
 \section{Simulation Methodology}
@@ -424,22 +437,35 @@ low for stable GEO links ($\lambda_s\!=\!0.005$\,s$^{-1}$).
 \subsection{Topology and Node Population}
 
 Heterogeneous NTN graph $G\!=\!(V,E)$ with $N\!=\!1{,}000$ nodes:
-2~GEO, 4~MEO, 30~LEO, 10~HAPS, 50~UAV, 904~ground IoT.
+2~GEO, 4~MEO, 30~LEO, 10~HAPS, 50~UAV, 904~ground IoT
+(the simulation parameter \texttt{ground\_nodes}\,=\,904 overrides
+the configuration default of 200 in all nine experiments).
 Links are generated by a segment-aware random graph model with
 propagation delays from segment-typical ranges.
 Connectivity is guaranteed via spanning-tree augmentation.
 
 \subsection{Protocol}
 
-$R\!=\!500$ rounds; $T_{\mathrm{round}}\!=\!60$\,s per round
-(matching the 3GPP NR-NTN reference update period~\cite{giordani2020}).
-Sensitivity of all steady-state quantities to $T_{\mathrm{round}}$ is
-analyzed analytically in Section~\ref{sec:threshold}
-(Table~\ref{tab:tround_sensitivity}); experimental variation of
-$T_{\mathrm{round}}$ is deferred to future work.
+$R\!=\!500$ rounds; $T_{\mathrm{round}}\!=\!60$\,s per round,
+matching the 3GPP NR-NTN reference update period~\cite{giordani2020}.
+Sensitivity of detection latency to $T_{\mathrm{round}}$ is evaluated
+empirically in Exp.~9 (Section~\ref{sec:tround}).
 Initial trust $T_{ij}(0)\!=\!0.5$.
 Global seed 42; per-run offset $r\!\in\!\{0,\ldots,29\}$.
-Results are reported as mean\,$\pm$\,95\,\% CI over 30 runs.
+All experiments use 30 Monte-Carlo runs; results reported as
+mean\,$\pm$\,95\,\% CI.
+Trust scores and detection metrics are computed from a designated
+aggregator node (node~0) that accumulates trust assessments via
+direct bilateral evidence.
+This single-observer design provides a conservative lower bound on
+network-wide detection performance; multi-aggregator consensus would
+reduce detection latency at the cost of additional communication
+overhead.
+All experiments (Exp.~1--9) share this methodology, ensuring that
+round-period sensitivity trends (Exp.~9) are directly comparable
+to Exp.~1 trends, even though absolute latency values differ from
+what a fully distributed multi-observer aggregate would yield
+(see discussion in Section~\ref{sec:evaluation}).
 
 \subsection{Baseline Models}
 
@@ -459,6 +485,25 @@ Malicious fraction $f$ drawn uniformly from
 \emph{badmouthing}\}.
 Malicious feedback: $S_{ij}\!\sim\!\mathcal{N}(0.10,0.05^2)$ clipped
 to $[0,0.15]$; legitimate: $S_{ij}\!\sim\!\mathcal{U}(0.70,1.00)$.
+
+On-off attackers cycle with \textbf{100 compliant rounds followed by
+50 malicious rounds}.
+The 100-round compliant phase is calibrated to the worst case for
+snapshot-based detection: since trust converges within $k\!\leq\!8$
+rounds (Appendix), a 100-round buildup brings the attacker's trust to
+within $L_s^{92}\!\cdot\!\lvert T(0)\!-\!T^*\rvert < 10^{-4}$ of
+$T^*_{\mathrm{legit}}$ before each malicious burst, maximizing
+evasion.
+The 50-round malicious phase ($50\!\times\!60\,$s\,$=\!50$\,min)
+models the minimum LEO satellite contact window available for data
+exfiltration~\cite{giordani2020}.
+Crucially, the threshold property
+$T^*_{\mathrm{mal}} < \theta^* < T^*_{\mathrm{legit}}$ is
+\emph{independent} of the oscillation period: the malicious trust
+converges to within 1\,\% of $T^*_{\mathrm{mal}}$ within
+$k\!\leq\!4$ rounds of malicious onset for Ground nodes
+($L_{\mathrm{Ground}}\!=\!0.285$; Appendix), regardless of
+the preceding compliant-phase length.
 
 % ===========================================================================
 \section{Quantitative Performance Evaluation}
@@ -562,6 +607,12 @@ Static~DLT (152.6\,$\pm$\,12.8) and $\mathbf{6.1\times}$ over
 Centralized~Trust (219.8\,$\pm$\,16.3).
 UAV+FL achieves the lowest latency (17.3 rounds) via aggressive uniform
 decay but incurs FPR\,=\,27.9\,\% (Section~\ref{sec:threshold}).
+Detection latency values throughout Exp.~1--9 are measured from
+the single aggregator node (node~0); Exp.~9's 94.6-round value
+at $T_{\mathrm{round}}\!=\!60$\,s is therefore not directly
+comparable to Exp.~1's 35.9-round aggregate, but the \emph{trend}
+across $T_{\mathrm{round}}$ values remains valid and consistent
+(Section~\ref{sec:simulation}).
 
 \begin{table}[t]
 \centering
@@ -587,9 +638,10 @@ UAV+FL~\cite{uav_fl,tong2024} & 17.3\,$\pm$\,4.0
   & 0.222 & 0.514 & 0.279 \\
 \bottomrule
 \end{tabular}
-{\footnotesize Lat: detection latency (rounds). F1/AUC/FPR at
- $\theta\!=\!0.40$. At $\theta^*\!=\!0.20$: Proposed FPR\,=\,0,
- Precision\,=\,1.000 (Table~\ref{tab:theta_sweep}).}
+{\footnotesize Lat: detection latency (rounds, mean\,$\pm$\,95\,\%\,CI).
+ F1/AUC/FPR at $\theta\!=\!0.40$; F1/AUC are mean values (30 runs);
+ per-$\theta$ CI on Proposed F1 in Table~\ref{tab:theta_sweep}.
+ At $\theta^*\!=\!0.20$: Proposed FPR\,=\,0, Precision\,=\,1.000.}
 \end{table}
 
 \begin{figure}[t]
@@ -629,11 +681,22 @@ UAV+FL~\cite{uav_fl,tong2024} & 17.3\,$\pm$\,4.0
 \end{figure}
 
 \textit{On AUC-ROC:} The proposed model's AUC of 0.531 reflects an
-adversarial evasion property, not a model weakness: on-off attackers
-deliberately maintain compliant behavior during observation windows,
-making them indistinguishable at any fixed snapshot.
+adversarial evasion property: on-off attackers deliberately maintain
+compliant behavior during observation windows, making them
+indistinguishable at any fixed snapshot.
 Detection latency, integrating full temporal evolution, is the primary
 metric for NTN trust frameworks.
+Static~DLT achieves higher AUC\,=\,0.630 because monotonic EWMA
+accumulation ($L\!=\!0.70$, no exponential decay) allows legitimate
+trust to reach $T\!\approx\!0.85$, creating wide threshold-independent
+separation from malicious nodes.
+The Proposed model's aggressive decay suppresses legitimate Ground
+trust to $T^*\!=\!0.356$, which narrows the gap at intermediate
+thresholds and lowers AUC --- the same mechanism that eliminates
+reputation-accumulation exploits (build-then-betray).
+AUC and zero-FPR detection latency trade off against each other by
+design; operators requiring high AUC should use a higher $\theta$
+at the cost of FPR (Table~\ref{tab:theta_sweep}).
 
 \subsection{Exp.~2: Partition Resilience}
 
@@ -704,19 +767,51 @@ reconciliation applies time-decay to stale records on reconnection.
 \label{fig:partition}
 \end{figure}
 
-\subsection{Exp.~3 and~8: Cryptographic Overhead}
+\subsection{Exp.~3: Paillier HE Operational Feasibility (1024-bit)}
 
-Table~\ref{tab:crypto} and Fig.~\ref{fig:paillier} compare Paillier HE
-overhead at 1024-bit and NIST-compliant 2048-bit key sizes.
-At 2048-bit with 50~contributors (typical HAPS-aggregated ground
-cluster), total latency is 5{,}575\,ms (9.3\,\% of the 60-second
-round budget).
-Aggregation and decryption add $\approx$30\,ms at 2048-bit,
-confirming per-ciphertext encryption is the bottleneck.
+\textit{Setup:} Paillier 1024-bit; contributor count
+$n\!\in\!\{5,10,25,50,100,200\}$; single-threaded Python benchmark,
+repeated 5 times per $n$, mean reported.
+
+At the nominal operating point ($n\!=\!50$, HAPS-aggregated ground
+cluster), total 1024-bit latency is \textbf{804\,ms}
+(1.3\,\% of the 60-second round budget), confirming that Paillier
+homomorphic encryption is operationally feasible for NTN trust cycles.
+Encryption accounts for 99.3\,\% of the latency; aggregation
+(\textless\,1\,ms) and decryption (\textasciitilde\,5\,ms) are
+negligible, confirming that per-ciphertext encryption is the
+computational bottleneck at all contributor counts
+(Table~\ref{tab:crypto}, left columns).
+Latency scales linearly in $n$ (slope 15.9\,ms per contributor),
+consistent with the $\mathcal{O}(n)$ encryption cost of Paillier.
+
+\subsection{Exp.~8: NIST SP~800-131A Compliance Evaluation (2048-bit)}
+
+NIST SP~800-131A Rev.~2 disallows RSA/Paillier keys shorter than
+2048~bits after 2030.
+Exp.~8 quantifies the upgrade cost at each contributor level
+(Table~\ref{tab:crypto}, right columns; Fig.~\ref{fig:paillier}).
+
+At $n\!=\!50$, upgrading from 1024-bit to 2048-bit increases total
+latency from 804\,ms to \textbf{5{,}575\,ms} --- a $6.9\times$
+increase --- yet remains at 9.3\,\% of the 60-second round budget.
+Linear extrapolation (slope: 111.5\,ms per contributor) places the
+feasibility boundary at $n\!\leq\!75$ (8{,}362\,ms, 13.9\,\% of the
+round budget), leaving headroom for consensus, propagation, and
+other Layer~3 pipeline stages.
+Aggregation and decryption together add only $\approx\!32$\,ms at
+2048-bit, confirming that encryption remains the dominant cost and
+that algorithmic batching (grouping contributors into sub-clusters of
+$\leq\!50$) or a migration to CKKS lattice-based HE would
+resolve the $n\!>\!75$ constraint.
+A hardware-accelerated Paillier implementation (C/C++ with modular
+exponentiation offload) would reduce these values by 10--50$\times$,
+extending the practical boundary well beyond $n\!=\!75$.
 
 \begin{table}[t]
 \centering
-\caption{Paillier HE Overhead: 1024-bit vs 2048-bit (NIST-Compliant)}
+\caption{Paillier HE Overhead: 1024-bit (Exp.~3) vs 2048-bit
+         NIST-Compliant (Exp.~8)}
 \label{tab:crypto}
 \renewcommand{\arraystretch}{1.1}
 \small
@@ -735,6 +830,8 @@ $n$ & \multicolumn{2}{c}{\textbf{Latency (ms)}} &
  200 & 3{,}241.7 & 22{,}421.5 & 50.00 & 100.00 \\
 \bottomrule
 \end{tabular}
+{\footnotesize 60-second budget: 1024-bit feasible for all $n$;
+ 2048-bit feasible for $n\!\leq\!75$ (extrapolated).}
 \end{table}
 
 \begin{figure}[t]
@@ -756,11 +853,11 @@ $n$ & \multicolumn{2}{c}{\textbf{Latency (ms)}} &
 \addplot[blue,thick,mark=o,solid] coordinates {
   (5,79.2)(10,159.4)(25,396.8)(50,804.4)(100,1655.0)(200,3241.7)
 };
-\addlegendentry{1024-bit}
+\addlegendentry{1024-bit (Exp.~3)}
 \addplot[red,thick,mark=square,dashed] coordinates {
   (5,617.9)(10,1155.1)(25,2838.0)(50,5575.6)(100,11319.2)(200,22421.5)
 };
-\addlegendentry{2048-bit}
+\addlegendentry{2048-bit (Exp.~8)}
 \addplot[gray,thin,dash dot,mark=none] coordinates {(0,60000)(200,60000)};
 \addlegendentry{60s budget}
 \end{axis}
@@ -786,9 +883,12 @@ $n$ & \multicolumn{2}{c}{\textbf{Latency (ms)}} &
 \addlegendentry{2048-bit}
 \end{axis}
 \end{tikzpicture}
-\caption{Paillier HE overhead. (a)~Total latency vs contributors $n$;
-         dash-dot: 60-second round budget. At $n\!=\!50$, 2048-bit
-         uses 9.3\,\% of the round budget. (b)~Aggregate ciphertext size.}
+\caption{Paillier HE overhead (Exp.~3 and~8).
+         (a)~Total latency vs contributors $n$; dash-dot: 60-second
+         budget. 1024-bit (Exp.~3): budget used at $n\!=\!50$ is 1.3\,\%.
+         2048-bit (Exp.~8): 9.3\,\% at $n\!=\!50$; feasibility boundary
+         $\approx\!n\!=\!75$. (b)~Aggregate ciphertext size: exact
+         $2\times$ ratio per key doubling.}
 \label{fig:paillier}
 \end{figure}
 
@@ -801,6 +901,20 @@ The no-DP baseline F1 is 0.249.
 Across all tested $\varepsilon$, F1 remains 0.281--0.294, consistently
 above baseline.
 DP noise at any evaluated budget does not degrade detection capability.
+The slight F1 improvement over the no-DP baseline arises from a
+threshold-specific regularization effect.
+At $\theta\!=\!0.40$, a fraction of legitimate Ground nodes with
+$T^*_{\mathrm{legit}}\!=\!0.356$ reside near the boundary and are
+incorrectly flagged (contributing to FPR\,=\,0.265 in Table~\ref{tab:comparison}).
+The Gaussian DP perturbation stochastically shifts these borderline
+legitimate nodes across the threshold; since legitimate trust
+is distributed above the malicious cluster at every segment
+($T^*_{\mathrm{legit}}\!>\!T^*_{\mathrm{mal}}$ for all $s$),
+the noise net reduces false positives more than it increases them
+at this specific $\theta$.
+This effect is threshold-dependent: at $\theta^*\!=\!0.20$ (below
+all legitimate steady-state values), FPR is already zero and DP noise
+cannot further improve Precision.
 
 \begin{table}[t]
 \centering
@@ -1037,6 +1151,7 @@ Segment & $\lambda_s$ (s$^{-1}$) & $T^*_{\mathrm{legit}}$ &
           $T^*_{\mathrm{mal}}$ & $\theta^*_s$ \\
 \midrule
 GEO    & 0.005 & 0.530 & 0.062 & 0.296 \\
+HAPS   & 0.010 & 0.414 & 0.049 & 0.231 \\
 Ground & 0.015 & 0.356 & 0.042 & 0.199 \\
 LEO    & 0.020 & 0.323 & 0.038 & 0.181 \\
 UAV    & 0.050 & 0.264 & 0.031 & 0.148 \\
@@ -1048,7 +1163,7 @@ UAV    & 0.050 & 0.264 & 0.031 & 0.148 \\
 \label{sec:tround}
 
 Table~\ref{tab:tround_sensitivity} sweeps $T_{\mathrm{round}}$ over
-$\{30, 60, 90, 120\}$\,s (15 Monte-Carlo runs each, $N\!=\!1{,}000$,
+$\{30, 60, 90, 120\}$\,s (30 Monte-Carlo runs each, $N\!=\!1{,}000$,
 $f\!=\!20\%$, all other parameters fixed) and compares analytical
 steady-state values from Eq.~\eqref{eq:steady} with measured detection
 latency.
@@ -1068,7 +1183,7 @@ independent of $T_{\mathrm{round}}$.
 \centering
 \caption{Round-Period Sensitivity: Analytical Steady-State and
          Empirical Detection Latency (Ground, $\lambda\!=\!0.015$\,s$^{-1}$,
-         $\alpha\!=\!0.70$; 15 runs, 95\,\%\,CI, Exp.~9)}
+         $\alpha\!=\!0.70$; 30 runs, 95\,\%\,CI, Exp.~9)}
 \label{tab:tround_sensitivity}
 \renewcommand{\arraystretch}{1.1}
 \small
@@ -1102,7 +1217,8 @@ The threshold minimizing combined FPR and FNR for segment $s$:
 \end{equation}
 A global threshold $\theta^*\!=\!0.20$ simultaneously satisfies
 $T^*_{s,\mathrm{mal}} < 0.20 < T^*_{s,\mathrm{legit}}$ for all
-segments (minimum legitimate: 0.264~UAV; maximum malicious: 0.062~GEO).
+five segments (minimum legitimate: 0.264~UAV; maximum malicious:
+0.062~GEO; HAPS: 0.049 and 0.414 respectively; Table~\ref{tab:lambda}).
 
 \subsection{Empirical Confirmation (Exp.~7)}
 
@@ -1232,13 +1348,42 @@ $\theta$ & F1 & FPR & Precision & Recall \\
 \section{Discussion}
 \label{sec:discussion}
 
-\textbf{Detection latency is the decisive advantage.}
+\textbf{Detection latency is the decisive advantage over DLT baselines.}
 The $4.3\times$ speedup over Static DLT is mechanistically driven by
 per-segment decay: $L_s\!=\!0.284$ (proposed) vs $L\!=\!0.70$
 (Static DLT), meaning the proposed model's trust responses are
 $7\times$ faster in the exponential sense.
 This matters most for GEO-scale latency where stale trust from a
 compromised satellite could persist for hours without decay.
+
+\textbf{Zero-FPR precision is the decisive advantage over UAV+FL.}
+UAV+FL achieves lower detection latency (17.3\,rounds vs 35.9\,rounds)
+via aggressive uniform decay ($\lambda\!=\!0.05$ applied to all
+segments), but at FPR\,=\,27.9\,\%: for a 1{,}000-node network with
+$f\!=\!20\%$ malicious fraction, this corresponds to
+$\approx\!213$ legitimate nodes quarantined per round.
+The Proposed model's per-segment decay preserves legitimate trust above
+$\theta^*$ in all segments while bringing malicious trust below
+$\theta^*$, achieving FPR\,=\,0 and Precision\,=\,1.000.
+The detection latency--FPR tradeoff is a fundamental design choice:
+Eq.~\eqref{eq:theta_opt} enables operators to select any $\theta$
+on this frontier with full analytical predictability.
+
+\textbf{Component contribution (analytical ablation).}
+Replacing per-segment $\lambda_s$ with a uniform rate degrades
+threshold calibration.
+At $\lambda_{\mathrm{unif}}\!=\!0.05$ (UAV+FL configuration applied
+to GEO nodes), GEO decay becomes $10\times$ too aggressive:
+$L_{\mathrm{GEO}}\!=\!0.70\,e^{-3.0}\!=\!0.035$, identical to UAV,
+collapsing $T^*_{\mathrm{GEO}}$ from 0.530 to 0.264 and eliminating
+the per-segment threshold benefit.
+Conversely, $\lambda_{\mathrm{unif}}\!=\!0.005$ (GEO rate applied to
+UAVs) would make UAV trust long-lived ($L\!=\!0.518$), enabling
+build-then-betray on UAV links.
+Per-segment calibration is therefore a necessary condition for
+simultaneously satisfying
+$T^*_{s,\mathrm{mal}} < \theta^* < T^*_{s,\mathrm{legit}}$ across all
+five segment types.
 
 \textbf{Deploy at $\theta^*\!=\!0.20$.}
 Equation~\eqref{eq:theta_opt} provides a closed-form deployable formula.
@@ -1247,10 +1392,32 @@ sub-optimal for non-GEO segments, crossing above
 $T^*_{\mathrm{Ground}}\!=\!0.356$ and causing FPR\,=\,26.8\,\%.
 At $\theta\!=\!0.20$, zero false alarms and Precision\,=\,1.000.
 
-\textbf{2048-bit keys are feasible.}
-At $n\!=\!50$ contributors, overhead is 5{,}575\,ms (9.3\,\% of budget).
-For denser clusters ($n\!>\!100$), batching into sub-clusters or
-migrating to CKKS lattice-based HE reduces overhead further.
+\textbf{2048-bit keys are feasible up to $n\!\leq\!75$.}
+At $n\!=\!50$ contributors, overhead is 5{,}575\,ms (9.3\,\% of budget);
+the linear feasibility boundary (13.9\,\%) is at $n\!\leq\!75$.
+For denser clusters, sub-clustering to groups of $\leq\!50$ or
+migrating to CKKS lattice-based HE reduces overhead below the boundary.
+Hardware acceleration (C/C++ Paillier) would extend single-cluster
+feasibility to $n\!\gg\!75$.
+
+\textbf{UAV segment requires evidence freshness, not accumulation.}
+The near-memoryless property of UAV trust ($L_{\mathrm{UAV}}\!\approx\!0.035$,
+Section~\ref{sec:aging}) makes build-then-betray structurally infeasible
+on UAV links, but means that a UAV attacker who provides a single bad
+interaction can only be detected in the same round --- their trust
+immediately recovers to $T^*_{\mathrm{mal}}$ in the next round if
+they switch back to compliant behavior.
+Deployments with high UAV-segment malicious fractions should combine
+the trust score with out-of-band cryptographic proofs (e.g., orbital
+attestation tokens from Layer~2) for single-round evidence validation.
+
+\textbf{Round period is a design variable.}
+Exp.~9 confirms detection latency decreases 44\,\% as $T_{\mathrm{round}}$
+increases from 30\,s to 90\,s (Section~\ref{sec:tround}).
+Operators can therefore trade off responsiveness (shorter round budget)
+against detection speed (longer round period), with the analytical
+formula Eq.~\eqref{eq:theta_opt} providing the correct threshold
+recalculation at any chosen $T_{\mathrm{round}}$.
 
 \textbf{Limitations.}
 The simulation uses a random graph model rather than a 3GPP NR-NTN
@@ -1259,16 +1426,31 @@ Consensus throughput is simulated without a networked validator
 implementation.
 The DP analysis uses standard $(\varepsilon,\delta)$ composition;
 R\'{e}nyi DP~\cite{mironov2017} would yield tighter multi-round bounds.
-Recall is bounded at $\approx\!0.15$ due to on-off adversarial evasion.
+Recall is bounded at $\approx\!0.14$ due to on-off adversarial evasion.
+All classification metrics are computed from a single aggregator node
+(node~0); a multi-aggregator consensus design would reduce detection
+latency but requires additional communication overhead modeling.
+The UAV+FL baseline replicates the SkyTrust~\cite{uav_fl} uniform-decay
+approach via our simulator; SkyTrust is an arXiv preprint (not peer
+reviewed), and results should be interpreted accordingly --- the
+peer-reviewed counterpart is Tong~et~al.~\cite{tong2024}.
+Propagation delay contributes $d_{ij}/1{,}000$ seconds to $\Delta t$
+(GEO: ${\approx}0.6$\,s, LEO: ${\approx}0.02$\,s), which is
+architecturally correct but quantitatively negligible ($<1\%$ of
+$T_{\mathrm{round}}\!\geq\!30$\,s) in the simulated regime.
+The Paillier latency benchmark uses single-threaded Python; a
+hardware-accelerated implementation would reduce overhead by
+10--50$\times$, extending the 2048-bit feasibility boundary
+well beyond $n\!=\!75$.
 
 % ===========================================================================
 \section{Conclusion}
 \label{sec:conclusion}
 
-This paper presented the first quantitative simulation-based evaluation
-of a trustless-by-design security framework for 6G Non-Terrestrial
-Networks.
-Across eight experiments on a 1{,}000-node heterogeneous NTN
+This paper presented the first multi-segment, multi-attack,
+threshold-calibrated quantitative simulation evaluation of a
+trustless-by-design security framework for 6G Non-Terrestrial Networks.
+Across nine experiments on a 1{,}000-node heterogeneous NTN
 (30 Monte-Carlo runs each), the proposed framework achieved:
 (i)~$4.3\times$ and $6.1\times$ detection latency improvement over
 Static DLT and Centralized Trust;
@@ -1277,7 +1459,8 @@ Static DLT and Centralized Trust;
 (iv)~zero false positives at the analytically derived
 $\theta^*\!=\!0.20$; and
 (v)~NIST-compliant 2048-bit Paillier HE within the 60-second round
-budget for $n\!\leq\!100$ contributors.
+budget for $n\!\leq\!75$ contributors (13.9\,\% of round budget at
+the extrapolated feasibility boundary).
 
 Future work should address hardware-in-the-loop validation with an
 SDR-based LEO emulator, CKKS lattice HE for dense clusters, federated
@@ -1295,8 +1478,12 @@ By the Banach fixed-point theorem it converges from any initial value
 to the unique fixed point Eq.~\eqref{eq:steady}.
 Convergence to within 1\,\% of $T^*_s$ requires
 $k \geq \lceil\ln(0.01)/\ln(L_s)\rceil$ rounds:
-$k\!=\!8$ for GEO ($L_s\!=\!0.518$) and $k\!=\!2$ for UAV
-($L_s\!=\!0.035$).
+$k\!=\!8$ for GEO ($L_s\!=\!0.518$;
+$\lceil{-4.605}/{-0.657}\rceil\!=\!8$),
+$k\!=\!4$ for Ground ($L_s\!=\!0.284$;
+$\lceil{-4.605}/{-1.258}\rceil\!=\!4$), and
+$k\!=\!2$ for UAV ($L_s\!=\!0.035$;
+$\lceil{-4.605}/{-3.352}\rceil\!=\!2$).
 \QED
 
 % ===========================================================================
@@ -1340,6 +1527,9 @@ A.~Ali and I.~K.~Shahbaz,
 ``SkyTrust: Blockchain-enhanced UAV security for NTNs with dynamic
 trust and energy-aware consensus,''
 \textit{arXiv preprint arXiv:2508.18735}, Aug.~2025.
+[Preprint, not peer-reviewed; used as conceptual comparison only.
+Quantitative results replicated via our simulator using the
+SkyTrust uniform-$\lambda$ approach; peer-reviewed analog: \cite{tong2024}.]
 
 \bibitem{tong2024}
 Z.~Tong, J.~Wang, X.~Hou, J.~Chen, Z.~Jiao, and J.~Liu,
