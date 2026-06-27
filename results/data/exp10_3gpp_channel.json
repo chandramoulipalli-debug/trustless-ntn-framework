@@ -1,0 +1,20 @@
+{
+  "random_graph": {
+    "detection_latency_mean": 126.98,
+    "detection_latency_ci95": 10.08,
+    "f1_mean": 0.2332,
+    "recall_mean": 0.1324,
+    "fpr_mean": 0.0,
+    "handovers_mean": 0.0,
+    "n_runs": 5
+  },
+  "3gpp_ntn": {
+    "detection_latency_mean": 86.1,
+    "detection_latency_ci95": 25.86,
+    "f1_mean": 0.066,
+    "recall_mean": 0.0343,
+    "fpr_mean": 0.0,
+    "handovers_mean": 307214.6,
+    "n_runs": 5
+  }
+}
