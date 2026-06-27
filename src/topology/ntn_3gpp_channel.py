@@ -188,14 +188,6 @@ class NTNChannel3GPP:
 
         N = G.number_of_nodes()
 
-        # Assign geographic positions to all nodes
-        self._positions: list[Optional[NodePosition]] = [None] * N
-        self._init_positions()
-
-        # Create satellite orbital states
-        self._sat_states: dict[int, SatelliteState] = {}
-        self._init_satellites()
-
         # Cache for current-round delay matrix (lazy, updated per round)
         self._cached_round = -1
         # Satellite ECEF for the cached round (fast: only ~100 satellites)
@@ -203,10 +195,16 @@ class NTNChannel3GPP:
         # Per-round per-edge delay cache (populated ON-DEMAND, not upfront)
         self._delay_cache:  dict[tuple, float] = {}
         self._active_cache: dict[tuple, bool]  = {}
-
-        # Precompute ground/HAPS/UAV ECEF once (static positions)
-        # Must be done AFTER _init_positions()
+        # Precompute ground/HAPS/UAV ECEF once (static positions) — filled by _init_positions
         self._ground_ecef_static: dict[int, np.ndarray] = {}
+
+        # Assign geographic positions to all nodes (also fills _ground_ecef_static)
+        self._positions: list[Optional[NodePosition]] = [None] * N
+        self._init_positions()
+
+        # Create satellite orbital states
+        self._sat_states: dict[int, SatelliteState] = {}
+        self._init_satellites()
 
     def _init_positions(self):
         """Assign realistic geographic positions to all nodes."""
