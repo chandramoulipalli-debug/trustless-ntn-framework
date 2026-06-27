@@ -31,6 +31,7 @@ trust:
   round_duration_sec: 60.0  # each round = 60s (one NTN interaction cycle)
   lambda_uav: 0.05      # fast decay: UAV links volatile (e^{-0.05*60}=0.050 per round)
   lambda_leo: 0.02      # medium decay: LEO handovers  (e^{-0.02*60}=0.301 per round)
+  lambda_meo: 0.008     # slow-medium: MEO orbit stability (e^{-0.008*60}=0.619 per round)
   lambda_geo: 0.005     # slow decay: GEO stable links (e^{-0.005*60}=0.741 per round)
   lambda_haps: 0.01
   lambda_ground: 0.015

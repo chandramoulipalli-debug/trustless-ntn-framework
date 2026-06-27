@@ -170,7 +170,7 @@ Beyond the prior conference version~\cite{conf_version}, this paper adds:
         nine simulation experiments (30 Monte-Carlo runs each) with
         measured detection latency, cryptographic overhead,
         privacy-utility tradeoff, scalability, and round-period
-        sensitivity across GEO/LEO/HAPS/UAV/Ground node types.
+        sensitivity across GEO/MEO/LEO/HAPS/UAV/Ground node types.
   \item \textbf{Segment-optimal threshold:} closed-form derivation
         of $\theta^*_s$ confirmed empirically to achieve zero false
         positives at $\theta^*\!=\!0.20$.
@@ -1182,12 +1182,20 @@ Segment & $\lambda_s$ (s$^{-1}$) & $T^*_{\mathrm{legit}}$ &
           $T^*_{\mathrm{mal}}$ & $\theta^*_s$ \\
 \midrule
 GEO    & 0.005 & 0.530 & 0.062 & 0.296 \\
+MEO    & 0.008 & 0.450 & 0.053 & 0.252 \\
 HAPS   & 0.010 & 0.414 & 0.049 & 0.231 \\
 Ground & 0.015 & 0.356 & 0.042 & 0.199 \\
 LEO    & 0.020 & 0.323 & 0.038 & 0.181 \\
 UAV    & 0.050 & 0.264 & 0.031 & 0.148 \\
 \bottomrule
 \end{tabular}
+{\footnotesize $\lambda_s$ values calibrated to physical trustworthiness
+ lifetimes: MEO ($\lambda\!=\!0.008$) between GEO and HAPS reflecting
+ intermediate orbital stability (8{,}000--20{,}200\,km altitude,
+ 2--12\,h period). All $T^*$ from Eq.~\eqref{eq:steady} with
+ $\bar{d}_s\!\approx\!0$ approximation.
+ Global $\theta^*\!=\!0.20$ satisfies
+ $T^*_{\mathrm{mal}} < 0.20 < T^*_{\mathrm{legit}}$ for all six segments.}
 \end{table}
 
 \subsection{Round-Period Sensitivity (Exp.~9)}
@@ -1254,8 +1262,8 @@ This is distinct from the F1-maximizing threshold, which lies at
 a higher value where some legitimate nodes are sacrificed for
 increased Recall (see Exp.~7 below).
 A global threshold $\theta^*\!=\!0.20$ simultaneously satisfies the
-zero-FPR condition for all five segments (minimum legitimate:
-0.264~UAV; maximum malicious: 0.062~GEO; HAPS: 0.049 and 0.414
+zero-FPR condition for all six segments (minimum legitimate:
+0.264~UAV; maximum malicious: 0.062~GEO; MEO: 0.053 and 0.450
 respectively; Table~\ref{tab:lambda}).
 
 \subsection{Empirical Confirmation (Exp.~7)}
@@ -1410,7 +1418,7 @@ $f\!=\!20\%$ malicious fraction (800 legitimate nodes),
 this corresponds to $800\!\times\!0.279\!\approx\!223$ legitimate
 nodes quarantined per round.
 The Proposed model's per-segment decay preserves legitimate trust above
-$\theta^*$ in all segments while bringing malicious trust below
+$\theta^*$ in all six segments while bringing malicious trust below
 $\theta^*$, achieving FPR\,=\,0 and Precision\,=\,1.000.
 The detection latency--FPR tradeoff is a fundamental design choice:
 Eq.~\eqref{eq:theta_opt} enables operators to select any $\theta$
@@ -1430,7 +1438,7 @@ build-then-betray on UAV links.
 Per-segment calibration is therefore a necessary condition for
 simultaneously satisfying
 $T^*_{s,\mathrm{mal}} < \theta^* < T^*_{s,\mathrm{legit}}$ across all
-five segment types.
+six segment types (GEO, MEO, HAPS, Ground, LEO, UAV).
 
 \textbf{Deploy at $\theta^*\!=\!0.20$ for zero-FPR operation.}
 Equation~\eqref{eq:theta_opt} provides a closed-form deployable formula
@@ -1545,6 +1553,8 @@ Convergence to within 1\,\% of $T^*_s$ requires
 $k \geq \lceil\ln(0.01)/\ln(L_s)\rceil$ rounds:
 $k\!=\!8$ for GEO ($L_s\!=\!0.518$;
 $\lceil{-4.605}/{-0.657}\rceil\!=\!8$),
+$k\!=\!6$ for MEO ($L_s\!=\!0.433$;
+$\lceil{-4.605}/{-0.837}\rceil\!=\!6$),
 $k\!=\!4$ for Ground ($L_s\!=\!0.285$;
 $\lceil{-4.605}/{-1.255}\rceil\!=\!4$), and
 $k\!=\!2$ for UAV ($L_s\!=\!0.035$;

@@ -105,7 +105,7 @@ def get_lambda(node_type: str, cfg: dict) -> float:
     mapping = {
         UAV:    cfg["trust"]["lambda_uav"],
         LEO:    cfg["trust"]["lambda_leo"],
-        MEO:    cfg["trust"]["lambda_leo"],
+        MEO:    cfg["trust"]["lambda_meo"],
         GEO:    cfg["trust"]["lambda_geo"],
         HAPS:   cfg["trust"]["lambda_haps"],
         GROUND: cfg["trust"]["lambda_ground"],
