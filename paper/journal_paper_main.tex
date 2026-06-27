@@ -202,8 +202,9 @@ fail during partitions.
 \subsection{UAV-Centric and Federated Trust}
 
 SkyTrust~\cite{uav_fl} integrates Hyperledger Fabric blockchain with
-federated learning for UAV-based NTN trust, achieving 94\,\% trust
-prediction accuracy and 96\,\% rogue-node detection rate.
+federated learning for UAV-based NTN trust, reporting 94\,\% trust
+prediction accuracy and 96\,\% rogue-node detection rate
+(self-reported; arXiv preprint, not peer-reviewed).
 Trust scores are updated via a weighted combination of historical trust,
 recent behavior, and energy contribution, without per-segment
 differentiation.
@@ -524,7 +525,7 @@ over all malicious nodes.
 
 Fig.~\ref{fig:trust_evo} shows trust score trajectories computed from
 the analytical model (Eq.~\eqref{eq:aging}).
-With $L_s\!=\!0.284$ for the Ground segment, both legitimate and
+With $L_s\!=\!0.285$ for the Ground segment, both legitimate and
 malicious nodes converge to steady state within 5 rounds.
 The build-then-betray attacker maintains $T\!\approx\!T^*_{\mathrm{legit}}$
 during the build phase, then drops to $T^*_{\mathrm{mal}}\!=\!0.042$
@@ -559,7 +560,7 @@ exponential decay), dominating the average detection latency.
 };
 \addlegendentry{Proposed (legit)}
 %% Proposed -- build-then-betray (betrayal at round 150)
-%% L_s=0.284 for Ground; converges to T*_mal=0.042 in ~5 rounds
+%% L_s=0.285 for Ground; converges to T*_mal=0.042 in ~5 rounds
 \addplot[red, thick, dashed, mark=none] coordinates {
   (0,0.500)(1,0.397)(2,0.368)(5,0.357)(10,0.356)
   (100,0.356)(149,0.356)(150,0.356)
@@ -592,7 +593,7 @@ exponential decay), dominating the average detection latency.
 \end{tikzpicture}
 \caption{Trust score trajectories (Ground segment,
          $\alpha\!=\!0.70$, $\lambda_s\!=\!0.015$\,s$^{-1}$,
-         $\Delta t\!=\!60$\,s). \emph{Proposed}: $L_s\!=\!0.284$;
+         $\Delta t\!=\!60$\,s). \emph{Proposed}: $L_s\!=\!0.285$;
          betrayal detected in $\approx$\,5 rounds (trust falls from
          0.356 to 0.042). \emph{Static~DLT}: $L\!=\!0.70$, no
          exponential decay; attacker builds to 0.85 and falls below
@@ -1239,16 +1240,23 @@ $T^*_{\mathrm{mal}}$ & $\theta^*$ &
 
 \subsection{Segment-Optimal Threshold Formula}
 
-The threshold minimizing combined FPR and FNR for segment $s$:
+Equation~\eqref{eq:theta_opt} defines the \emph{zero-FPR
+precision-optimal} threshold: the midpoint between steady-state
+clusters that simultaneously satisfies
+$T^*_{s,\mathrm{mal}} < \theta^*_s < T^*_{s,\mathrm{legit}}$,
+minimizing the sum FPR\,+\,FNR under equal misclassification cost:
 \begin{equation}
   \theta^*_s =
     \frac{T^*_{s,\mathrm{legit}} + T^*_{s,\mathrm{mal}}}{2}.
   \label{eq:theta_opt}
 \end{equation}
-A global threshold $\theta^*\!=\!0.20$ simultaneously satisfies
-$T^*_{s,\mathrm{mal}} < 0.20 < T^*_{s,\mathrm{legit}}$ for all
-five segments (minimum legitimate: 0.264~UAV; maximum malicious:
-0.062~GEO; HAPS: 0.049 and 0.414 respectively; Table~\ref{tab:lambda}).
+This is distinct from the F1-maximizing threshold, which lies at
+a higher value where some legitimate nodes are sacrificed for
+increased Recall (see Exp.~7 below).
+A global threshold $\theta^*\!=\!0.20$ simultaneously satisfies the
+zero-FPR condition for all five segments (minimum legitimate:
+0.264~UAV; maximum malicious: 0.062~GEO; HAPS: 0.049 and 0.414
+respectively; Table~\ref{tab:lambda}).
 
 \subsection{Empirical Confirmation (Exp.~7)}
 
@@ -1256,9 +1264,17 @@ Fig.~\ref{fig:threshold} and Table~\ref{tab:theta_sweep} present the
 empirical sweep from $\theta\!=\!0.10$ to $0.50$ (30 runs each).
 At $\theta^*\!=\!0.20$: \textbf{FPR\,=\,0.000, Precision\,=\,1.000,
 F1\,=\,0.250}.
+The empirical F1-maximizing threshold is $\theta\!=\!0.30$
+(F1\,=\,0.300), but at FPR\,=\,0.002, corresponding to
+$\approx$\,2 legitimate nodes per 1{,}000 incorrectly quarantined
+per round.
+For NTN deployments where erroneous quarantine of legitimate satellite
+or HAPS nodes disrupts mission-critical communication,
+FPR\,=\,0 is the correct design objective; $\theta^*\!=\!0.20$ is
+the analytically derived operating point achieving this.
 The FPR transition occurs sharply at $\theta\!\approx\!0.30$,
-consistent with the analytical boundary at $T^*_{\mathrm{Ground}}$.
-Recall is bounded by $\approx\!0.15$ because on-off attackers in
+consistent with the analytical boundary at $T^*_{\mathrm{Ground}}\!=\!0.356$.
+Recall is bounded by $\approx\!0.14$ because on-off attackers in
 their compliant phase maintain trust above any fixed threshold by
 design; detection latency (35.9~rounds) is the complementary metric.
 
@@ -1380,9 +1396,9 @@ $\theta$ & F1 & FPR & Precision & Recall \\
 
 \textbf{Detection latency is the decisive advantage over DLT baselines.}
 The $4.3\times$ speedup over Static DLT is mechanistically driven by
-per-segment decay: $L_s\!=\!0.284$ (proposed) vs $L\!=\!0.70$
-(Static DLT), meaning the proposed model's trust responses are
-$7\times$ faster in the exponential sense.
+per-segment decay: $L_s\!=\!0.285$ (proposed, Ground segment) vs
+$L\!=\!0.70$ (Static DLT), meaning the proposed model's trust
+responses are $7\times$ faster in the exponential sense.
 This matters most for GEO-scale latency where stale trust from a
 compromised satellite could persist for hours without decay.
 
@@ -1390,8 +1406,9 @@ compromised satellite could persist for hours without decay.
 UAV+FL achieves lower detection latency (17.3\,rounds vs 35.9\,rounds)
 via aggressive uniform decay ($\lambda\!=\!0.05$ applied to all
 segments), but at FPR\,=\,27.9\,\%: for a 1{,}000-node network with
-$f\!=\!20\%$ malicious fraction, this corresponds to
-$\approx\!213$ legitimate nodes quarantined per round.
+$f\!=\!20\%$ malicious fraction (800 legitimate nodes),
+this corresponds to $800\!\times\!0.279\!\approx\!223$ legitimate
+nodes quarantined per round.
 The Proposed model's per-segment decay preserves legitimate trust above
 $\theta^*$ in all segments while bringing malicious trust below
 $\theta^*$, achieving FPR\,=\,0 and Precision\,=\,1.000.
@@ -1415,12 +1432,19 @@ simultaneously satisfying
 $T^*_{s,\mathrm{mal}} < \theta^* < T^*_{s,\mathrm{legit}}$ across all
 five segment types.
 
-\textbf{Deploy at $\theta^*\!=\!0.20$.}
-Equation~\eqref{eq:theta_opt} provides a closed-form deployable formula.
-Using $\theta\!=\!0.40$ (conservative experiment value) is demonstrably
-sub-optimal for non-GEO segments, crossing above
-$T^*_{\mathrm{Ground}}\!=\!0.356$ and causing FPR\,=\,26.8\,\%.
-At $\theta\!=\!0.20$, zero false alarms and Precision\,=\,1.000.
+\textbf{Deploy at $\theta^*\!=\!0.20$ for zero-FPR operation.}
+Equation~\eqref{eq:theta_opt} provides a closed-form deployable formula
+for the zero-FPR precision-optimal threshold.
+Using $\theta\!=\!0.40$ is demonstrably sub-optimal for non-GEO
+segments, crossing above $T^*_{\mathrm{Ground}}\!=\!0.356$ and causing
+FPR\,=\,26.8\,\%.
+The empirical F1-maximizing threshold is $\theta\!=\!0.30$
+(F1\,=\,0.300, FPR\,=\,0.002); operators willing to accept
+$\approx$\,2 false quarantines per 1{,}000 legitimate nodes per round
+may deploy at $\theta\!=\!0.30$.
+For mission-critical NTN links where \emph{any} false quarantine
+of a satellite or HAPS node is unacceptable, $\theta^*\!=\!0.20$
+(FPR\,=\,0, Precision\,=\,1.000) is the correct operating point.
 
 \textbf{2048-bit keys are feasible up to $n\!\leq\!75$.}
 At $n\!=\!50$ contributors, overhead is 5{,}575\,ms (9.3\,\% of budget);
@@ -1521,8 +1545,8 @@ Convergence to within 1\,\% of $T^*_s$ requires
 $k \geq \lceil\ln(0.01)/\ln(L_s)\rceil$ rounds:
 $k\!=\!8$ for GEO ($L_s\!=\!0.518$;
 $\lceil{-4.605}/{-0.657}\rceil\!=\!8$),
-$k\!=\!4$ for Ground ($L_s\!=\!0.284$;
-$\lceil{-4.605}/{-1.258}\rceil\!=\!4$), and
+$k\!=\!4$ for Ground ($L_s\!=\!0.285$;
+$\lceil{-4.605}/{-1.255}\rceil\!=\!4$), and
 $k\!=\!2$ for UAV ($L_s\!=\!0.035$;
 $\lceil{-4.605}/{-3.352}\rceil\!=\!2$).
 \QED
