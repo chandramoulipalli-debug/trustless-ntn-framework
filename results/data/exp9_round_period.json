@@ -1,0 +1,66 @@
+{
+  "30": {
+    "t_round_sec": 30,
+    "analytic": {
+      "T_star_legit": 0.4606,
+      "T_star_mal": 0.0542,
+      "theta_opt": 0.2574
+    },
+    "empirical": {
+      "T_star_legit_mean": 0.4931,
+      "T_star_legit_ci95": 0.0002,
+      "T_star_mal_mean": 0.4591,
+      "T_star_mal_ci95": 0.0025,
+      "detection_latency_mean": 131.4,
+      "detection_latency_ci95": 9.39
+    }
+  },
+  "60": {
+    "t_round_sec": 60,
+    "analytic": {
+      "T_star_legit": 0.3564,
+      "T_star_mal": 0.0419,
+      "theta_opt": 0.1992
+    },
+    "empirical": {
+      "T_star_legit_mean": 0.4706,
+      "T_star_legit_ci95": 0.0004,
+      "T_star_mal_mean": 0.4374,
+      "T_star_mal_ci95": 0.0034,
+      "detection_latency_mean": 94.62,
+      "detection_latency_ci95": 7.52
+    }
+  },
+  "90": {
+    "t_round_sec": 90,
+    "analytic": {
+      "T_star_legit": 0.3115,
+      "T_star_mal": 0.0367,
+      "theta_opt": 0.1741
+    },
+    "empirical": {
+      "T_star_legit_mean": 0.4582,
+      "T_star_legit_ci95": 0.0006,
+      "T_star_mal_mean": 0.4256,
+      "T_star_mal_ci95": 0.0039,
+      "detection_latency_mean": 74.03,
+      "detection_latency_ci95": 6.7
+    }
+  },
+  "120": {
+    "t_round_sec": 120,
+    "analytic": {
+      "T_star_legit": 0.2884,
+      "T_star_mal": 0.0339,
+      "theta_opt": 0.1611
+    },
+    "empirical": {
+      "T_star_legit_mean": 0.4509,
+      "T_star_legit_ci95": 0.0007,
+      "T_star_mal_mean": 0.4188,
+      "T_star_mal_ci95": 0.0043,
+      "detection_latency_mean": 74.13,
+      "detection_latency_ci95": 6.69
+    }
+  }
+}
