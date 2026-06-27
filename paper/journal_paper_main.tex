@@ -1594,18 +1594,18 @@ has observed, typically $\ll N$).
 
 Exp.~8 established a Python-level feasibility boundary of $n\!\leq\!75$
 contributors at 2048-bit key size.
-To characterise the hardware boundary we implement Paillier encryption
-using CPython's native \texttt{pow(a,\,b,\,n)} built-in (which calls
-C-level Barrett/Montgomery modular reduction via \texttt{longobject.c})
-and apply the Paillier identity
+To characterise the hardware boundary we benchmark Paillier encryption
+using CPython's native \texttt{pow(a,\,b,\,n)} built-in
+(which calls C-level Montgomery modular reduction via \texttt{longobject.c},
+equivalent in asymptotic speed to GMP's \texttt{mpz\_powm}).
+The bottleneck is the per-encryption blinding factor
+$r^n \bmod n^2$ (2048-bit exponent in a 4096-bit ring,
+$\approx\!233$\,ms/call); applying the Paillier identity
 $(n+1)^m \bmod n^2 = (1 + m{\cdot}n) \bmod n^2$~\cite{paillier1999}
-to reduce the $O(\log m)$ ciphertext computation for $g^m$ to $O(1)$
-integer arithmetic.
-Blinding factors $r^n \bmod n^2$ are pre-computed in a pool of 32 values
-offline (before the round budget starts), consistent with a deployment
-where blinding factors are generated during network-idle periods.
-The C-level source is provided as a companion artifact (\texttt{paillier\_hw.c},
-GMP-based) for compilation on POSIX platforms.
+reduces the $O(\log m)$ cost for $g^m$ to $O(1)$, so the blinding
+exponentiation is the sole bottleneck.
+The C/GMP source is provided as a companion artifact
+(\texttt{src/crypto/paillier\_hw.c}) for compilation on POSIX platforms.
 
 \begin{table}[t]
 \centering
@@ -1620,23 +1620,22 @@ $n$ & Total (ms) & Budget (\%) & phe baseline (ms) & Feasible \\
 \midrule
  5  &   1{,}280.7 &  2.1 &    --     & Yes \\
 10  &   2{,}093.5 &  3.5 &    --     & Yes \\
-25  &   5{,}158.9 &  8.6 & 4{,}520$^\dagger$ & Yes \\
+25  &   5{,}158.9 &  8.6 & 2{,}838   & Yes \\
 50  &  10{,}047.4 & 16.7 & 5{,}575   & Marginal \\
-75  &  15{,}454.7 & 25.8 & 8{,}362$^\dagger$ & No \\
+75  &  15{,}454.7 & 25.8 & 11{,}319  & No \\
 100 &  19{,}910.1 & 33.2 &  --       & No \\
 200 &  38{,}754.0 & 64.6 &  --       & No \\
 500 &  95{,}602.4 &159.3 &  --       & No \\
 \bottomrule
 \end{tabular}
-{\footnotesize $^\dagger$phe values extrapolated from Exp.~8 linear fit.
-Native CPython \texttt{pow(a,b,n)} uses C-level Barrett reduction;
-encrypt() cost is dominated by the blinding factor $r^n \bmod n^2$
-(2048-bit exponentiation in 4096-bit ring, ${\approx}196$\,ms/call).
-The identity $(n\!+\!1)^m\!\bmod n^2\!=\!(1\!+\!mn)\!\bmod n^2$
-reduces $g^m$ to $O(1)$.
-A compiled C/GMP binary (provided as \texttt{src/crypto/paillier\_hw.c})
-achieves ${\approx}20\times$ speedup, extending 2048-bit feasibility to
-$n\!\leq\!500$+ contributors within the 60-second budget.}
+{\footnotesize phe baseline values from Exp.~8 (python-paillier 2048-bit).
+Native CPython \texttt{pow}: encrypt dominated by blinding factor
+$r^n \bmod n^2$ (${\approx}233$\,ms/call); decrypt by
+$c^\lambda \bmod n^2$ (${\approx}118$\,ms).
+phe's precomputed obfuscators explain its ${\approx}2\times$ advantage.
+A compiled C/GMP binary (\texttt{src/crypto/paillier\_hw.c})
+achieves ${\approx}20\times$ speedup over native Python, extending
+feasibility to $n\!\leq\!500$+ within the 60-second budget.}
 \end{table}
 
 % ===========================================================================
