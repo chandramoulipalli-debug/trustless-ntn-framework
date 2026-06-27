@@ -990,6 +990,11 @@ No DP &  0.000 & --- & 0.249 \\
 
 Fig.~\ref{fig:scalability} and Table~\ref{tab:scalability} show
 near-linear $\mathcal{O}(N)$ scaling.
+The ms/round metric measures the per-round trust update computation
+(Eq.~\eqref{eq:aging} applied to all active node pairs), excluding
+DLT consensus overhead which is simulated as a fixed-latency
+barrier~\cite{yang2024} and does not scale with $N$ in the
+permissioned-DLT setting.
 Computation grows from 5.1\,ms ($N\!=\!100$) to 227.7\,ms
 ($N\!=\!5{,}000$).
 Memory reaches 112\,MB at $N\!=\!5{,}000$, within the capacity of
@@ -1426,7 +1431,18 @@ Consensus throughput is simulated without a networked validator
 implementation.
 The DP analysis uses standard $(\varepsilon,\delta)$ composition;
 R\'{e}nyi DP~\cite{mironov2017} would yield tighter multi-round bounds.
-Recall is bounded at $\approx\!0.14$ due to on-off adversarial evasion.
+Recall is bounded at $\approx\!0.14$ due to on-off adversarial evasion:
+on-off attackers in their 100-round compliant phase maintain trust
+above $\theta^*$ and are therefore admitted through Layer~4, identical
+to legitimate nodes.
+This is an inherent property of any threshold-based trust system, not
+a framework defect; the 50-round malicious burst window bounds the
+maximum exploitation window per on-off cycle, and Layer~4's
+per-service session rate limits (enforced via smart contract audit log)
+constrain damage within each burst window independently of the trust
+score.
+Detection latency (35.9\,rounds) measures how quickly the burst onset
+is caught, not the fraction of malicious nodes visible at any snapshot.
 All classification metrics are computed from a single aggregator node
 (node~0); a multi-aggregator consensus design would reduce detection
 latency but requires additional communication overhead modeling.
