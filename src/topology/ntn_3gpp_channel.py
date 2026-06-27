@@ -187,14 +187,8 @@ class NTNChannel3GPP:
         self.round_dur = cfg["trust"]["round_duration_sec"]
 
         N = G.number_of_nodes()
+        self._N = N
 
-        # Cache for current-round delay matrix (lazy, updated per round)
-        self._cached_round = -1
-        # Satellite ECEF for the cached round (fast: only ~100 satellites)
-        self._sat_ecef: dict[int, np.ndarray] = {}
-        # Per-round per-edge delay cache (populated ON-DEMAND, not upfront)
-        self._delay_cache:  dict[tuple, float] = {}
-        self._active_cache: dict[tuple, bool]  = {}
         # Precompute ground/HAPS/UAV ECEF once (static positions) — filled by _init_positions
         self._ground_ecef_static: dict[int, np.ndarray] = {}
 
@@ -205,6 +199,28 @@ class NTNChannel3GPP:
         # Create satellite orbital states
         self._sat_states: dict[int, SatelliteState] = {}
         self._init_satellites()
+
+        # ── Vectorized precomputation arrays ─────────────────────────────────
+        # Ordered arrays of sat / ground IDs for batch numpy operations
+        self._sat_ids  = np.array(sorted(self._sat_states.keys()), dtype=np.int32)
+        self._gnd_ids  = np.array(sorted(self._ground_ecef_static.keys()), dtype=np.int32)
+        n_gnd = len(self._gnd_ids)
+
+        # Ground-node ECEF matrix — shape (n_gnd, 3) — static, precomputed once
+        self._gnd_pos = np.array([self._ground_ecef_static[int(nid)]
+                                  for nid in self._gnd_ids])  # (n_gnd, 3)
+        gnd_norms = np.linalg.norm(self._gnd_pos, axis=1, keepdims=True)
+        self._gnd_unit = self._gnd_pos / np.where(gnd_norms > 0, gnd_norms, 1.0)  # (n_gnd, 3)
+
+        # Full N×N delay/active matrices — updated per round via vectorized batch
+        # Default: delay=0 (ground-ground), active=True
+        self._delay_arr  = np.zeros((N, N), dtype=np.float32)
+        self._active_arr = np.ones((N, N),  dtype=bool)
+
+        # Precompute ground-ground delays once (static positions)
+        self._precompute_ground_ground()
+
+        self._cached_round = -1
 
     def _init_positions(self):
         """Assign realistic geographic positions to all nodes."""
@@ -272,85 +288,82 @@ class NTNChannel3GPP:
             self._sat_states[nid] = SatelliteState("GEO", nid, 0.0, 0.0,
                                                     float(rng.uniform(0, 360)))
 
+    def _precompute_ground_ground(self):
+        """Precompute ground-ground and ground-UAV/HAPS delays (static, one-time)."""
+        gnd_ids = self._gnd_ids
+        gnd_pos = self._gnd_pos  # (n_gnd, 3)
+        n_gnd = len(gnd_ids)
+        if n_gnd == 0:
+            return
+        # Pairwise distances: (n_gnd, n_gnd)
+        diff_gg = gnd_pos[:, np.newaxis, :] - gnd_pos[np.newaxis, :, :]  # (n,n,3)
+        dists_gg = np.linalg.norm(diff_gg, axis=2)  # (n_gnd, n_gnd)
+        np.fill_diagonal(dists_gg, 0.001)  # avoid log10(0) warning for self-links
+        delays_gg = (dists_gg / C_KM_S * 1000).astype(np.float32)
+        # Scatter into full N×N matrix
+        ix = np.ix_(gnd_ids.astype(int), gnd_ids.astype(int))
+        self._delay_arr[ix]  = delays_gg
+        self._active_arr[ix] = True
+
     def _update_round(self, round_num: int):
         """
-        Per-round update: recompute satellite ECEF positions (cheap: ~100 sats).
-        Edge delays are computed ON-DEMAND in _get_link(), not upfront for all edges.
-        This reduces per-round overhead from O(|E|) to O(|satellites|).
+        Vectorized per-round update: compute ALL (satellite × ground) pairs at once.
+        O(n_sat × n_gnd) numpy ops per round — eliminates per-edge Python overhead.
         """
         if self._cached_round == round_num:
             return
         self._cached_round = round_num
-        # Clear per-edge cache for this round (avoids stale values from last round)
-        self._delay_cache  = {}
-        self._active_cache = {}
 
         t_sec = round_num * self.round_dur
-        # Compute satellite ECEF positions (only ~100 satellites — fast)
-        for nid, state in self._sat_states.items():
-            self._sat_ecef[nid] = _sat_ecef(state, t_sec)
+        n_sat = len(self._sat_ids)
+        n_gnd = len(self._gnd_ids)
+        if n_sat == 0 or n_gnd == 0:
+            return
+
+        # ── Step 1: compute all satellite ECEF positions ─────────────────────
+        sat_pos = np.empty((n_sat, 3), dtype=np.float64)
+        for k, nid in enumerate(self._sat_ids):
+            state  = self._sat_states[int(nid)]
+            h      = ALTITUDES_KM[state.seg_type]
+            r      = R_EARTH_KM + h
+            T      = ORBITAL_PERIOD_S.get(state.seg_type, 86164.0)
+            phase  = np.radians(state.phase0_deg) + (2 * np.pi / T) * t_sec
+            inc    = np.radians(state.inc_deg)
+            raan   = np.radians(state.raan_deg)
+            x_orb, y_orb = r * np.cos(phase), r * np.sin(phase)
+            ci, si = np.cos(inc), np.sin(inc)
+            cr, sr = np.cos(raan), np.sin(raan)
+            sat_pos[k, 0] = x_orb * cr - y_orb * ci * sr
+            sat_pos[k, 1] = x_orb * sr + y_orb * ci * cr
+            sat_pos[k, 2] = y_orb * si
+
+        # ── Step 2: vectorised (sat × gnd) diff, distance, elevation ─────────
+        # diffs[k, m] = sat_pos[k] - gnd_pos[m], shape (n_sat, n_gnd, 3)
+        diffs  = sat_pos[:, np.newaxis, :] - self._gnd_pos[np.newaxis, :, :]
+        dists  = np.linalg.norm(diffs, axis=2)          # (n_sat, n_gnd)
+
+        safe_d = np.where(dists > 1e-6, dists, 1.0)
+        # sin(elevation) = dot(diff_unit, gnd_unit)
+        dots   = np.einsum('sgi,gi->sg',
+                           diffs / safe_d[:, :, np.newaxis],
+                           self._gnd_unit)               # (n_sat, n_gnd)
+        elev   = np.degrees(np.arcsin(np.clip(dots, -1.0, 1.0)))  # (n_sat, n_gnd)
+
+        active_sg = elev >= MIN_ELEV_DEG                # (n_sat, n_gnd) bool
+        delay_sg  = (dists / C_KM_S * 1000).astype(np.float32)  # (n_sat, n_gnd) ms
+
+        # ── Step 3: scatter results into N×N matrices ─────────────────────────
+        gnd_int = self._gnd_ids.astype(int)
+        for k in range(n_sat):
+            sid = int(self._sat_ids[k])
+            self._delay_arr[sid,   gnd_int] = delay_sg[k]
+            self._delay_arr[gnd_int, sid]   = delay_sg[k]
+            self._active_arr[sid,   gnd_int] = active_sg[k]
+            self._active_arr[gnd_int, sid]   = active_sg[k]
 
     def _get_link(self, i: int, j: int) -> tuple[float, bool]:
-        """
-        Compute and cache delay_ms + active for edge (i,j) within the current round.
-        Called on-demand — only for edges actually used in the simulation loop.
-        """
-        key = (i, j)
-        if key in self._delay_cache:
-            return self._delay_cache[key], self._active_cache[key]
-
-        ti = self.G.nodes[i]["type"]
-        tj = self.G.nodes[j]["type"]
-        delay, active = self._compute_link(i, j, ti, tj)
-
-        self._delay_cache[(i, j)]  = delay
-        self._delay_cache[(j, i)]  = delay
-        self._active_cache[(i, j)] = active
-        self._active_cache[(j, i)] = active
-        return delay, active
-
-    def _compute_link(self, i, j, ti, tj) -> tuple[float, bool]:
-        """
-        Compute (delay_ms, active) for edge (i,j) using pre-cached satellite ECEF
-        and static ground ECEF.  Called lazily — only for edges actually used.
-        """
-        sat_ecef   = self._sat_ecef              # pre-computed for this round
-        ground_ecef = self._ground_ecef_static   # static (computed once at init)
-
-        # Satellite–ground links
-        for (sat_id, sat_t), (gnd_id, gnd_t) in [
-            ((i, ti), (j, tj)), ((j, tj), (i, ti))
-        ]:
-            if sat_t in ("LEO", "MEO", "GEO") and gnd_t in ("GROUND", "HAPS", "UAV"):
-                if sat_id not in sat_ecef or gnd_id not in ground_ecef:
-                    return self._fallback_delay(sat_t), True
-                se   = sat_ecef[sat_id]
-                ge   = ground_ecef[gnd_id]
-                elev = elevation_angle_deg(ge, se)
-                dist = float(np.linalg.norm(se - ge))
-                active = elev >= MIN_ELEV_DEG
-                delay  = one_way_delay_ms(dist) if active else 999.0
-                return delay, active
-
-        # ISL (satellite–satellite)
-        if ti in ("LEO", "MEO", "GEO") and tj in ("LEO", "MEO", "GEO"):
-            if i in sat_ecef and j in sat_ecef:
-                dist = float(np.linalg.norm(sat_ecef[i] - sat_ecef[j]))
-                return one_way_delay_ms(dist), True
-            return self._fallback_delay("LEO"), True
-
-        # Aerial–aerial or ground–ground
-        if i in ground_ecef and j in ground_ecef:
-            dist = float(np.linalg.norm(ground_ecef[i] - ground_ecef[j]))
-            dist = max(dist, 0.01)
-            return one_way_delay_ms(dist), True
-
-        return self._fallback_delay(ti), True
-
-    def _fallback_delay(self, seg: str) -> float:
-        delays = {"LEO": 3.0, "MEO": 50.0, "GEO": 270.0,
-                  "HAPS": 0.1, "UAV": 0.01, "GROUND": 2.0}
-        return delays.get(seg, 10.0)
+        """O(1) lookup into precomputed round matrices."""
+        return float(self._delay_arr[i, j]), bool(self._active_arr[i, j])
 
     def link_active(self, i: int, j: int, round_num: int) -> bool:
         self._update_round(round_num)
