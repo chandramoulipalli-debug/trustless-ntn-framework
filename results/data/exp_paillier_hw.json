@@ -1,0 +1,14 @@
+{
+  "key_bits_2048": [
+    {"n_contributors": 5,   "enc_time_ms": 1163.0, "agg_time_ms": 0.01, "dec_time_ms": 117.7, "total_time_ms": 1280.74, "ciphertext_size_kb": 0.62,  "budget_pct": 2.1,  "result": 0.8},
+    {"n_contributors": 10,  "enc_time_ms": 1857.1, "agg_time_ms": 0.02, "dec_time_ms": 118.3, "total_time_ms": 2093.48, "ciphertext_size_kb": 1.25,  "budget_pct": 3.5,  "result": 0.8},
+    {"n_contributors": 25,  "enc_time_ms": 4923.6, "agg_time_ms": 0.04, "dec_time_ms": 119.8, "total_time_ms": 5158.94, "ciphertext_size_kb": 3.12,  "budget_pct": 8.6,  "result": 0.8},
+    {"n_contributors": 50,  "enc_time_ms": 9808.4, "agg_time_ms": 0.09, "dec_time_ms": 120.2, "total_time_ms": 10047.41, "ciphertext_size_kb": 6.25, "budget_pct": 16.7, "result": 0.8},
+    {"n_contributors": 75,  "enc_time_ms": 15215.9, "agg_time_ms": 0.13, "dec_time_ms": 120.5, "total_time_ms": 15454.69, "ciphertext_size_kb": 9.37, "budget_pct": 25.8, "result": 0.8},
+    {"n_contributors": 100, "enc_time_ms": 19670.0, "agg_time_ms": 0.17, "dec_time_ms": 120.7, "total_time_ms": 19910.07, "ciphertext_size_kb": 12.5, "budget_pct": 33.2, "result": 0.8},
+    {"n_contributors": 200, "enc_time_ms": 38513.5, "agg_time_ms": 0.34, "dec_time_ms": 121.1, "total_time_ms": 38753.95, "ciphertext_size_kb": 25.0, "budget_pct": 64.6, "result": 0.8},
+    {"n_contributors": 500, "enc_time_ms": 95361.6, "agg_time_ms": 0.86, "dec_time_ms": 121.4, "total_time_ms": 95602.39, "ciphertext_size_kb": 62.5, "budget_pct": 159.3, "result": 0.8}
+  ],
+  "key_bits_2048_feasibility_n": 25,
+  "notes": "Native CPython pow() with Paillier identity (n+1)^m mod n^2 = (1+mn) mod n^2. Keygen: 1103ms. Budget: 60s round. Feasibility threshold: <10% budget (strict) or <20% (marginal). n<=25 strictly feasible (8.6%), n=50 marginal (16.7%)."
+}

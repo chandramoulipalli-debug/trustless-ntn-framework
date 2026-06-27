@@ -68,6 +68,56 @@ class TrustEngine:
     def snapshot(self) -> np.ndarray:
         return self.T.copy()
 
+    # ── Transitive (indirect) trust via DLT-consensus ────────────────────────
+
+    def indirect_trust_row(self, observer: int,
+                           interaction_counts: np.ndarray) -> np.ndarray:
+        """
+        Compute indirect (one-hop DLT-consensus) trust for every node k
+        from the perspective of `observer`.
+
+        For each candidate k, aggregate the trust scores T_jk published by
+        all intermediaries j that have directly interacted with k and are
+        themselves trusted by observer:
+
+            T_indirect[k] = sum_j(T[obs,j] * T[j,k] * I[j observed k])
+                            / sum_j(T[obs,j] * I[j observed k])
+
+        Nodes never observed by any j return NaN (fall back to direct score).
+        """
+        has_obs = (interaction_counts > 0).astype(np.float64)
+        np.fill_diagonal(has_obs, 0.0)
+
+        T_obs = self.T[observer, :]
+        numerator   = np.einsum('j,jk->k', T_obs, self.T * has_obs)
+        denominator = np.einsum('j,jk->k', T_obs, has_obs)
+
+        indirect = np.full(self.N, np.nan)
+        mask = denominator > 1e-9
+        indirect[mask] = numerator[mask] / denominator[mask]
+        return indirect
+
+    def combined_trust_scores(self, observer: int,
+                               interaction_counts: np.ndarray,
+                               gamma: float = 0.40) -> np.ndarray:
+        """
+        Return combined (direct + indirect) trust for all nodes.
+
+        w_d = min(n_direct/20, 1-gamma) blends toward direct evidence as the
+        observer accumulates direct interactions.  Nodes with no indirect
+        evidence fall back to their direct score.
+        """
+        direct   = self.T[observer, :].copy()
+        indirect = self.indirect_trust_row(observer, interaction_counts)
+        n_direct = interaction_counts[observer, :]
+        w_direct = np.minimum(n_direct / 20.0, 1.0 - gamma)
+        combined = np.where(
+            ~np.isnan(indirect),
+            w_direct * direct + (1.0 - w_direct) * indirect,
+            direct,
+        )
+        return np.clip(combined, 0.0, 1.0)
+
 
 # ── Baseline models ──────────────────────────────────────────────────────────
 

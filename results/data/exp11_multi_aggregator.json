@@ -1,0 +1,18 @@
+{
+  "single_observer": {
+    "detection_latency_mean": 134.927,
+    "detection_latency_ci95": 7.082,
+    "f1_mean": 0.233,
+    "recall_mean": 0.132,
+    "fpr_mean": -1,
+    "overhead_kb_per_round": -1
+  },
+  "multi_aggregator": {
+    "detection_latency_mean": 108.616,
+    "detection_latency_ci95": 2.636,
+    "f1_mean": 0.092,
+    "recall_mean": 0.048,
+    "fpr_mean": -1,
+    "overhead_kb_per_round": 20.53
+  }
+}
