@@ -28,7 +28,7 @@ from src.trust.trust_engine import TrustEngine
 from src.attacks.attack_models import assign_attack_roles
 from src.metrics.evaluator import detection_latency_all, classification_metrics
 
-NUM_RUNS  = 20          # 20 independent Monte-Carlo runs (10 min est. wall-clock)
+NUM_RUNS  = 5           # 5 runs for 3GPP phase (RG baseline confirmed stable at 20 runs)
 NUM_ROUNDS = 500
 THETA     = 0.20
 

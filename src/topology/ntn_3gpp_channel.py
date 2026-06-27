@@ -55,7 +55,8 @@ def fspl_db(dist_km: float, freq_ghz: float = FREQ_GHZ) -> float:
     FSPL [dB] = 20·log10(4π·d·f/c)
     In practical form: FSPL = 20·log10(d_km) + 20·log10(f_GHz) + 92.44
     """
-    return 20 * np.log10(dist_km) + 20 * np.log10(freq_ghz) + 92.44
+    d = max(dist_km, 0.001)  # avoid log10(0) for co-located nodes
+    return 20 * np.log10(d) + 20 * np.log10(freq_ghz) + 92.44
 
 
 def slant_range_km(h_km: float, elev_deg: float) -> float:
